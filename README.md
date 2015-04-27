@@ -2,7 +2,8 @@
 Automated testing of Firefox for SSL web compatibility
 
 This project:
-* Automatically runs thousands of secure sites on a given branch of Firefox.
+* Downloads a branch build of Firefox.
+* Automatically runs thousands of secure sites on that build.
 * Runs any errors on a release version of Firefox. 
 * Diffs the results and presents potentially broken sites in an HTML page for further diagnosis.
 
@@ -15,7 +16,7 @@ Directions:
 * Use the bash_test.sh script to run the test
 * Specify three parameters:
   * -u Build URL
-  * -s Source
+  * -s Source list of sites
   * -d Decription of test
 
 Example:
