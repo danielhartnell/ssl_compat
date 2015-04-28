@@ -52,7 +52,7 @@ then
 exit
 fi  
 
-if [ -z $description ]
+if [ -z ${description+x} ]
 then
     description="Generic test description"
 fi
