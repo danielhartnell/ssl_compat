@@ -7,15 +7,14 @@
 /* === This is the stuff you might want to change === */
 if (!arguments || arguments.length < 1) {
 
-  throw "Usage: xpcshell getXHRSSLStatus.js <domains-file> [error-output]\n";
+  throw "Usage: xpcshell sslScan.js <domains-file> [error-output]\n";
 }
 
-dump (arguments.toString() + "\n");
 const SOURCE = arguments[0];     // this can be an http URI if you want
 const ERROR_OUTPUT = arguments[1] || ("error-" + SOURCE);
-const MAX_CONCURRENT_REQUESTS = 30;
-const MAX_RETRIES = 0;
-const REQUEST_TIMEOUT = 10 * 1000;
+const MAX_CONCURRENT_REQUESTS = 30; // can be much lower (more accurate) but not much faster
+const MAX_RETRIES = 0; // can be adjusted up to 5 for more network robustness, but takes longer to run
+const REQUEST_TIMEOUT = 10 * 1000; // can be increased for more network robustness, but takes longer to run
 
 const Cc = Components.classes;
 const Ci = Components.interfaces;
@@ -44,8 +43,8 @@ XPCOMUtils.defineLazyGetter(this, "Timer", function() {
 });
 
 
-
-
+// optional: set prefs
+// this is vestigial code from testing RC4 and TLS intolerance
 /*
 const PREF_DISPLAY = "security.tls.version.fallback-limit";
 Services.prefs.setIntPref(PREF_DISPLAY,1);
@@ -64,6 +63,8 @@ let nssErrorsService = Cc['@mozilla.org/nss_errors_service;1'].getService(nsINSS
 const UNKNOWN_ERROR = 0x8000ffff;
 
 
+// currently unused, and probably needs to be updated
+// so that the directory is relative to SOURCE and not "CurWorkD"
 function setup_profile_dir() {
   var dirSvc = Cc["@mozilla.org/file/directory_service;1"].
   getService(Ci.nsIProperties);
@@ -107,19 +108,15 @@ function readHttp() {
     dump("ERROR: problem downloading '" + SOURCE + "': status " + req.status);
     return [];
   }
-
   return req.responseText;
 }
 
 function readFile() {
   let file = Cc["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
   file.initWithPath(SOURCE);
-
   let stream = Cc["@mozilla.org/network/file-input-stream;1"]
                  .createInstance(Ci.nsIFileInputStream);
-
   stream.init(file, -1, 0, 0);
-
   return NetUtil.readInputStreamToString(stream, stream.available());
 }
 
@@ -229,24 +226,6 @@ function createTCPError(status) {
       break;
     }
   }
-
-  // XXX we have no TCPError implementation right now because it's really hard to
-  // do on b2g18. On mozilla-central we want a proper TCPError that ideally
-  // sub-classes DOMError. Bug 867872 has been filed to implement this and
-  // contains a documented TCPError.webidl that maps all the error codes we use in
-  // this file to slightly more readable explanations.
-
-/*
-  try {
-    let error = Cc["@mozilla.org/dom-error;1"].createInstance(Ci.nsIDOMDOMError);
-    error.wrappedJSObject.init(errName);
-    error.layer = errType;
-    return error;
-  } catch (e) {
-    dump("Error creating DOMError: " + e + "\n");
-  }
-*/
-
   return { name: errName, layer: errType };
 }
 
@@ -263,7 +242,6 @@ function analyzeSecurityInfo(xhr, error, hostname) {
     return false;
   }
 
-  let isEV = false;
   try {
     let channel = xhr.channel;
     let secInfo = channel.securityInfo;
@@ -311,9 +289,8 @@ function analyzeSecurityInfo(xhr, error, hostname) {
       dump("\tValid until " + validity.notAfterGMT + "\n");
       dump("\n\n");
 
+     // currently unused functionality, but you could check for a root cert here
      // crawlCertChain (cert, hostname);
-
-
     }
     }
     if (error != null) {
@@ -324,13 +301,15 @@ function analyzeSecurityInfo(xhr, error, hostname) {
   } catch(err) {
     dump("\nError: " + err.message + "\n");
   }
-  secInfoObj.isEV = isEV;
   return secInfoObj;
 }
 
 
+// currently unused function
 function crawlCertChain(cert, hostname)
 {
+  // NOTE: more vestigial code, here we were looking for two Equifax root certs, 
+  // but you can substitute your own sha1 fingerprint(s) here
   var fingerprint1 = "D2:32:09:AD:23:D3:14:23:21:74:E4:0D:7F:9D:62:13:97:86:63:3A";
   var fingerprint2 = "7E:78:4A:10:1C:82:65:CC:2D:E1:F1:6D:47:B4:40:CA:D9:0A:19:45";
 
@@ -347,7 +326,6 @@ function crawlCertChain(cert, hostname)
       .QueryInterface(Ci.nsIX509Cert);
     dump ("CERT: " + childCert.sha1Fingerprint + "\n" );
   }
-
   if ( childCert.sha1Fingerprint == fingerprint1
        || childCert.sha1Fingerprint == fingerprint2 )
   {
@@ -382,7 +360,6 @@ function queryHost(hostname, callback) {
       callback(error, req);
     }
   }
-
   function errorHandler(e) {
     completed(e.target.channel.QueryInterface(Ci.nsIRequest).status, e.target);
   }
@@ -416,11 +393,7 @@ function queryHost(hostname, callback) {
 // write a single entry to the log output stream
 function writeToErrorLog(outputStream, data) {
   let message = "0x" + data.error.toString(16);
-//  if ((data.error & 0xff0000) === 0x5a0000) { // Security module
-//    message = message + " " + nssErrorsService.getErrorMessage(data.error);
-//  } else {
     message = message + " " + data.type + " " + data.errorInfo;
-//  }
   message = data.name + " " + message;
   message = message.replace("\n", "|", "g").replace("\r", "", "g") + "\n";
   outputStream.write(message, message.length);
@@ -449,29 +422,19 @@ function processAllHosts(hosts, errorStream) {
   }
   let counter = 0;
   let errorCount = 0;
-//  let evCount = 0;
   let doneCount = 0;
   function recordResult(hostname, error, xhr) {
     let errorInfo = error ? createTCPError(error) : null;
     let secInfoObj = analyzeSecurityInfo(xhr, errorInfo, hostname);
-    //let ev = secInfoObj.isEV;
-
 
     ++doneCount;
     if (error) {
       ++errorCount;
     }
-/*
-    if (ev) {
-      ++evCount;
-    }
-*/
     let idx = outstanding.findIndex(e => e.name === hostname);
     let entry = outstanding[idx];
     outstanding.splice(idx, 1);
-
     entry.error = error;
-//    entry.ev = ev;
 
     if (errorInfo) {
       entry.errorInfo = secInfoObj.message;
@@ -494,7 +457,6 @@ function processAllHosts(hosts, errorStream) {
            counter + " / " + errorCount + " / " +
            (hosts.length-counter) + "+" + outstanding.length +
            "(" + ((outstanding.length > 0) ? outstanding[0].name : "-") + ")\n");
-
       startNext();
     }
 
@@ -508,7 +470,6 @@ function processAllHosts(hosts, errorStream) {
   for (let i = 0; i < MAX_CONCURRENT_REQUESTS; ++i) {
     startNext();
   }
-
   waitForAResponse(() => outstanding.length > 0);
 }
 
@@ -542,19 +503,15 @@ function openFile(name) {
 // get the status of each host
 // download and parse the raw text file
 
+// not currently used - assign custom profile
 // setup_profile_dir();
 
 let hosts = downloadHosts();
 try {
   dump("Loaded " + hosts.length + " hosts\n");
   let errFile = openFile(ERROR_OUTPUT);
-  //let evFile = openFile(EV_OUTPUT);
-  //var certFile = openFile("certs.txt");
-
   processAllHosts(hosts, errFile);
   FileUtils.closeSafeFileOutputStream(errFile);
-  //FileUtils.closeSafeFileOutputStream(evFile);
-  //FileUtils.closeSafeFileOutputStream(certFile);
 } catch (e) {
   dump("ERROR: problem writing output\n");
 }
