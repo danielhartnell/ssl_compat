@@ -401,7 +401,9 @@ function loadError(e)
 function parseDocument(str)
 {
 	var bothTables = str.split("-- ");
+
 	var targetTable = createTableData (bothTables[1], "-");
+
 	var controlTable = createTableData (bothTables[0], "+");
 	tabStr1 = targetTable[0].split(" ")[0].split("	")[0];
 	tabStr2 = controlTable[0].split(" ")[0].split("	")[0];
@@ -441,6 +443,11 @@ function createColumnsFromRows ( a )
 		tempArray.push (a[i].split(" "));
 		var tempURI = "<a target='blank' href=\'https://" + tempArray[i][0] + "'>" + tempArray[i][0] + "</a>";
 		tempArray[i][0] = tempURI;
+		
+			if (tempArray[i].length == 4) 
+		{
+				tempArray[i][4]="unknown";
+		}
 	}
 	return tempArray;
 }
