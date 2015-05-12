@@ -1,0 +1,8 @@
+2015-05-04-12-00-00	Fx38.0b8 vs Fx37.0.2 release - modified for Issuer Common Name field
+2015-04-29-09-38-29	Fx38.0b8 vs Fx37.0.2 release
+2015-04-28-15-16-12	Fx39.0a2 vs Fx37.0.2 release
+2015-04-24-14-51-11	Fx40 vs Fx37.0.2 release
+2015-04-06-14-07-53	Fx39.0a2 vs Fx37.0.2 release
+2015-04-02-14-52-15	Fx38.0b1 vs Fx37.0.2 release
+2015-01-13-11-56-43	Fx36 Aurora vs Fx34 release
+2014-11-21-12-32-35	Fx34 beta vs Fx33 release

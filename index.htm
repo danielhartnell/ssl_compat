@@ -4,7 +4,8 @@
 <title>SSL Compatibility Testing</title>
 <style>
 table, th, td {
-	border: 1px solid black;
+	border: 0px;
+	padding: 3px;
 	font-size: small;
 	background: white;
 }
@@ -81,14 +82,16 @@ h1 {
 <script>
 
 var masterTab1, masterTab2;
-var testData = "<a href=2015-05-04-12-00-00>2015-05-04-12-00-00</a>&nbsp;&nbsp;Fx38.0b8 vs Fx37.0.2 release - modified for Issuer Common Name field<br><a href=2015-04-29-09-38-29>2015-04-29-09-38-29</a>&nbsp;&nbsp;Fx38.0b8 vs Fx37.0.2 release<br><a href=2015-04-28-15-16-12>2015-04-28-15-16-12</a>&nbsp;&nbsp;Fx39.0a2 vs Fx37.0.2 release<br><a href=2015-04-24-14-51-11>2015-04-24-14-51-11</a>&nbsp;&nbsp;Fx40 vs Fx37.0.2 release<br><a href=2015-04-06-14-07-53>2015-04-06-14-07-53</a>&nbsp;&nbsp;Fx39.0a2 vs Fx37.0.2 release<br><a href=2015-04-02-14-52-15>2015-04-02-14-52-15</a>&nbsp;&nbsp;Fx38.0b1 vs Fx37.0.2 release<br><a href=2015-01-13-11-56-43>2015-01-13-11-56-43</a>&nbsp;&nbsp;Fx36 Aurora vs Fx34 release<br><a href=2014-11-21-12-32-35>2014-11-21-12-32-35</a>&nbsp;&nbsp;Fx34 beta vs Fx33 release<br>";
-var info = "This is an index page that links to automated SSL test runs. <br><br>We regularly run large lists of URLs against branches of Firefox <br>to look for SSL regressions. The tests are primarily xpcshell-based, <br>and the source URL lists can be specified dynamically. <br><br>The two main lists we use are the Pulse top sites list and the <br>Google Certificate Transparency list. Those lists comprise <br>approximately 211k and 2.7m sites, respectively.<br><br>Regular runs are triggered at beginning of beta branch cycle and are <br>run on both beta and Aurora branches. Once a run is complete, an <br>HTML page is generated with a diffed list of problem URLs that allows <br>for better inspection of errors. <br><br>We also run compatibility tests on an ad-hoc basis to look for <br>specific changes, or to test with custom SSL settings.<br><br>All resources for this project - code, lists, xpcshell binaries - are<br>available on GitHub: <a href=\'https://github.com/mwobensmith/ssl_compat/\'>github.com/mwobensmith/ssl_compat</a>.<br><br>Questions: Matt Wobensmith mwobensmith@mozilla.com";
+var testData;
+
+var info = "<p>We regularly run large lists of top sites against branches of Firefox to look for SSL regressions. <p>All resources for this project are <a href=\'https://github.com/mwobensmith/ssl_compat/\'>available on GitHub</a>. <p>Questions: Matt Wobensmith mwobensmith@mozilla.com";
+
 
 function init()
 {
 	masterTab1 = document.getElementById("tab_1");
 	masterTab2 = document.getElementById("tab_2");
-	onTabSelect(1);
+	loadTestRuns("runs.txt");
 }
 
 function onTabSelect(arg)
@@ -105,6 +108,54 @@ function onTabSelect(arg)
 		document.getElementById("content").innerHTML = info;
 	}
 }
+function loadTestRuns(fileURI)
+{
+	var req = new XMLHttpRequest();
+	req.addEventListener("load", loadSuccess)
+	req.addEventListener("error", loadError)
+	req.open("GET", fileURI);
+	req.send();
+}
+
+function loadSuccess(e)
+{
+	testData = makeTableHTML(parseRuns(e.target.response.toString()));
+	onTabSelect(1);
+
+}
+function loadError(e)
+{
+	alert ("load error" );
+}
+function parseRuns(arg)
+{
+	var temp1 = [];
+	var temp2 = arg.split("\n");
+	for (var i=0;i<temp2.length;i++)
+	{
+		temp1.push (temp2[i].split("\t"));
+	}
+	return temp1;
+}
+function showFloater(arg)
+{
+	alert(decodeURIComponent(arg));
+
+}
+function makeTableHTML ( body )
+{
+	var tableStr = "<table>";
+
+	for ( var i=0;i<body.length;i++ )
+	{
+		tableStr += "<tr>";
+		tableStr += "<td><a href=\'" + body[i][0] + "\'>" + body[i][0] + "</a></td>";
+		tableStr += "<td><a onclick=showFloater(\'" + encodeURIComponent(body[i][1]) + "\')>" + body[i][1] + "</a></td></tr>";
+	}
+	tableStr += "</table>";
+	return tableStr;
+}
+
 
 </script>
 
@@ -122,6 +173,5 @@ function onTabSelect(arg)
 		<p></p>
 	</div>
 </div>
-
 </body>
 </html>
