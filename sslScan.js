@@ -275,9 +275,11 @@ function analyzeSecurityInfo(xhr, error, hostname) {
       let cert = secInfo.QueryInterface(Ci.nsISSLStatusProvider)
         .SSLStatus.QueryInterface(Ci.nsISSLStatus).serverCert;
 
-      isEV = secInfo.QueryInterface(Ci.nsISSLStatusProvider)
+      /*
+      var isEV = secInfo.QueryInterface(Ci.nsISSLStatusProvider)
        .SSLStatus.QueryInterface(Ci.nsISSLStatus)
        .isExtendedValidation;
+      */
 
       dump("\tCommon name (CN) = " + cert.commonName + "\n");
       dump("\tOrganisation = " + cert.organization + "\n");
