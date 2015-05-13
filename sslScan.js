@@ -301,7 +301,9 @@ function analyzeSecurityInfo(xhr, error, hostname) {
       secInfoObj.type = error.name;
     }
   } catch(err) {
-    dump("\nError: " + err.message + "\n");
+      dump("\nError: " + err.message + "\n");
+      secInfoObj.message = "undefined";
+      secInfoObj.type = error.name;
   }
   return secInfoObj;
 }
