@@ -149,12 +149,12 @@ export DYLD_LIBRARY_PATH=$appDir
 
 # run test against downloaded Firefox
 XPC_SHELL=$DIR"/xpcshell"
-$XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $DIR"/sources/"$url_source $TEST_DIR"/"errors.txt
+$XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $DIR"/sources/"$url_source $TEST_DIR"/"errors.txt $DIR
 
 if [ "$?" -ne "0" ]; then
     XPC_SHELL=$DIR"/xpcshell_new"
     echo "TRYING BACKUP"
-    $XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $DIR"/sources/"$url_source $TEST_DIR"/"errors.txt
+    $XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $DIR"/sources/"$url_source $TEST_DIR"/"errors.txt $DIR
 fi
 
 echo "First pass on test build of Firefox complete"
@@ -177,11 +177,11 @@ greDir=$( dirname $appDir )"/Resources"
 export DYLD_LIBRARY_PATH=$appDir
 
 XPC_SHELL=$DIR"/xpcshell"
-$XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $TEST_DIR"/"error_urls.txt $TEST_DIR"/"_control_errors.txt
+$XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $TEST_DIR"/"error_urls.txt $DIR$TEST_DIR"/"_control_errors.txt
 
 if [ "$?" -ne "0" ]; then
     XPC_SHELL=$DIR"/xpcshell_new"
-    $XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $TEST_DIR"/"error_urls.txt $TEST_DIR"/"_control_errors.txt
+    $XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $TEST_DIR"/"error_urls.txt $DIR$TEST_DIR"/"_control_errors.txt
 fi
 echo "Tests on release Firefox complete."
 

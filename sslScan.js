@@ -12,6 +12,7 @@ if (!arguments || arguments.length < 1) {
 
 const SOURCE = arguments[0];     // this can be an http URI if you want
 const ERROR_OUTPUT = arguments[1] || ("error-" + SOURCE);
+const PROFILE_PATH = arguments[2] + "/locked_profile" || null;
 const MAX_CONCURRENT_REQUESTS = 30; // can be much lower (more accurate) but not much faster
 const MAX_RETRIES = 0; // can be adjusted up to 5 for more network robustness, but takes longer to run
 const REQUEST_TIMEOUT = 10 * 1000; // can be increased for more network robustness, but takes longer to run
@@ -66,26 +67,30 @@ const UNKNOWN_ERROR = 0x8000ffff;
 // currently unused, and probably needs to be updated
 // so that the directory is relative to SOURCE and not "CurWorkD"
 function setup_profile_dir() {
-  var dirSvc = Cc["@mozilla.org/file/directory_service;1"].
-  getService(Ci.nsIProperties);
+
+/*
+  var dirSvc = Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties);
   var dir = dirSvc.get("CurWorkD", Ci.nsILocalFile);
   dir.append("locked_profile");
-
+*/
+  let dir = Cc["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
+  dir.initWithPath(PROFILE_PATH);
+  dump ("Profile path: " + dir.path + "\n\n");
   var provider = {
     getFile: function(prop, persistent) {
-    persistent.value = true;
-    if (prop == "ProfLD" ||
-    prop == "ProfLDS" ||
-    prop == "ProfD" ||
-    prop == "cachePDir")
-    return dir;
+      persistent.value = true;
+      if (prop == "ProfLD" ||
+          prop == "ProfLDS" ||
+          prop == "ProfD" ||
+          prop == "cachePDir")
+      return dir;
 
     throw Cr.NS_ERROR_FAILURE;
     },
     QueryInterface: function(iid) {
     if (iid.equals(Ci.nsIDirectoryProvider) ||
-    iid.equals(Ci.nsISupports)) {
-    return this;
+        iid.equals(Ci.nsISupports)) {
+      return this;
     }
     throw Cr.NS_ERROR_NO_INTERFACE;
     }
@@ -207,8 +212,8 @@ function createTCPError(status) {
     errType = 'Network';
     switch (status) {
       // connect to host:port failed
-    case 0x804B000C: // NS_ERROR_CONNECTION_REFUSED, network(13)
-      errName = 'ConnectionRefusedError';
+    case 0x804B000D: // NS_ERROR_CONNECTION_REFUSED, network(13)
+      errName = 'NetworkConnectionRefusedError';
       break;
       // network timeout error
     case 0x804B000E: // NS_ERROR_NET_TIMEOUT, network(14)
