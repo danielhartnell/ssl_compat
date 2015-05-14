@@ -517,7 +517,7 @@ function openFile(name) {
 // download and parse the raw text file
 
 // not currently used - assign custom profile
-// setup_profile_dir();
+setup_profile_dir();
 
 let hosts = downloadHosts();
 try {
