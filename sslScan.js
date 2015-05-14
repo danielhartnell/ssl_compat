@@ -356,7 +356,7 @@ RedirectStopper.prototype = {
 
 // make a minimal XHR request to the identified host and record details of the attempt
 function queryHost(hostname, callback) {
-  let timeout = Timer.setTimeout(() => completed(UNKNOWN_ERROR), REQUEST_TIMEOUT);
+  let timeout;
   function completed(error, req) {
     if (timeout) {
       Timer.clearTimeout(timeout);
@@ -365,6 +365,7 @@ function queryHost(hostname, callback) {
     }
   }
   function errorHandler(e) {
+    dump ("XHR error handler, hostname: " + hostname + " :  status: " + e.target.channel.QueryInterface(Ci.nsIRequest).status + "\n");
     completed(e.target.channel.QueryInterface(Ci.nsIRequest).status, e.target);
   }
 
@@ -375,10 +376,13 @@ function queryHost(hostname, callback) {
   }
 
   try {
+    // first, set up a catch-all in case no events ever fire
+    // so, set timeout to 2 seconds longer than the xhr's built-in timeout
+    timeout = Timer.setTimeout(() => completed(UNKNOWN_ERROR), REQUEST_TIMEOUT + 2000);
+
     let req = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"]
       .createInstance(Ci.nsIXMLHttpRequest);
     req.open("HEAD", "https://" + hostname, true);
-
     req.timeout = REQUEST_TIMEOUT;
     req.channel.notificationCallbacks = new RedirectStopper();
     req.addEventListener("error", errorHandler, false);
@@ -389,7 +393,7 @@ function queryHost(hostname, callback) {
     req.addEventListener("load", readyHandler, false);
     req.send();
   } catch (err) {
-    dump("ERROR: exception making request to " + hostname + ": " + err + "\n");
+    dump("ERROR: runtime exception making request to " + hostname + ": " + err + "\n");
     completed(UNKNOWN_ERROR);
   }
 }
@@ -428,8 +432,8 @@ function processAllHosts(hosts, errorStream) {
   let errorCount = 0;
   let doneCount = 0;
   function recordResult(hostname, error, xhr) {
-    let errorInfo = error ? createTCPError(error) : null;
-    let secInfoObj = analyzeSecurityInfo(xhr, errorInfo, hostname);
+    let currentError = error ? createTCPError(error) : null;
+    let secInfoObj = analyzeSecurityInfo(xhr, currentError, hostname);
 
     ++doneCount;
     if (error) {
@@ -440,7 +444,7 @@ function processAllHosts(hosts, errorStream) {
     outstanding.splice(idx, 1);
     entry.error = error;
 
-    if (errorInfo) {
+    if (currentError) {
       entry.errorInfo = secInfoObj.message;
       entry.type = secInfoObj.type;
     }
