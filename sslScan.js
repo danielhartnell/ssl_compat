@@ -9,7 +9,7 @@ if (!arguments || arguments.length < 1) {
 
   throw "Usage: xpcshell sslScan.js <domains-file> [error-output]\n";
 }
-
+ 
 const SOURCE = arguments[0];     // this can be an http URI if you want
 const ERROR_OUTPUT = arguments[1] || ("error-" + SOURCE);
 const PROFILE_PATH = arguments[2] + "/locked_profile" || null;
