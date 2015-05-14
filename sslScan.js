@@ -435,6 +435,8 @@ function processAllHosts(hosts, errorStream) {
     let currentError = error ? createTCPError(error) : null;
     let secInfoObj = analyzeSecurityInfo(xhr, currentError, hostname);
 
+    // TODO: Is error ever null? What happens?
+
     ++doneCount;
     if (error) {
       ++errorCount;
@@ -448,6 +450,9 @@ function processAllHosts(hosts, errorStream) {
       entry.errorInfo = secInfoObj.message;
       entry.type = secInfoObj.type;
     }
+
+    // TODO: if no error, does this code run? 
+    dump ("Has error: " + (error instanceof Object) + " and then writes to log\n\n");
     writeToLog(entry, errorStream);
   }
 
@@ -455,7 +460,10 @@ function processAllHosts(hosts, errorStream) {
     let host;
 
     function handleResult(err, xhr) {
+
+      // TODO: I don't think this code gets hit here - test with retries > 0
       if (err && host.retries > 0) {
+	dump ("OK: condition in handleResult is called after all\n\n");
         --host.retries;
         queryHost(host.name, handleResult);
         return;
