@@ -163,7 +163,7 @@ sleep 2
 
 
 # run it again to remove noise
-$XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $TEST_DIR"/"error_urls.txt $TEST_DIR"/"errors.txt
+$XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $TEST_DIR"/"error_urls.txt $TEST_DIR"/"errors.txt $DIR
 echo "Second pass on test build of Firefox complete"
 
 sort -u errors.txt > final_errors.txt
@@ -177,11 +177,11 @@ greDir=$( dirname $appDir )"/Resources"
 export DYLD_LIBRARY_PATH=$appDir
 
 XPC_SHELL=$DIR"/xpcshell"
-$XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $TEST_DIR"/"error_urls.txt $DIR$TEST_DIR"/"_control_errors.txt
+$XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $TEST_DIR"/"error_urls.txt $TEST_DIR"/"_control_errors.txt $DIR
 
 if [ "$?" -ne "0" ]; then
     XPC_SHELL=$DIR"/xpcshell_new"
-    $XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $TEST_DIR"/"error_urls.txt $DIR$TEST_DIR"/"_control_errors.txt
+    $XPC_SHELL -g $greDir -a $appDir -s $DIR"/sslScan.js" $TEST_DIR"/"error_urls.txt $TEST_DIR"/"_control_errors.txt $DIR
 fi
 echo "Tests on release Firefox complete."
 
