@@ -67,12 +67,7 @@ const UNKNOWN_ERROR = 0x8000ffff;
 // currently unused, and probably needs to be updated
 // so that the directory is relative to SOURCE and not "CurWorkD"
 function setup_profile_dir() {
-
-/*
-  var dirSvc = Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties);
-  var dir = dirSvc.get("CurWorkD", Ci.nsILocalFile);
-  dir.append("locked_profile");
-*/
+  let dirSvc = Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties);
   let dir = Cc["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
   dir.initWithPath(PROFILE_PATH);
   dump ("Profile path: " + dir.path + "\n\n");
