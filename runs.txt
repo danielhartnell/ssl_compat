@@ -1,3 +1,5 @@
+2015-06-04-10-29-58	Fx39.0b2 vs Fx38.0.5
+2015-05-28-16-47-42	Fx40.0a2 vs Fx40.0a1, Logjam
 2015-05-13-14-41-16	Fx40.0a2 vs Fx38
 2015-05-12-14-44-59	Fx38.0.5b1 vs Fx38
 2015-05-04-12-00-00	Fx38.0b8 vs Fx37.0.2 release - modified for Issuer Common Name field

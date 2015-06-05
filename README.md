@@ -1,4 +1,4 @@
-# ssl_compat
+# TLS Canary (formerly ssl_compat)
 Automated testing of Firefox for SSL web compatibility
 
 This project:
