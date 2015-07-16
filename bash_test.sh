@@ -160,6 +160,7 @@ fi
 echo "First pass on test build of Firefox complete"
 cut -f1,1 -d " " errors.txt > error_urls.txt
 sleep 2
+mv errors.txt firstrun_errors.txt
 
 
 # run it again to remove noise
@@ -202,6 +203,7 @@ sed -e "$arg_string" $DIR"/"report_template.htm > "$TEST_DIR/"index.htm
 sleep 2
 
 # remove some test files
+rm -rf firstrun_errors.txt
 rm -rf errors.txt
 rm -rf log.txt
 rm -rf error_urls.txt
