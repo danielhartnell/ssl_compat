@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PAGE_TITLE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- onload=loadDiffFile("error_diff.txt")-->
+<!--script src="app.js"-->
+<!--/script-->
+<!-- a href="javascript:go2()">hi</a-->
+
+<div id="main"></div>
+<script src="js/Utility.js"></script>
+<script src="js/TabContainer.js"></script>
+<script src="js/Chart.js"></script>
+<script src="js/Data.js"></script>
+<script src="js/URIGrid.js"></script>
+<script src="js/TLSCanary.js"></script>
+
+<script>
+var canary = new TLSCanary(document.getElementById("main"));
+canary.init();
+</script>
+
+</body>
+</html>
