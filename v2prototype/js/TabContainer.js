@@ -27,7 +27,7 @@ TabContainer.prototype.init = function()
 {
 	var header = Utility.createElement("div", [{id:"header"}]);
 	this.tabs = Utility.createElement("div", [{id:"tabs"}]);
-	this.contentArea = Utility.createElement("div", [{id:"content"}]);
+	this.contentArea = Utility.createElement("div", [{id:"content"}, {width:100}, {height:300}]);
 	this.label = Utility.createElement("h1", [{id:"label"}]);
 	this.tabs.appendChild(this.label);
 	this.displayArea.appendChild(Utility.appendChildren (header, this.tabs, this.contentArea));
@@ -91,7 +91,6 @@ TabContainer.prototype.updateTabs = function(tabArray, index)
 		this.tabs.removeChild(this.tabList);
 	} catch (e)
 	{}
-	//this.currentTabIndex = index;
 	this.tabArray = [];
 	this.createTabs(tabArray);
 	this.drawTabs();

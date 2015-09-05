@@ -17,14 +17,21 @@ function Data ()
 Data.parseDocument = function(arg)
 {
 	var temp1 = arg.toString().split("+++ ");
-	var temp2 = temp1[1].split("--- ")[1];
-	var temp3 = temp2.split("\n");
-	temp3.shift();
-
+	//var temp2 = temp1[1].split("--- ")[1];
+	//var temp3 = temp2.split("\n");
+	var temp4 = temp1[1].split("\n");
+	//alert(temp4[0])
 	var uriObjectArray = [];
-	for (var i=0;i<temp3.length;i++)
+	//temp3.splice(0,1)
+	for (var i=0;i<temp4.length;i++)
 	{
-		uriObjectArray.push (Data.makeURIObject(temp3[i]));
+		try
+		{
+			uriObjectArray.push (Data.makeURIObject(temp4[i]));
+		} catch (e)
+		{
+			//alert("Bad JSON detected");
+		}
 	}
 	var o = {};
 	o.metadata = temp1[0]; // new Data() ?
@@ -34,10 +41,14 @@ Data.parseDocument = function(arg)
 
 Data.makeURIObject = function (str)
 {
-	var temp1 = str.split("    ");
+	var p = str.indexOf("{");
+	if (p == -1)
+	{
+		throw new Error();
+	}
+	var temp1 = str.substring(p);
 	var o = {};
-	//o.uri = temp1[0];
-	var temp2 = JSON.parse(temp1[1])
+	var temp2 = JSON.parse(temp1)
 	for (var i in temp2)
 	{
 		o[i] = temp2[i];

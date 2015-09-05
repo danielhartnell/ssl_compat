@@ -6,29 +6,41 @@ function TLSCanary(div)
     this.currentTabIndex;
     this.DEFAULT_TAB = 1;
     this.masterDiv = div;
+    this.defaultView = ["site_info.uri","error.code","error.type","error.message"];
+
 }
 TLSCanary.prototype.getMouse = function(e)
 {
     this.mouseX = e.pageX;
     this.mouseY = e.pageY;
 }
+TLSCanary.prototype.load = function (uri)
+{
+    this.dataURL = uri;
+    var req = new XMLHttpRequest();
+    req.onload = this.loadSuccess.bind(this);
+    req.onerror = this.loadError.bind(this);
+    req.open("GET", uri);
+    req.send();    
+}
+TLSCanary.prototype.loadSuccess = function (e)
+{
+    var doc = Data.parseDocument(e.target.response.toString());
+    this.metadata = doc.metadata;
+    this.uriList = doc.uriList;
+    this.makeViewObject(this.uriList[0], this.defaultView);
+    this.updateView();
+    this.init();
+}
+TLSCanary.prototype.loadError = function (e)
+{
+    alert("Cannot load data");
+}
+
 TLSCanary.prototype.init = function()
 {
     document.captureEvents(Event.MOUSEMOVE); // TODO: addEventListener
     document.onmousemove = this.getMouse.bind(this);
-
-    this.defaultView = ["site_info.uri","error.code","error.type","error.message"];
-
-
-    // TODO: load data
-    this.testData = 'test metadata\n+++ blah\n--- blah\nwww.site.com    {"site_info":{"uri":"www.site.com","rank":1, "connection_time":2000},"error":{"code":"0x000000","type":"network","message":"site_not_found"},"tls_info":{"version":"1.2","cypher_suite":"", "key_length":0, "secret_key_length":0},"cert_info":{"chain_length":3,"ev":"false","issuer":"GeoTrust", "date":"1/1/15","cert_chain":"issuer CN fields"}}\nwww.anothersite.com    {"site_info":{"uri":"www.anothersite.com","rank":2, "connection_time":200},"error":{"code":"0x0000ff","type":"protocol","message":"no_cypher_overlap"},"tls_info":{"version":"1.0","cypher_suite":"", "key_length":0, "secret_key_length":0},"cert_info":{"chain_length":3,"ev":"true","issuer":"Equifax", "date":"2/1/16","cert_chain":"issuer CN fields"}}\nwww.blah.com    {"site_info":{"uri":"www.blah.com","rank":1, "connection_time":10000},"error":{"code":"0x000000","type":"certificate","message":"unknown_issuer"},"tls_info":{"version":"","cypher_suite":"", "key_length":0, "secret_key_length":0},"cert_info":{"chain_length":0,"ev":"true","issuer":"", "date":"","cert_chain":{}}}';  
-    var doc = Data.parseDocument(this.testData);
-    this.metadata = doc.metadata;
-
-    //this.uriList = doc.uriList;
-    this.uriList = fakeData;
-    this.makeViewObject(this.uriList[0], this.defaultView);
-    this.updateView();
 
     // make tabs
     this.currentTabIndex = this.DEFAULT_TAB;
@@ -49,7 +61,7 @@ TLSCanary.prototype.init = function()
     this.tabListener.onChange = this.onTabChange.bind(this);
     this.tabListener.onRemove = this.removeTab.bind(this);
     this.tc.addListener(this.tabListener);
-    this.tabs[this.DEFAULT_TAB].action(1);
+    this.tabs[this.DEFAULT_TAB].action(this.DEFAULT_TAB);
 }
 
 TLSCanary.prototype.makeViewObject = function (obj, view)
@@ -122,7 +134,6 @@ TLSCanary.prototype.makeChart = function(arg)
 }
 TLSCanary.prototype.makeGrid = function(arg)
 {
-    //this.updateView();
     var currentTab = this.tabs[arg];
     this.grid = new URIGrid(currentTab.data, this.currentView, currentTab.field, currentTab.sortOrder);
     this.grid.addListener (this);
@@ -131,8 +142,11 @@ TLSCanary.prototype.makeGrid = function(arg)
 
 TLSCanary.prototype.makeFieldsUI = function(arg)
 {
-    var myDiv = Utility.createElement("div");
-    var myForm = Utility.createElement("form", [{id:"checkboxes"}]);
+    var myDiv = Utility.createElement("div", [{width:"700"}]);
+    var myTable = Utility.createElement("table", [{width:"700"}]);
+    var tableRow = Utility.createElement("tr");
+    var leftColumn = Utility.createElement("td", [{width:"50%"}])
+    var rightColumn = Utility.createElement("td", [{width:"50%"}])
     var fields = this.tabs[arg].data;
     for (var i=0;i<fields.length;i++)
     {
@@ -147,9 +161,20 @@ TLSCanary.prototype.makeFieldsUI = function(arg)
         var label = Utility.createElement("label");
         var str = document.createTextNode(fields[i]);
         label.appendChild(str);
-        Utility.appendChildren (myForm, checkbox, label, Utility.createElement("br"));
+        var myColumn;
+        if (i < fields.length/2)
+        {
+            myColumn = leftColumn;
+        } else {
+            myColumn = rightColumn;
+        }
+        Utility.appendChildren (myColumn, checkbox, label, Utility.createElement("br"));
     }
-    myDiv.appendChild(myForm);
+    Utility.appendChildren(tableRow, leftColumn, rightColumn);
+    myTable.appendChild(tableRow);
+
+    var t = new Data();
+    myDiv.appendChild(myTable);
     this.tc.setContent(myDiv);
 }
 
@@ -186,9 +211,24 @@ TLSCanary.prototype.onColumnSelect = function (arg)
     this.tc.setContent(this.grid.html);
     currentTab.data = newData;
 }
+TLSCanary.prototype.onPageSelect = function (arg)
+{
+    var currentTab = this.tabs[this.currentTabIndex];
+    this.grid.redraw(currentTab.data, this.currentView);
+    this.tc.setContent(this.grid.html);
 
+}
+TLSCanary.prototype.onCertClick = function (arg)
+{
+    alert(arg)
+}
 TLSCanary.prototype.onGridSelect = function (arg)
 {
+    if (arg.field == "site_info.uri")
+    {
+        // show different menu: open URI / view certificate
+        //alert(arg)
+    }
     var list = Utility.createElement("ul");
     var item1 = Utility.createElement("li");
     var removeAttributes = [{id:"remove"}, {href:"#"}, {field_name:arg.field}, {value:arg.value}];
@@ -210,6 +250,7 @@ TLSCanary.prototype.showFloater = function (content)
 {
     this.grid.floater.style.visibility = "visible";
     this.grid.floater.style.position = "absolute";
+    // insert logic to make floater position more intelligent w/r/t edges
     this.grid.floater.style.left = (this.mouseX + 10) + "px";
     this.grid.floater.style.top = (this.mouseY - 20) + "px"; 
     this.grid.floater.innerHTML = "";
@@ -262,13 +303,13 @@ TLSCanary.prototype.addTab = function (label, permanent, data, field, callback)
 }
 TLSCanary.prototype.removeTab = function (index)
 {
-    if (index <= this.currentTabIndex && index != this.tabs.length-2)
+    if (index <= this.currentTabIndex && index >= this.tabs.length-2)
     {
         this.currentTabIndex--;
     } 
     this.tabs.splice (index, 1);
     this.tc.updateTabs (this.tabs, this.currentTabIndex);
     this.tc.changeTabSelection(this.currentTabIndex)
-    this.doTabAction(this.currentTabIndex)
+    this.onTabChange(this.currentTabIndex)
 }
 

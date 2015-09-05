@@ -1,8 +1,11 @@
 table, th, td {
-	border: 1px solid black;
+	border: 0px solid black;
 	font-size: small;
-	background: white;
+	#background: white;
+	
 }
+tr:nth-child(even) {background: #EEE}
+tr:nth-child(odd) {background: #FFF}
 body {
 	font: small arial, helvetica, sans-serif;
 }
@@ -102,6 +105,7 @@ select {
 	color: black;
 	background: #99ffff;
 }
+
 #content #controls {
 	#border-top: 2px solid white;
 	background: #99ffff;
@@ -124,8 +128,12 @@ select {
 	position: absolute; 
 	top: 10px; 
 	left: 10px;
+	width:90%;
+
 }
 #tabs {
+	width:100%;
+
 }
 #tabs ul {
 	list-style: none;
@@ -134,30 +142,35 @@ select {
 }
 
 #tabs li {
+    border-radius: 10px 10px 0px 0px;
 	display: inline;
+	padding: 0 1em;
 	margin: 0 2px 0 0;
+	color: #a80;
+	background: #ccffff;
 }
-
+#tabs li:hover {
+	background: #99ffff;
+	color: #540;
+}
 #tabs a {
 	padding: 0 1em;
 	text-decoration: none;
-	color: #a80;
-	background: #ccffff;
+	color: black;
 }
 
 #tabs a:hover {
 	background: #99ffff;
-	color: #540;
 }
 
 #tabs #selected {
+	background: #99ffff;
+	color: #540;
+	padding-bottom: 2px;
 }
 
 #tabs #selected a {
-	padding-bottom: 2px;
 	font-weight: bold;
-	color: black;
-	color: black;
 	background: #99ffff;
 }
 
@@ -166,17 +179,23 @@ select {
 	background: #99ffff;
 	padding: 1em;
 	z-index: 0
+	width:100%;
+
 }
 
 #content p {
 	margin: 0;
 	padding: 1em;
 	background: white;
+	width:97%;
+
 }
 #content div {
 	margin: 0;
 	padding: 1em;
 	background: white;
+	width:97%;
+
 }
 #column_header a {
 	font-weight: bold;
@@ -185,9 +204,20 @@ select {
 	color: #000000;
 	#background: #ccffff;
 }
+#grid
+{
+		width:90%;
+
+}
 #field a {
 	#padding: 0 1em;
 	text-decoration: none;
+}
+#page_controller a
+{
+	padding: 0 2px;
+	margin: 2px 2px 0 0;
+
 }
 h1 {
 	font-size: 1.5em;
