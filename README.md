@@ -1,34 +1,39 @@
-# TLS Canary (formerly ssl_compat)
+# TLS Canary version 2
 Automated testing of Firefox for SSL web compatibility
 
 This project:
-* Downloads a branch build of Firefox.
-* Automatically runs thousands of secure sites on that build.
-* Runs any error URLs on a release version of Firefox. 
+* Downloads a branch build and a release build of Firefox.
+* Automatically runs thousands of secure sites on those builds.
 * Diffs the results and presents potentially broken sites in an HTML page for further diagnosis.
 
 Requirements:
-* Mac, for now
-* Pre-installed release version of Firefox in default location
+* Mac, for now.
 
 Directions:
-* Use the bash_test.sh script to run the test
-* Specify three parameters:
-  * -u Build URL
-  * -s Source list of sites
+* Use the main.sh script to run the test.
+* Mandatory parameter:
+  * -b branch (beta, aurora, nightly)
+* Optional parameters:
+  * -s Source list of sites - try test if you are just testing this out 
   * -d Decription of test
+  * -h Lists other optional parameters
 
 Example:
-* bash_test.sh -u=http://ftp.mozilla.org/pub/mozilla.org/firefox/candidates/38.0b8-candidates/build2/mac/en-US/Firefox%2038.0b8.dmg -s=smoke -d="Simple smoke test of Fx38.0b8 against Fx release"
+* main.sh -b=aurora -s=test -d="Just trying this out"
 
-* When test run is over, an HTML page will be opened with lists of flagged sites.
-* Go to Options tab and click "Show new breakage only".
-* Go to first tab and view list. These sites are uniquely broken in your test build.
+This short test should take 3-4 minutes.
+
+When test run is over, the index.htm page will be updated with a link to your run.
+* Click on your run to see results.
 * To filter list, click on string in the table and choose option in pop-up to remove from list or to filter search.
-* To start over and reset all filters, click "Restore original".
+* Other features: make charts, export lists, view captured certificates.
 
-
-More information is available in the index.htm page located within.
-
-
-
+New features in version 2:
+* Completely rewritten - better UI and page design
+* No longer caches intermediate certs - one xpcshell instance per URL
+* Far more accurate results (see above, plus additional sorting)
+* Historical charting per branch
+* Generate charts and lists of current site view
+* Now capturing more metadata about connection and certificate
+* Save certificate to disk when possible
+* Ability to dynamically pass in customized preferences
