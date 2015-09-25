@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TLS Canary - SSL site compatibility testing</title>
+<style>
+table, th, td {
+	border: 0px;
+	padding: 3px;
+	font-size: small;
+	background: white;
+}
+body {
+	font: small arial, helvetica, sans-serif;
+}
+select {
+	background: #99ff99;
+    	overflow-y: scroll;
+}
+#tabs {
+	position: absolute; 
+	top: 10px; 
+	left: 30px;
+}
+#header {
+}
+#header ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#header li {
+	display: inline;
+	margin: 0 2px 0 0;
+}
+
+#header a {
+	padding: 0 1em;
+	text-decoration: none;
+	color: #a80;
+	background: #99ff99;
+}
+
+#header a:hover {
+	background: #33cc33;
+	color: #540;
+}
+
+#header #selected {
+}
+
+#header #selected a {
+	padding-bottom: 2px;
+	font-weight: bold;
+	color: black;
+	background: #33cc33;
+}
+
+#content {
+	border-top: 2px solid white;
+	background: #ffffff;
+    	border: 10px solid #33cc33;
+	padding: 1em;
+	width: 600px
+}
+
+#content p {
+	margin: 0;
+	padding: 1em;
+	background: white;
+}
+#column_header a {
+	text-decoration: none;
+	color: #000000;
+}
+h1 {
+	font-size: 1.5em;
+}
+</style>
+</head>
+<body onload=init()>
+<script>
+
+var masterTab1, masterTab2;
+var testData;
+
+var info = "<p>We regularly run large lists of top sites against branches of Firefox to look for SSL regressions. <p>All resources for this project are <a href=\'https://github.com/mwobensmith/ssl_compat/\'>available on GitHub</a>. <p>Questions: Matt Wobensmith mwobensmith@mozilla.com";
+
+
+function init()
+{
+	masterTab1 = document.getElementById("tab_1");
+	masterTab2 = document.getElementById("tab_2");
+	loadTestRuns("runs.txt");
+}
+
+function onTabSelect(arg)
+{
+	if ( arg == 1 )
+	{
+		masterTab1.id = "selected";
+		masterTab2.id = "not_selected";	
+		document.getElementById("content").innerHTML = testData;
+	} else if ( arg == 2 )
+	{
+		masterTab1.id = "not_selected";
+		masterTab2.id = "selected";	
+		document.getElementById("content").innerHTML = info;
+	}
+}
+function loadTestRuns(fileURI)
+{
+	var req = new XMLHttpRequest();
+	req.addEventListener("load", loadSuccess)
+	req.addEventListener("error", loadError)
+	req.open("GET", fileURI);
+	req.send();
+}
+
+function loadSuccess(e)
+{
+	testData = makeTableHTML(parseRuns(e.target.response.toString()));
+	onTabSelect(1);
+
+}
+function loadError(e)
+{
+	alert ("load error" );
+}
+function parseRuns(arg)
+{
+	var temp1 = [];
+	var temp2 = arg.split("\n");
+	for (var i=0;i<temp2.length;i++)
+	{
+		temp1.push (temp2[i].split("\t"));
+	}
+	return temp1;
+}
+function showFloater(arg)
+{
+	//alert(decodeURIComponent(arg));
+
+}
+function makeTableHTML ( body )
+{
+	var tableStr = "<table>";
+
+	for ( var i=0;i<body.length;i++ )
+	{
+		tableStr += "<tr>";
+		tableStr += "<td><a href=\'" + body[i][0] + "\'>" + body[i][0] + "</a></td>";
+		tableStr += "<td><a onclick=showFloater(\'" + encodeURIComponent(body[i][1]) + "\')>" + body[i][1] + "</a></td></tr>";
+	}
+	tableStr += "</table>";
+	return tableStr;
+}
+
+
+</script>
+
+
+<div id="tabs">
+	<div id="header" >
+		<h1 id="header_text">TLS Canary: a tool for SSL site compatibility testing</h1>
+		<ul>
+			<li id="tab_1"><a href="#" onclick=onTabSelect(1)>Test runs by date</a></li>
+			<li id="tab_2"><a href="#" onclick=onTabSelect(2)>Information about these tests</a></li>
+		</ul>
+	</div>
+
+	<div id="content">
+		<p></p>
+	</div>
+</div>
+</body>
+</html>

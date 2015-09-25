@@ -1,0 +1,1992 @@
+Metadata : 2015-04-29-09-38-29 : Pulse top 211096 sites : Fx38.0b8 vs Fx37.0.2
+MODIFIED: 2015-05-04-12-00-00: Added in Issuer Common Name field where possible
+Build : ftp://ftp.mozilla.org/pub/mozilla.org/firefox/candidates/38.0b8-candidates/build2/mac/en-US/Firefox%2038.0b8.dmg
++++ control_errors.txt	2015-04-29 16:16:34.000000000 -0700
++106hotline.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++1337pwn.gameriot.com 0x804b000d undefined undefined
++2011.drupalcampla.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++affiliate.doreo.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++agents.aerosvit.com 0x804b001e undefined undefined
++agreements.realdealdocs.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++ahse.bookall.cn 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++aimsweb.utm.my 0x804b000d undefined undefined
++aimswebxs.utm.my 0x804b000d undefined undefined
++alcala.tomalaplaza.net 0x8000ffff undefined undefined
++alicante.tomalaplaza.net 0x8000ffff undefined undefined
++america.aerosvit.com 0x804b001e undefined undefined
++anagramme.spieleck.de 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++anket.marmara.edu.tr 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++app.cadivi.gob.ve 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++apps.abchospital.com 0x8000ffff undefined undefined
++articles.onlineautoinsurance.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++bbs.im520.com 0x804b000d undefined undefined
++bd.patent.su 0x8000ffff undefined undefined
++bjydts.bookall.cn 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++blair.vanderbilt.edu 0x8000ffff undefined undefined
++bloc.regio7.cat 0x804b000d undefined undefined
++blog.fused.com 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
++blog.laopinioncoruna.es 0x804b000d undefined undefined
++blogs.laopiniondemalaga.es 0x804b000d undefined undefined
++branchenbuch.mallorcazeitung.es 0x804b000d undefined undefined
++btos.bankofchina.com 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate
++business.szse.cn 0x8000ffff undefined undefined
++business.veronafiere.it 0x8000ffff undefined undefined
++buyeyelashes.co.uk 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++cafnr.missouri.edu 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate
++campus.efrei.fr 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++campusmail.lums.edu.pk 0x8000ffff undefined undefined
++carsworld.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++celebs.nana10.co.il 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++central.veoliawater.co.uk 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++centregold.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++cfgate.trade.gov.tw 0x805a1ff6 SecurityError sec_error_bad_signature
++chat.skillpath.com 0x804b0014 undefined undefined
++checkout.ariama.com 0x8000ffff undefined undefined
++chiclana.tomalaplaza.net 0x8000ffff undefined undefined
++cis.mecit.edu.om 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++classifieds.mtbr.com 0x804b000d undefined undefined
++client.poweo.com 0x8000ffff undefined undefined
++club.diariodeibiza.es 0x804b000d undefined undefined
++club.diariodemallorca.es 0x804b000d undefined undefined
++club.levante-emv.com 0x804b000d undefined undefined
++club.lne.es 0x804b000d undefined undefined
++community.mallorcazeitung.es 0x804b000d undefined undefined
++compras.uner.edu.ar 0x8000ffff undefined undefined
++comunidad.diariodeibiza.es 0x804b000d undefined undefined
++comunidad.diariodemallorca.es 0x804b000d undefined undefined
++comunidad.diarioinformacion.com 0x804b000d undefined undefined
++comunidad.farodevigo.es 0x804b000d undefined undefined
++comunidad.laopinion.es 0x804b000d undefined undefined
++comunidad.laopinioncoruna.es 0x804b000d undefined undefined
++comunidad.laopiniondemalaga.es 0x804b000d undefined undefined
++comunidad.laopiniondemurcia.es 0x804b000d undefined undefined
++comunidad.laopiniondezamora.es 0x804b000d undefined undefined
++comunidad.laprovincia.es 0x804b000d undefined undefined
++comunidad.levante-emv.com 0x804b000d undefined undefined
++comunidad.lne.es 0x804b000d undefined undefined
++comunidad.mallorcazeitung.es 0x804b000d undefined undefined
++comunidades.diariodeibiza.es 0x804b000d undefined undefined
++comunidades.diariodemallorca.es 0x804b000d undefined undefined
++comunidades.diarioinformacion.com 0x804b000d undefined undefined
++comunidades.farodevigo.es 0x804b000d undefined undefined
++comunidades.laopinion.es 0x804b000d undefined undefined
++comunidades.laopinioncoruna.es 0x804b000d undefined undefined
++comunidades.laopiniondegranada.es 0x804b000d undefined undefined
++comunidades.laopiniondemalaga.es 0x804b000d undefined undefined
++comunidades.laopiniondemurcia.es 0x804b000d undefined undefined
++comunidades.laopiniondezamora.es 0x804b000d undefined undefined
++comunidades.laprovincia.es 0x804b000d undefined undefined
++comunidades.levante-emv.com 0x804b000d undefined undefined
++comunidades.lne.es 0x804b000d undefined undefined
++comunitat.diaridegirona.cat 0x804b000d undefined undefined
++comunitat.emporda.info 0x804b000d undefined undefined
++comunitat.regio7.cat 0x804b000d undefined undefined
++comunitats.diaridegirona.cat 0x804b000d undefined undefined
++comunitats.emporda.info 0x804b000d undefined undefined
++comunitats.regio7.cat 0x804b000d undefined undefined
++control.unet.edu.ve 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++cordoba.tomalaplaza.net 0x8000ffff undefined undefined
++core.braveheartwomen.com 0x804b0014 NetworkError pr_connect_reset_error
++cornerstreet.fr 0x804b000d undefined undefined
++corporbank.961111.cn 0x8000ffff undefined undefined
++correo.venalum.com.ve 0x8000ffff undefined undefined
++court.gmw.cn 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++cpa.mahatransco.in 0x804b0014 NetworkError pr_end_of_file_error
++cpaf.uplb.edu.ph 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++cpms.e-chinalife.com 0x805a2ffe SecurityError ssl_error_no_cypher_overlap
++creditcard.cib.com.cn 0x804b000d undefined undefined
++csrv03.bcrp.gob.pe 0x804b0047 NetworkInterruptError pr_end_of_file_error
++cuenca.tomalaplaza.net 0x8000ffff undefined undefined
++cull.tv 0x804b000d undefined undefined
++cyberexchange.isc2.org 0x8000ffff undefined undefined
++data.tce.ir 0x804b0047 NetworkInterruptError pr_end_of_file_error
++declara.cadivi.gob.ve 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++developer.anscamobile.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++diy.daikin-china.com.cn 0x804b001e undefined undefined
++diymusicplatform.com 0x8000ffff undefined undefined
++dm.epiq11.com 0x8000ffff undefined undefined
++docs.metricfire.com 0x8000ffff undefined undefined
++duf.spieleck.de 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++duyuru.marmara.edu.tr 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++e-campus.uni.lodz.pl 0x8000ffff undefined undefined
++e-rehber.marmara.edu.tr 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++e.tce.ir 0x804b0047 NetworkInterruptError pr_end_of_file_error
++ebank.961111.cn 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++ebank.bankofbeijing.com.cn 0x804b0014 NetworkError pr_connect_reset_error
++ebank.zjcbank.com 0x8000ffff undefined undefined
++ebooks.mysterylovers.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++elc.um.ac.ir 0x804b000d undefined undefined
++elgornal.net 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++empresas.diariodemallorca.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++empresas.monster.com.br 0x8000ffff undefined undefined
++empreses.diaridegirona.cat 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++empreses.regio7.cat 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++enterprise.18ebank.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++epassk.eciq.cn 0x804b0047 NetworkInterruptError pr_end_of_file_error
++epay.icegate.gov.in 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++epsilonnet.ucam.edu 0x8000ffff undefined undefined
++epubunraku.com 0x8000ffff undefined undefined
++es.wannasurf.com 0x8000ffff undefined undefined
++expand.alpha.aussiehq.net.au 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++faraso.ir 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++fdpd.spieleck.de 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++fedhz.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++ffh.uh.cu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++findings.com 0x8000ffff undefined undefined
++flavitlife.eu 0x8000ffff undefined undefined
++flowersales.morrisville.edu 0x8000ffff undefined undefined
++formacion.levante-emv.com 0x804b000d undefined undefined
++formula1.laopiniondemurcia.es 0x804b000d undefined undefined
++formula1.laopiniondezamora.es 0x804b000d undefined undefined
++formula1.lne.es 0x804b000d undefined undefined
++forum.vodafone.ie 0x805a3ffd SecurityError mozilla_pkix_error_v1_cert_used_as_ca
++fr.wannasurf.com 0x8000ffff undefined undefined
++frank.spieleck.de 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++freebeacon.com 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++friendlymusic.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++frontend.languagewire.com 0x8000ffff undefined undefined
++fsplifestyle.co.za 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++ftp.eeq.com.ec 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++fund.mma.com.tw 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++gradresearch.rice.edu 0x804b0014 undefined undefined
++groupbuy.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++gs.reading.gglec.go.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++gwangju.wef.co.kr 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++headliner.fm 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++hellforge.gameriot.com 0x804b000d undefined undefined
++help.jlist.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++home.chicagorealestatedaily.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++home.cisco.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++home.workforce.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++hotels.yesterland.com 0x805a1ff4 SecurityRevokedCertificateError sec_error_revoked_certificate
++i.bank24.ru 0x804b000d undefined undefined
++image.xiu.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++incite.dkpsystem.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++indiana.companiestowatch.org 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++international.yeditepe.edu.tr 0x8000ffff undefined undefined
++intranet.mhu.gov.dz 0x8000ffff undefined undefined
++iplan.com.ar 0x805a1ff4 SecurityRevokedCertificateError sec_error_revoked_certificate
++jenniferlopez.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++kajak.spieleck.de 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++konukevi.marmara.edu.tr 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++kurgan.u-tel.ru 0x804b000d undefined undefined
++labs.webmetrics.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++lamps.projectorsuperstore.com 0x804b0014 NetworkError pr_connect_reset_error
++learningcenter.statefarm.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++library.dbs.ie 0x804b000d undefined undefined
++limitbreak.gameriot.com 0x8000ffff undefined undefined
++lists.bufferbloat.net 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++login.monster.com.br 0x804b000d undefined undefined
++login.monster.com.mx 0x804b000d undefined undefined
++m.laredoute.de 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++m.rubytuesday.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++madrid.cnt.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++mail.ama.edu.vn 0x8000ffff undefined undefined
++mail.azaruniv.edu 0x8000ffff undefined undefined
++mail.cjlu.edu.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++mail.itesca.edu.mx 0x8000ffff undefined undefined
++mail.jsbc.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++mail.mountainstate.edu 0x804b0014 NetworkError pr_connect_reset_error
++mail.northnet.ru 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++mail.sdca.gov.cn 0x8000ffff undefined undefined
++mail.sut.ac.ir 0x8000ffff undefined undefined
++mail.uoz.ac.ir 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++mail2.gzmtr.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++mailz.unt.edu.ar 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++mandrivausers.org 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++marketing.senderglobal.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++masscom.korea.ac.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++med.jj.ac.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++member.playpark.web.id 0x804b001e undefined undefined
++menhu.cufe.edu.cn 0x8000ffff undefined undefined
++meyyas.marmara.edu.tr 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++minwon.goe.go.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++mnuace.mokpo.ac.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++mnufc.mokpo.ac.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++mnusalrim.mokpo.ac.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++mobile.iwf.org.uk 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++mpoint.hanbat.ac.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++museum.khu.ac.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++music.mokpo.ac.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++my.amhosted.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++myccc.corning-cc.edu 0x805a3ffd SecurityError mozilla_pkix_error_v1_cert_used_as_ca
++mymoney.nana10.co.il 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++mysharp.sharp.com 0x804b0014 NetworkError pr_connect_reset_error
++mysu.seattleu.edu 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++n-sb.org 0x804b001e undefined undefined
++net.nana10.co.il 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++news.nana10.co.il 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++nhmh.net 0x804b001e undefined undefined
++nkjmkzk.net 0x8000ffff undefined undefined
++notes.monroe.edu 0x804b000d undefined undefined
++o2businessaccount.o2.co.uk 0x8000ffff undefined undefined
++oaais.ucsf.edu 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++online.auto-credit.ru 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++onlinecustomerservice.celcom.com.my 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++operators.u-tel.ru 0x804b000d undefined undefined
++order.qualispace.com 0x8000ffff undefined undefined
++order.sheca.com 0x8000ffff undefined undefined
++oymhunt.spieleck.de 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++patrick.spieleck.de 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++photography-now.com 0x8000ffff undefined undefined
++photoshopfaq.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++pia.eeq.com.ec 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++pks.sindominio.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++plan.elac.edu 0x804b001e undefined undefined
++portal.maketechnologies.com 0x8000ffff undefined undefined
++portal.wszia.edu.pl 0x8000ffff undefined undefined
++prof.mi.dk 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++pt-br.dudu.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++pt-pt.dudu.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++pt.flashbooking.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++pt.genevalab.ch 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++qsoft.ru 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++quakelife.gameriot.com 0x8000ffff undefined undefined
++robertmaron.com 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++rochester-new-york.thesexylist.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++san-diego.thesexylist.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++san-francisco.thesexylist.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++sanantonio.parenthood.com 0x805a1ff6 SecurityError sec_error_bad_signature
++sanfrancisco.parenthood.com 0x805a1ff6 SecurityError sec_error_bad_signature
++sc.bns.lt 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++scd.univ-poitiers.fr 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++science.korea.ac.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++scotblogs.wooster.edu 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++secure.menandmice.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++secure.psbill.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++secure.roomdividerstore.com 0x804b0014 NetworkError pr_connect_reset_error
++secure.utb-shop.de 0x8000ffff undefined undefined
++sekaicamera.com 0x8000ffff undefined undefined
++senate.korea.ac.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++seo.aboutus.org 0x804b000d undefined undefined
++series60.ru 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
++service.jj.ac.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++servicios.casaley.com.mx 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++sewhahall.khu.ac.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++sharesandbonds.nationalbank.co.nz 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++shelter.khu.ac.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++shop.bythegrape.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++shop.edna.de 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++shop.ehc-muenchen.de 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++shop.mi.dk 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++si.reading.gglec.go.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++snwmail.shac.gov.cn 0x8000ffff undefined undefined
++sociallysexydeals.com 0x8000ffff undefined undefined
++soft.72ec.com 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate
++sortejos.regio7.cat 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++splice.xignite.com 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++ssl.tuxlogin.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++st-louis.thesexylist.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++status.stack.nl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++stayfriends.t-online.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++stihome.stpsb.org 0x8000ffff undefined undefined
++stopjunk.iammoving.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++store.applegatefarms.com 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++store.brightsign.biz 0x8000ffff undefined undefined
++store.cc.cc 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++store.gameriot.com 0x804b000d undefined undefined
++store.gonu.com 0x8000ffff undefined undefined
++store.greenvana.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++store.nsvrc.org 0x8000ffff undefined undefined
++suburbanorganics.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++suburbia.sindominio.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++suchagent.gwa.de 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++sudoku.spieleck.de 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++suntv.canoe.ca 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++support.ei42.com 0x804b000d undefined undefined
++support.peakcandle.com 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++takvim.marmara.edu.tr 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++tax.changwon.go.kr 0x804b000d undefined undefined
++techsupport.dodea.edu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++terminal.bileter.ru 0x8000ffff undefined undefined
++thehipster.co 0x804b000d undefined undefined
++topdj.ua 0x804b000d undefined undefined
++travel.svyaznoy.ru 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++travel.withphoto.co.jp 0x8000ffff undefined undefined
++travelagents.marriott.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++trendsetter.com.ar 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++trichord.change-vision.com 0x804b000d undefined undefined
++triniandsusana.nana10.co.il 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++ubezpieczenia.deutsche-bank-pbc.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++udb.sc2.com.cn 0x8000ffff undefined undefined
++uhost.rmutp.ac.th 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++unternehmen.ernstings-family.de 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++vmd.swcc.gov.sa 0x804b0047 NetworkInterruptError pr_end_of_file_error
++vmutpp.vu-wien.ac.at 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate
++vodafonemail.vodafone.co.nz 0x805a3ffd SecurityError mozilla_pkix_error_v1_cert_used_as_ca
++wafl.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++wager2.sbgglobal.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++webmail.ait.ac.th 0x8000ffff undefined undefined
++webmail.cca.edu 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++webmail.iau-ahar.ac.ir 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++webmail.uma.ac.ir 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++wfdd.org 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++wiki.soholaunch.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++wiki.spieleck.de 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++win.7m.cn 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++wipfilms.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++wireless.shopnbc.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++wittlebee.com 0x8000ffff undefined undefined
++wonderwall.msn.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++wordrio.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++wssb3.szsi.gov.cn 0x804b000d undefined undefined
++www.111.com.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.33i.co.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.4blackyouth.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.96-10.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.abilie.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.acquaintable.com 0x8000ffff undefined undefined
++www.acronymfinder.com 0x8000ffff undefined undefined
++www.aerosvit.com 0x8000ffff undefined undefined
++www.agigen.se 0x8000ffff undefined undefined
++www.ahidistribution.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.airizu.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.airsoftcanada.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.akat.dk 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.akmos.ru 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.alexanderhiggins.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.alibabahost.com 0x8000ffff undefined undefined
++www.allancer.com 0x804b000d undefined undefined
++www.amcorrpjobs.com 0x804b0014 NetworkError pr_connect_reset_error
++www.analytics.bmocm.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.angolaxyami.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.anheng.com.cn 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.anitan.tv 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.architektura.put.poznan.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.arthur.gr.jp 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.aspirant.vstu.edu.ru 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.atfbank.kz 0x8000ffff undefined undefined
++www.atlantichockey.org 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.awbox.de 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.babyjays.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.ballarat.edu.au 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.bamarang.co.uk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.bancoripley.com.pe 0x805a2ff1 SecurityError ssl_error_bad_mac_read
++www.bandworm.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.bassanglermag.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.bdonline.co.uk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.bdsmdiscountstore.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.beauty-navi.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.behigh.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.best.tuke.sk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.best1-host.com 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.bestcolouredcontacts.co.uk 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.bestmall.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.bestrentsnyc.com 0x804b000d undefined undefined
++www.bfmdev1.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.bg.umlub.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.bgfl.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.bidshop.com.br 0x804b0014 NetworkError pr_connect_reset_error
++www.billingboss.com 0x8000ffff undefined undefined
++www.bip.umww.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.bis.put.poznan.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.biwebco.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.blackeyedpeas.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.blackstoneaudio.com 0x804b000d undefined undefined
++www.boconline.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.booc.co.za 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.book-your-driving-test.co.uk 0x804b001e undefined undefined
++www.bookstudio.com 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.boribori.co.kr 0x804b0014 NetworkError pr_connect_reset_error
++www.bradescofinanciamentos.com.br 0x804b0014 NetworkError pr_connect_reset_error
++www.brigade97kat.com 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.brokensaints.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.bsr.org 0x804b000d undefined undefined
++www.buildstore.co.uk 0x804b0014 NetworkError pr_connect_reset_error
++www.bulkemailtools.com 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.butterflymarketing.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.californiacozy.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.camerahot.com.br 0x8000ffff undefined undefined
++www.capcrossfit.com 0x8000ffff undefined undefined
++www.capitaltaxltd.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.caroto.gr 0x8000ffff undefined undefined
++www.casting.fr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.cat-5-cable-company.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.cavesa.ch 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.cclassiphosting.com 0x8000ffff undefined undefined
++www.ccpnet.poste.tn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.cdrecordingsoftware.com 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
++www.chama.ne.jp 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.chaosmen.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.charaletter.com 0x8000ffff undefined undefined
++www.chinaewindow.net 0x8000ffff undefined undefined
++www.chrismartenson.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.cias.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.cicloceap.com.br 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.cienciatk.csic.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.circuitcity.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.cjadvertising.com 0x805a1ff6 SecurityError sec_error_bad_signature
++www.clevercomm.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.clickedeals.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.clickfragrance.co.uk 0x804b0014 NetworkError pr_connect_reset_error
++www.clickshappen.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.cocinayvino.net 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.codeofthenatural.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.cometd.org 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.comprediretodachina.com.br 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.compujob.com.br 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.computers4sure.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.concentric.co.jp 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.cordeals.nl 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.coudal.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.cpk.put.poznan.pl 0x8000ffff undefined undefined
++www.cqgp.gov.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.crazymonkeygames.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.crecla.jp 0x804b000d undefined undefined
++www.crmoncall.com 0x804b0047 NetworkInterruptError pr_end_of_file_error
++www.ctio.noao.edu 0x8000ffff undefined undefined
++www.cut.ac.za 0x8000ffff undefined undefined
++www.cyberteams.com 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.dannylipford.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.daysofknights.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.dbs.ie 0x8000ffff undefined undefined
++www.dealcloud.co.uk 0x8000ffff undefined undefined
++www.deepmix.ru 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.deodeo.co.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.designerclothing.com 0x8000ffff undefined undefined
++www.detur.fi 0x805a1ff4 SecurityRevokedCertificateError sec_error_revoked_certificate
++www.detur.no 0x805a1ff4 SecurityRevokedCertificateError sec_error_revoked_certificate
++www.detur.se 0x805a1ff4 SecurityRevokedCertificateError sec_error_revoked_certificate
++www.dialadeliverykenya.co.ke 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.diaridegirona.cat 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.diariodeibiza.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.diariodemallorca.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.diarioinformacion.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.diblogotus.com 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.digitalvalley.com 0x8000ffff undefined undefined
++www.diskfaktory.com 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.djoss.tv 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.dodeweb.com 0x8000ffff undefined undefined
++www.dopesmokingdonkeys.com 0x8000ffff undefined undefined
++www.dreamisland.pl 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.drj.com 0x8000ffff undefined undefined
++www.dubaifestivalcity.com 0x804b0014 NetworkError pr_end_of_file_error
++www.durangomountainresort.com 0x804b0014 NetworkError pr_connect_reset_error
++www.e-fudou.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.e-planning.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.e-sacombank.com.vn 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.eas.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.easternmiles.com 0x804b000d undefined undefined
++www.eazycollect.co.uk 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate
++www.ecigarettesusa.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.ecigsunlimited.com 0x804b000d undefined undefined
++www.econ.ucsb.edu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.edition01.com 0x8000ffff undefined undefined
++www.edomexico.gob.mx 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.egoist-inc.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.egpal.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.ehbox.com 0x8000ffff undefined undefined
++www.einblick.dgb.de 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.eisbaeren.de 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.eleadstracker.com 0x804b000d undefined undefined
++www.electran.org 0x8000ffff undefined undefined
++www.electroworld.gr 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.elgar.govt.nz 0x804b0047 NetworkInterruptError pr_end_of_file_error
++www.eliteweb.cc 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.elmwoodmagic.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.elsevier.es 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.emailaprisoner.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.en.awf.gda.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.en4u.co.kr 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.ep.io 0x8000ffff undefined undefined
++www.equipement-automobile.eu 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.eshopbahamas.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.espoma.com 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
++www.essayforum.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.et.gr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.exphase.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.extension.ucsb.edu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.extremnews.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.ezcontrol.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.faceofmankind.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.fakultaet1.fh-hannover.de 0x8000ffff undefined undefined
++www.fakultaet2.fh-hannover.de 0x8000ffff undefined undefined
++www.ferrere.com 0x8000ffff undefined undefined
++www.ferrycheap.com 0x804b0014 NetworkError pr_connect_reset_error
++www.filamnation.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.fiona-cooper.com 0x8000ffff undefined undefined
++www.firstflight.net 0x8000ffff undefined undefined
++www.firstplacebank.com 0x804b0014 NetworkError pr_connect_reset_error
++www.firstplacebankecomm.net 0x804b0014 NetworkError pr_connect_reset_error
++www.fishbase.us 0x804b0014 NetworkError pr_connect_reset_error
++www.fitnessblowout.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.fla-keys.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.folgers.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.formulaformiracles.net 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.foursquarestore.com 0x8000ffff undefined undefined
++www.fq.uh.cu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.fullbloomhydroponics.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.funeralhomes.com 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.furniture-collection.co.uk 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.galileo.ronson.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.geishatokyo.com 0x8000ffff undefined undefined
++www.getperx.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.gifttrap.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.gigatorrents.ws 0x804b001e undefined undefined
++www.global-laptop-batteries.com 0x8000ffff undefined undefined
++www.goaruna.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.goldendeals.ro 0x804b001e undefined undefined
++www.gomadrid.com 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.gonetready.com 0x804b0014 NetworkError pr_connect_reset_error
++www.gopetsamerica.com 0x804b0014 NetworkError pr_connect_reset_error
++www.gost.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.gout.com 0x804b0014 NetworkError pr_connect_reset_error
++www.gptengine.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.grad.ucalgary.ca 0x8000ffff undefined undefined
++www.grafighters.com 0x804b0014 NetworkError pr_connect_reset_error
++www.granatum.com.br 0x804b000d undefined undefined
++www.greatamericanphotocontests.com 0x804b0014 NetworkError pr_connect_reset_error
++www.greatlance.com 0x804b0014 NetworkError pr_connect_reset_error
++www.greenbang.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.greencine.com 0x804b0014 NetworkError pr_connect_reset_error
++www.gressive.jp 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.guardia.mil.ve 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.gwa.de 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.gwstuff.org 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.hakodate.ne.jp 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.halfclub.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.hancocks-paducah.com 0x804b000d undefined undefined
++www.hartrans.gov.in 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.hbcuconnect.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.hbd.nl 0x8000ffff undefined undefined
++www.hcl-axon.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.hd.ca 0x804b0014 NetworkError pr_connect_reset_error
++www.healthiervending.com 0x8000ffff undefined undefined
++www.healthymagination.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.hearingdirect.com 0x804b000d undefined undefined
++www.hemenevinde.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.hemrid.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.heptahost.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.hermes.com 0x8000ffff undefined undefined
++www.hillas.com 0x804b000d undefined undefined
++www.hispaweb.net 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.hksh.com 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.home-entertainment.toshiba.co.uk 0x8000ffff undefined undefined
++www.hotelesmexico.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.iclick.com 0x804b000d undefined undefined
++www.idtgv.com 0x804b000d undefined undefined
++www.ifal.uh.cu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.igxhost.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.ihelpyou.com 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.ilbraccoitaliano.net 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.imeetzu.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.imsuperelite.com 0x8000ffff undefined undefined
++www.inforge.net 0x8000ffff undefined undefined
++www.instantinvestor.com 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.intelligencecareers.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.internetarmory.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.intuniv.com 0x8000ffff undefined undefined
++www.ipad2books.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.iparkiet.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.iprimus.com.au 0x8000ffff undefined undefined
++www.itechline.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.ito-ya.co.jp 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.itsjustjewelry.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.ivisa.org 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.iwantcollectibles.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.j-hobby.com 0x804b001e undefined undefined
++www.jabtac.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.jagat.jp 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.jongordon.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.joomlajunkie.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.joox.com.br 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.jorf.co.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.joyeriacardell.com 0x804b0014 NetworkError pr_connect_reset_error
++www.jpps.cyc.edu.tw 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.jumpbox.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.just4design.co.uk 0x804b0014 NetworkError pr_connect_reset_error
++www.jusuhoroskopai.lt 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.juvepoland.com 0x8000ffff undefined undefined
++www.kanda-office.com 0x8000ffff undefined undefined
++www.kashbet.com 0x804b000d undefined undefined
++www.kenmuir.co.uk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.kiditroc.com 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.killerglass.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.kinerja.com 0x8000ffff undefined undefined
++www.kino-mir.ru 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.kino.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.kita-colle.com 0x8000ffff undefined undefined
++www.kladilnica.net 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.knittersreview.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.ksi.is 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.lacensebeef.com 0x804b0047 NetworkInterruptError pr_end_of_file_error
++www.lagrange-vacances.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.laopinion.es 0x804b000d undefined undefined
++www.laopinioncoruna.es 0x804b000d undefined undefined
++www.laopiniondemalaga.es 0x804b000d undefined undefined
++www.laopiniondemurcia.es 0x804b000d undefined undefined
++www.laopiniondezamora.es 0x804b000d undefined undefined
++www.laprovincia.es 0x804b000d undefined undefined
++www.latsportswear.com 0x804b0014 NetworkError pr_connect_reset_error
++www.leamancomputing.com 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.legroom.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.levante-emv.com 0x804b000d undefined undefined
++www.library.vstu.edu.ru 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.limata.com 0x804b0014 NetworkError pr_connect_reset_error
++www.limo.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.linqia.com 0x8000ffff undefined undefined
++www.livinglifefully.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.livingsocial.co.id 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.lonelyway.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.longtermcareinsurancetree.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.luciennes.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.luckymanonline.com 0x804b000d undefined undefined
++www.lvccld.org 0x8000ffff undefined undefined
++www.lytogame.com 0x804b000d undefined undefined
++www.maherterminals.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.mail.kz 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.mallexpress.cl 0x804b000d undefined undefined
++www.mallorca-today.de 0x804b000d undefined undefined
++www.mallorcazeitung.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.mattersofsize.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.maxispor.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.meadbrown.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.mediajmp.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.medienberater-werden.de 0x804b000d undefined undefined
++www.meijergroceryexpress.com 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
++www.metlife.co.in 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.metricfire.com 0x8000ffff undefined undefined
++www.mfa.gov.cy 0x8000ffff undefined undefined
++www.mid-east.com 0x8000ffff undefined undefined
++www.mijntelegraaf.nl 0x804b000d undefined undefined
++www.minimoy.com 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
++www.mlmbusinessblueprint.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.mobsterboss.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.monipla.jp 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
++www.monistat.com 0x804b000d undefined undefined
++www.montesanos.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.mortons.hu 0x8000ffff undefined undefined
++www.mosgid.ru 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.mp3passion.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.mrinetwork.com 0x804b0014 NetworkError pr_connect_reset_error
++www.myallianz.com.mx 0x8000ffff undefined undefined
++www.mybirthcare.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.mycityexplorer.com 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.mythtrips.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.nacoonline.org 0x804b000d undefined undefined
++www.national.com 0x8000ffff undefined undefined
++www.naturalis.ronson.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.naughtyalysha.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.nautica.ronson.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.naxpgaming.com 0x804b000d undefined undefined
++www.ncb.coop 0x804b0014 undefined undefined
++www.ncc-volga.ru 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.nektra.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.neotel.co.za 0x804b0014 NetworkError pr_end_of_file_error
++www.netdesignhost.com 0x804b0014 NetworkError pr_connect_reset_error
++www.newbalancetoronto.ca 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.newegg.com.cn 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.newlymaid.com 0x8000ffff undefined undefined
++www.newnetmail.com 0x804b000d undefined undefined
++www.news-on.jp 0x805a3ffd SecurityError mozilla_pkix_error_v1_cert_used_as_ca
++www.newsmth.net 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.newyorkironworks.com 0x804b000d undefined undefined
++www.nexenta.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.nexicore.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.nexus.org.uk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.ngo.kujawsko-pomorskie.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.nic.mx 0x804b000d undefined undefined
++www.noa.gr 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.nonviolentpeaceforce.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.nord.dgb.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.notebookwebsite.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.notowania.allianz.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.npa2009.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.nrf.eu 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.nri.co.jp 0x804b000d undefined undefined
++www.nttpc.ne.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.nurserymanagementonline.com 0x804b0014 NetworkError pr_connect_reset_error
++www.nysm.nysed.gov 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.obchodobchodov.sk 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.oetker.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.oixi.jp 0x8000ffff undefined undefined
++www.olume.com 0x8000ffff undefined undefined
++www.onepiece-ten.com 0x804b000d undefined undefined
++www.ongcreports.net 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.orangeaccessories.co.uk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.orderrogers.ca 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.osrodki.put.poznan.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.outdous.com 0x8000ffff undefined undefined
++www.ozfreeonline.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.p0c.cc 0x8000ffff undefined undefined
++www.panek.eu 0x8000ffff undefined undefined
++www.pasgiannina.gr 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.patriotoutfitters.com 0x8000ffff undefined undefined
++www.payu.cz 0x804b0014 NetworkError pr_connect_reset_error
++www.people.virginia.edu 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.pharma-iq.com 0x8000ffff undefined undefined
++www.phpcipher.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.planet-elektronik.de 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.planetashop.ru 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.plarenovat.cat 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.playinstar.com 0x8000ffff undefined undefined
++www.playntrade.com 0x804b000d undefined undefined
++www.plsweb.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.pompa.co.il 0x8000ffff undefined undefined
++www.popmedia.co.nz 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.poppin.com 0x804b000d undefined undefined
++www.premios-cine.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.prestigetechnologies.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.prisonstruggle.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.processexcellencenetwork.com 0x804b0014 NetworkError pr_connect_reset_error
++www.prodottiunicef.it 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.professionalgambler.com 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.professionalsoldiers.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.publikationen.h-da.de 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.puremaison.fr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.purwater.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.puzzle.de 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.qiar.com.br 0x8000ffff undefined undefined
++www.qpublic.net 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.qualityservice.com.mx 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.railtourismindia.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.rdln.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.resellercluster.com 0x8000ffff undefined undefined
++www.retronaut.co 0x804b000d undefined undefined
++www.ridepros.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.rocbattle.com 0x8000ffff undefined undefined
++www.roommatespeelandstick.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.roppongiartnight.com 0x804b000d undefined undefined
++www.routhost.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.royalcruisematrix.com 0x804b000d undefined undefined
++www.rsrtcors.co.in 0x804b000d undefined undefined
++www.rt.com.br 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.ruelsoft.org 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.rukazan.ru 0x8000ffff undefined undefined
++www.run2sport.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.russianbare.com 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.rythercamera.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.sadabandeira.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.saleschase.com 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.salescrunch.com 0x8000ffff undefined undefined
++www.scd.inpl-nancy.fr 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.schueler.cc 0x804b000d undefined undefined
++www.scilor.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.secure-payment-solutions.com 0x804b000d undefined undefined
++www.seda.org.za 0x8000ffff undefined undefined
++www.seeber-immobilien.com 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.sensualsteals.com 0x804b000d undefined undefined
++www.serious-partners.com 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.set.rn.gov.br 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.sewingworld.co.uk 0x804b001e undefined undefined
++www.sfi.org.tw 0x805a3ffd SecurityError mozilla_pkix_error_v1_cert_used_as_ca
++www.shangmail.com 0x804b000d undefined undefined
++www.shdf.gov.cn 0x8000ffff undefined undefined
++www.shenghuojia.com 0x804b000d undefined undefined
++www.shinhansecret.com 0x8000ffff undefined undefined
++www.shmec.gov.cn 0x8000ffff undefined undefined
++www.shoebiz.com.br 0x804b0014 NetworkError pr_connect_reset_error
++www.shoeperman.com 0x8000ffff undefined undefined
++www.shopperhive.co.uk 0x804b000d undefined undefined
++www.showitfast.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.shuame.com 0x8000ffff undefined undefined
++www.sig.ufla.br 0x8000ffff undefined undefined
++www.simplyaccounting.com 0x8000ffff undefined undefined
++www.sip.cnsaas.com 0x8000ffff undefined undefined
++www.skyboximaging.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.slimstacticalguns.com 0x804b000d undefined undefined
++www.smart-c.jp 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.snaps.co.kr 0x8000ffff undefined undefined
++www.solidarnosc.org.pl 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.soovle.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.spanndeckenzubehoer.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.spieleck.de 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
++www.spillape.no 0x804b000d undefined undefined
++www.sport2000rent.at 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.sprayfoam.com 0x8000ffff undefined undefined
++www.square-enix-shop.com 0x8000ffff undefined undefined
++www.standard.org.cn 0x8000ffff undefined undefined
++www.staples.be 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.stationsportsconnection.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.stonepages.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.subdreamer.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.superclick.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.superdeporte.es 0x804b000d undefined undefined
++www.supportindeed.com 0x8000ffff undefined undefined
++www.surveyusa.com 0x8000ffff undefined undefined
++www.sustainability.fcps.net 0x8000ffff undefined undefined
++www.swatchandbeyond.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.swedishhasbeens.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.syndicatekahuna.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.synergentcorp.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.system.co.kr 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.tambara.co.jp 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.tarifadetaxi.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.tcpglobal.com 0x804b000d undefined undefined
++www.teacode.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.tealit.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.teamhost.org 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.tec-direkt.de 0x804b000d undefined undefined
++www.temf.co.kr 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.thcnet.net 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.theatertv.co.jp 0x8000ffff undefined undefined
++www.thefurniturewarehouse.net 0x8000ffff undefined undefined
++www.themes-mgnto.com 0x8000ffff undefined undefined
++www.ths-net.jp 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.ti.tohmatsu.co.jp 0x8000ffff undefined undefined
++www.ticket.com 0x804b001e undefined undefined
++www.tiendaempresasvodafone.com 0x804b0047 NetworkInterruptError pr_end_of_file_error
++www.timeimports.com 0x804b000d undefined undefined
++www.timesplus.co.uk 0x8000ffff undefined undefined
++www.tinyshopping.com 0x8000ffff undefined undefined
++www.tmn.pt 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.tokyo-islands.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.torranceca.gov 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.total.fr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.tourisme67.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.tradetang.com.cn 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.trainingchannel.es 0x8000ffff undefined undefined
++www.tricyclelabs.com 0x8000ffff undefined undefined
++www.trueroots.ca 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.trustlink.de 0x8000ffff undefined undefined
++www.truthalliance.net 0x804b0014 NetworkError pr_connect_reset_error
++www.truus.nl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.try.wikidot.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.tryflexseal.com 0x804b000d undefined undefined
++www.tryincrediblyslim.com 0x804b000d undefined undefined
++www.trymedia.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.trymuscleextreme.co.uk 0x804b001e undefined undefined
++www.trynuescience.com 0x804b000d undefined undefined
++www.tsc.gov.in 0x8000ffff undefined undefined
++www.tse.fi 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.tuckahoe.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.tvn.hu 0x8000ffff undefined undefined
++www.tylershields.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.ucc.edu.gh 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.uck.put.poznan.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.ulat.ac.pa 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.unibanco.pt 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.unigift.unibanco.pt 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.upanshi.com 0x8000ffff undefined undefined
++www.upsale.fr 0x804b000d undefined undefined
++www.urscorp.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.uxd.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.vancouverhomestayagency.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.vanitytollfreenumbers.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.vanns.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.vbhelp.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.vbsupport.org 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.vcc-shops.com 0x804b000d undefined undefined
++www.velida.net 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.verdis.ronson.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.viafacil.com.br 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.victorious.org 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.videoportal.mar.mil.br 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.vinfax.ru 0x8000ffff undefined undefined
++www.visionforum.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.vodahits.com 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.vstu.edu.ru 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.vumero.com 0x8000ffff undefined undefined
++www.wannasurf.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.wattspremier.com 0x804b0014 NetworkError pr_connect_reset_error
++www.wavepanel.net 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.waynesarcade.com 0x804b000d undefined undefined
++www.web-modules.net 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.webinarconferencecalls.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.websystems.pl 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++www.wh-rsv.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.wheatsales.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.whypaymore.co.kr 0x8000ffff undefined undefined
++www.widzew.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.winkelkraam.nl 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.wmmail.ru 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.workfor3dollars.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.wow-gem.com 0x8000ffff undefined undefined
++www.wustenrot24.cz 0x8000ffff undefined undefined
++www.wwdb.biz 0x8000ffff undefined undefined
++www.www.gov.tw 0x8000ffff undefined undefined
++www.wydawnictwo.librus.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++www.wynikilotto.com.pl 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
++www.xxxhq.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www.yinshi.es 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.zedzone.it 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www.zeroforfait.fr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www1.caixa.gov.br 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
++www2.dgb-jugend.de 0x805a1f50 SecurityCertificateSignatureAlgorithmDisabledError sec_error_cert_signature_algorithm_disabled
++www2.ghc.com.br 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate
++zippykid.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
++zozotown.com 0x804b000d undefined undefined
+--- final_errors.txt	2015-04-29 14:56:47.000000000 -0700
+-106hotline.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-1337pwn.gameriot.com 0x8000ffff undefined undefined
+-2011.drupalcampla.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Go_Daddy_Secure_Certification_Authority
+-acente.hdisigorta.com.tr 0x8000ffff undefined undefined COMODO_RSA_Domain_Validation_Secure_Server
+-affiliate.doreo.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-agents.aerosvit.com 0x804b000d undefined undefined
+-agreements.realdealdocs.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-ahse.bookall.cn 0x8000ffff undefined undefined GeoTrust_SSL_CA
+-aimsweb.utm.my 0x8000ffff undefined undefined
+-aimswebxs.utm.my 0x8000ffff undefined undefined
+-alcala.tomalaplaza.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer tomalaplaza
+-alicante.tomalaplaza.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer tomalaplaza
+-america.aerosvit.com 0x804b000d undefined undefined
+-anagramme.spieleck.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-anket.marmara.edu.tr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer e-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi
+-ann.cbs.co.kr 0x8000ffff undefined undefined GeoTrust_SSL_CA
+-app.cadivi.gob.ve 0x805a1ff7 SecurityError sec_error_bad_der
+-app.cbs.co.kr 0x8000ffff undefined undefined GeoTrust_SSL_CA
+-apps.abchospital.com 0x805a2ff7 SecurityUnsupportedTLSVersionError ssl_error_unsupported_version
+-articles.onlineautoinsurance.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certification_Authority
+-avportal.avinc.com 0x804b000d undefined undefined DigiCert_SHA2_High_Assurance_Server_CA
+-bbs.im520.com 0x8000ffff undefined undefined
+-bd.patent.su 0x804b001e undefined undefined
+-billing.rof.net 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Go_Daddy_Secure_Certification_Authority
+-bjydts.bookall.cn 0x8000ffff undefined undefined GeoTrust_SSL_CA
+-blair.vanderbilt.edu 0x804b000d undefined undefined
+-bloc.regio7.cat 0x805a1ff7 SecurityError sec_error_bad_der
+-blog.fused.com 0x8000ffff undefined undefined
+-blog.laopinioncoruna.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-blogs.laopiniondemalaga.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-branchenbuch.mallorcazeitung.es 0x805a1ff7 SecurityError sec_error_bad_der
+-btos.bankofchina.com 0x8000ffff undefined undefined GuangXi_Server_CA
+-business.szse.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer SZSE_Operation_CA
+-business.veronafiere.it 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Go_Daddy_Secure_Certification_Authority
+-buyeyelashes.co.uk 0x8000ffff undefined undefined COMODO_Extended_Validation_Secure_Server_CA
+-c-link.crowley.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate VeriSign_Class_3_Secure_Server_CA
+-cafnr.missouri.edu 0x8000ffff undefined undefined University_of_Missouri_-_Columbia_Enterprise
+-campus.efrei.fr 0x8000ffff undefined undefined StartCom_Class_1_Primary_Intermediate_Server
+-campusmail.lums.edu.pk 0x804b000d undefined undefined
+-carsworld.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-celebs.nana10.co.il 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer PositiveSSL_CA_2
+-central.veoliawater.co.uk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_RSA_Domain_Validation_Secure_Server
+-centregold.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_DV_SSL_CA
+-certificadotributario.comfenalco.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_SSL_CA
+-cfgate.trade.gov.tw 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-chat.skillpath.com 0x8000ffff undefined undefined
+-checkout.ariama.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
+-chiclana.tomalaplaza.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer tomalaplaza
+-cis.mecit.edu.om 0x8000ffff undefined undefined SSL.com_DV_CA
+-classifieds.mtbr.com 0x8000ffff undefined undefined
+-client.poweo.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain COMODO_RSA_Organization_Validation_Secure_Server
+-club.diariodeibiza.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-club.diariodemallorca.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-club.levante-emv.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-club.lne.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-community.mallorcazeitung.es 0x805a1ff7 SecurityError sec_error_bad_der
+-compras.uner.edu.ar 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer compras.uner.edu.ar
+-comunidad.diariodeibiza.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidad.diariodemallorca.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidad.diarioinformacion.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidad.farodevigo.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidad.laopinion.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidad.laopinioncoruna.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidad.laopiniondemalaga.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidad.laopiniondemurcia.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidad.laopiniondezamora.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidad.laprovincia.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidad.levante-emv.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidad.lne.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidad.mallorcazeitung.es 0x805a1ff7 SecurityError sec_error_bad_der
+-comunidades.diariodeibiza.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidades.diariodemallorca.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidades.diarioinformacion.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidades.farodevigo.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidades.laopinion.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidades.laopinioncoruna.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidades.laopiniondegranada.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidades.laopiniondemalaga.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidades.laopiniondemurcia.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidades.laopiniondezamora.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidades.laprovincia.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidades.levante-emv.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunidades.lne.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunitat.diaridegirona.cat 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunitat.emporda.info 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunitat.regio7.cat 0x805a1ff7 SecurityError sec_error_bad_der
+-comunitats.diaridegirona.cat 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunitats.emporda.info 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-comunitats.regio7.cat 0x805a1ff7 SecurityError sec_error_bad_der
+-connect.northwood.edu 0x8000ffff undefined undefined GeoTrust_SSL_CA_-_G3
+-control.unet.edu.ve 0x8000ffff undefined undefined proliant.unet.edu.ve
+-cordoba.tomalaplaza.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer tomalaplaza
+-core.braveheartwomen.com 0x8000ffff undefined undefined
+-cornerstreet.fr 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
+-corporbank.961111.cn 0x804b0014 NetworkError pr_connect_reset_error
+-correo.venalum.com.ve 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer OWA1
+-court.gmw.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer court.gmw.cn
+-cpa.mahatransco.in 0x804b0047 NetworkInterruptError pr_end_of_file_error
+-cpaf.uplb.edu.ph 0x8000ffff undefined undefined DigiCert_High_Assurance_CA-3
+-cpms.e-chinalife.com 0x8000ffff undefined undefined
+-creditcard.cib.com.cn 0x8000ffff undefined undefined
+-csonline.eskom.co.za 0x8000ffff undefined undefined
+-csrv03.bcrp.gob.pe 0x8000ffff undefined undefined
+-cuenca.tomalaplaza.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer tomalaplaza
+-cull.tv 0x8000ffff undefined undefined
+-cyberexchange.isc2.org 0x804b000d undefined undefined
+-data.tce.ir 0x804b0014 NetworkError pr_end_of_file_error
+-declara.cadivi.gob.ve 0x805a1ff7 SecurityError sec_error_bad_der
+-developer.anscamobile.com 0x8000ffff undefined undefined DigiCert_High_Assurance_CA-3
+-diy.daikin-china.com.cn 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
+-diymusicplatform.com 0x804b000d undefined undefined
+-dm.epiq11.com 0x804b0014 NetworkError pr_connect_reset_error
+-docs.metricfire.com 0x804b000d undefined undefined
+-domains.mcreal.net 0x8000ffff undefined undefined RapidSSL_SHA256_CA_-_G3
+-donor.navigators.org 0x8000ffff undefined undefined
+-duf.spieleck.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-duyuru.marmara.edu.tr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer e-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi
+-e-campus.uni.lodz.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain TERENA_SSL_CA
+-e-rehber.marmara.edu.tr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer e-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi
+-e.tce.ir 0x804b0014 NetworkError pr_end_of_file_error
+-ebank.961111.cn 0x8000ffff undefined undefined
+-ebank.bankofbeijing.com.cn 0x805a2ff7 SecurityUnsupportedTLSVersionError ssl_error_unsupported_version VeriSign_Class_3_Extended_Validation_SSL
+-ebank.yantaibank.net 0x8000ffff undefined undefined VeriSign_Class_3_Extended_Validation_SSL
+-ebank.zjcbank.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Entrust_Certification_Authority_-_L1C
+-ebooks.mysterylovers.com 0x8000ffff undefined undefined DigiCert_SHA2_High_Assurance_Server_CA
+-ecademy.mcfc.co.uk 0x8000ffff undefined undefined COMODO_RSA_Extended_Validation_Secure_Server
+-ecollege.rutgers.edu 0x8000ffff undefined undefined InCommon_Server_CA
+-ecommerce.utech.edu.jm 0x8000ffff undefined undefined RapidSSL_CA
+-elc.um.ac.ir 0x8000ffff undefined undefined
+-elgornal.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Linksys
+-empresas.diariodemallorca.es 0x804b000d undefined undefined Editorial_Prensa_Iberica_CA
+-empresas.monster.com.br 0x804b000d undefined undefined
+-empreses.diaridegirona.cat 0x804b000d undefined undefined Editorial_Prensa_Iberica_CA
+-empreses.regio7.cat 0x804b000d undefined undefined
+-enterprise.18ebank.com 0x8000ffff undefined undefined WoSign_Class_3_OV_Server_CA
+-epassk.eciq.cn 0x804b0014 NetworkError pr_end_of_file_error
+-epay.icegate.gov.in 0x8000ffff undefined undefined (n)Code_Solutions_CA_2014
+-epsilonnet.ucam.edu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Cybertrust_Educational_CA
+-epubunraku.com 0x804b000d undefined undefined
+-es.wannasurf.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer www.wannasurf.com
+-events.unitn.it 0x8000ffff undefined undefined TERENA_SSL_CA
+-everyme.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate DigiCert_SHA2_Secure_Server_CA
+-expand.alpha.aussiehq.net.au 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-faraso.ir 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer WoSign_Class_1_DV_Server_CA
+-fdpd.spieleck.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-fedhz.com 0x8000ffff undefined undefined GlobalSign_Organization_Validation_CAT_-_G2
+-ffh.uh.cu 0x8000ffff undefined undefined CA_UH
+-findings.com 0x804b000d undefined undefined
+-flavitlife.eu 0x804b000d undefined undefined
+-flowersales.morrisville.edu 0x804b0014 NetworkError pr_connect_reset_error
+-formacion.levante-emv.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-formula1.laopiniondemurcia.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-formula1.laopiniondezamora.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-formula1.lne.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-forum.vodafone.ie 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Vodafone_(Corporate_Services_2009)
+-fr.livenation.be 0x8000ffff undefined undefined COMODO_RSA_Organization_Validation_Secure_Server
+-fr.sees.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Symantec_Class_3_EV_SSL_SGC
+-fr.wannasurf.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer www.wannasurf.com
+-frank.spieleck.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-freebeacon.com 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate KEMP_Technologies
+-friendlymusic.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certification_Authority
+-frontend.languagewire.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate COMODO_High-Assurance_Secure_Server_CA
+-fsplifestyle.co.za 0x8000ffff undefined undefined Thawte_DV_SSL_CA
+-ftp.eeq.com.ec 0x8000ffff undefined undefined
+-fund.mma.com.tw 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Symantec_Class_3_EV_SSL_CA
+-golf.golfdigest.co.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Symantec_Class_3_EV_SSL_SGC
+-gradresearch.rice.edu 0x8000ffff undefined undefined InCommon_Server_CA
+-groupbuy.com 0x8000ffff undefined undefined DigiCert_High_Assurance_CA-3
+-gs.reading.gglec.go.kr 0x805a1ff7 SecurityError sec_error_bad_der
+-guard.canberra.edu.au 0x804b0014 NetworkError pr_connect_reset_error QuoVadis_Global_SSL_ICA_G2
+-gutscheine.liquidrom-berlin.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_DV_SSL_CA
+-gwangju.wef.co.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_SSL_CA
+-hangar.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Gandi_Standard_SSL_CA
+-headliner.fm 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Go_Daddy_Secure_Certificate_Authority_-
+-heidiswapp.com 0x804b000d undefined undefined GeoTrust_DV_SSL_CA
+-hellforge.gameriot.com 0x8000ffff undefined undefined
+-hello.cbs.co.kr 0x8000ffff undefined undefined GeoTrust_SSL_CA
+-help.jlist.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer localhost.localdomain
+-home.chicagorealestatedaily.com 0x8000ffff undefined undefined COMODO_High-Assurance_Secure_Server_CA
+-home.cisco.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain VeriSign_Class_3_Secure_Server_CA
+-home.workforce.com 0x8000ffff undefined undefined VeriSign_Class_3_Secure_Server_CA
+-hotel.ezfly.com 0x8000ffff undefined undefined TWCA_Secure_Certification_Authority
+-hotels.yesterland.com 0x8000ffff undefined undefined
+-houston.positivecoach.org 0x8000ffff undefined undefined Trustwave_Organization_Validation_CA,_Level_2
+-i.bank24.ru 0x8000ffff undefined undefined
+-image.xiu.com 0x8000ffff undefined undefined WoSign_Class_3_OV_Server_CA
+-incite.dkpsystem.com 0x8000ffff undefined undefined PositiveSSL_CA_2
+-indiana.companiestowatch.org 0x8000ffff undefined undefined Go_Daddy_Secure_Certificate_Authority_-
+-inow.mcpss.com 0x8000ffff undefined undefined
+-international.yeditepe.edu.tr 0x804b0014 NetworkError pr_connect_reset_error
+-intranet.guilford.edu 0x8000ffff undefined undefined COMODO_High-Assurance_Secure_Server_CA
+-intranet.mhu.gov.dz 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-iplan.com.ar 0x8000ffff undefined undefined
+-jenniferlopez.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain incapsula.com
+-kajak.spieleck.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-konukevi.marmara.edu.tr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer e-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi
+-kurgan.u-tel.ru 0x8000ffff undefined undefined
+-labs.webmetrics.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-lagen.nu 0x804b001e undefined undefined RapidSSL_CA
+-lamps.projectorsuperstore.com 0x8000ffff undefined undefined
+-learningcenter.statefarm.com 0x804b000d undefined undefined Entrust_Certification_Authority_-_L1C
+-library.dbs.ie 0x8000ffff undefined undefined
+-lifesciencesweek.missouri.edu 0x8000ffff undefined undefined InCommon_RSA_Server_CA
+-limitbreak.gameriot.com 0x804b000d undefined undefined
+-lists.bufferbloat.net 0x8000ffff undefined undefined RapidSSL_CA
+-login.arnet.com.ar 0x8000ffff undefined undefined GeoTrust_SSL_CA
+-login.monster.com.br 0x8000ffff undefined undefined
+-login.monster.com.mx 0x8000ffff undefined undefined
+-m.laredoute.de 0x8000ffff undefined undefined GlobalSign_Organization_Validation_CA_-_SHA256
+-m.liftopia.com 0x8000ffff undefined undefined
+-m.rubytuesday.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Entrust_Certification_Authority_-_L1K
+-madrid.cnt.es 0x804b000d undefined undefined *.cnt.es
+-magefox.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certificate_Authority_-
+-mail.ama.edu.vn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer mail.ama.edu.vn
+-mail.azaruniv.edu 0x804b0014 NetworkError pr_connect_reset_error
+-mail.cjlu.edu.cn 0x8000ffff undefined undefined mail.cjlu.edu.cn
+-mail.itesca.edu.mx 0x804b0047 NetworkInterruptError pr_end_of_file_error
+-mail.jsbc.com 0x8000ffff undefined undefined mail.jsbc.com
+-mail.mountainstate.edu 0x8000ffff undefined undefined
+-mail.northnet.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer communigate.com
+-mail.sdca.gov.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer sdcaCA
+-mail.sut.ac.ir 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer AxigenMailServer
+-mail.uoz.ac.ir 0x8000ffff undefined undefined mail.uoz.ac.ir
+-mail2.gzmtr.com 0x8000ffff undefined undefined GZMETRO_Root_CA
+-mailz.unt.edu.ar 0x8000ffff undefined undefined mailz.unt.edu.ar
+-mandrivausers.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer mandrivausers.org
+-map.ucf.edu 0x8000ffff undefined undefined InCommon_RSA_Server_CA
+-marketing.senderglobal.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer EssentialSSL_CA
+-masscom.korea.ac.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-med.jj.ac.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial CA134100031
+-member.jagoanhosting.com 0x8000ffff undefined undefined EssentialSSL_CA
+-member.playpark.web.id 0x8000ffff undefined undefined
+-menhu.cufe.edu.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer menhu.cufe.edu.cn
+-metrology.leica-geosystems.com 0x8000ffff undefined undefined COMODO_High-Assurance_Secure_Server_CA
+-meyyas.marmara.edu.tr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer e-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi
+-minwon.goe.go.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial CA134100031
+-mjmarketeermso.coolerads.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certificate_Authority_-
+-mjmarketeersf.coolerads.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certificate_Authority_-
+-mnuace.mokpo.ac.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial CA134100031
+-mnufc.mokpo.ac.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial CA134100031
+-mnusalrim.mokpo.ac.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial CA134100031
+-mobile.iwf.org.uk 0x8000ffff undefined undefined COMODO_SSL_CA
+-mpoint.hanbat.ac.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial CA134100031
+-museum.khu.ac.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial CA134100031
+-music.mokpo.ac.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial CA134100031
+-my.amhosted.com 0x8000ffff undefined undefined my.amhosted.com
+-my.cadedic.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer EssentialSSL_CA
+-my.emich.edu 0x8000ffff undefined undefined DigiCert_High_Assurance_CA-3
+-my.uiu.edu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_SSL_CA_-_G3
+-myac.ballarat.edu.au 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_Extended_Validation_Secure_Server_CA
+-myccc.corning-cc.edu 0x805a3ffe SecurityError mozilla_pkix_error_inadequate_key_size
+-mymoney.nana10.co.il 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer PositiveSSL_CA_2
+-mysharp.sharp.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Symantec_Class_3_Secure_Server_CA
+-mysu.seattleu.edu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer InCommon_Server_CA
+-n-sb.org 0x8000ffff undefined undefined
+-nad.cbs.co.kr 0x8000ffff undefined undefined GeoTrust_SSL_CA
+-net.nana10.co.il 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer PositiveSSL_CA_2
+-news.nana10.co.il 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer PositiveSSL_CA_2
+-nhmh.net 0x8000ffff undefined undefined
+-nkjmkzk.net 0x804b000d undefined undefined
+-nmhpnetwork.bestfriends.org 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate COMODO_RSA_Domain_Validation_Secure_Server
+-notes.monroe.edu 0x805a2ff7 SecurityUnsupportedTLSVersionError ssl_error_unsupported_version
+-o2businessaccount.o2.co.uk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_SGC_CA_-_G2
+-oaais.ucsf.edu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer localhost.localdomain
+-ogr.rize.edu.tr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer e-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi
+-online.auto-credit.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer RBC_HC_High_Assurance_Services_CA
+-onlinecustomerservice.celcom.com.my 0x805a3ffd SecurityError mozilla_pkix_error_v1_cert_used_as_ca
+-operators.u-tel.ru 0x8000ffff undefined undefined
+-order.qualispace.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
+-order.sheca.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer SHECA
+-oymhunt.spieleck.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-patrick.spieleck.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-paysrv2.pagomiscuentas.com 0x8000ffff undefined undefined Symantec_Class_3_EV_SSL_CA
+-pg.tejaratbank.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer e-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi
+-photography-now.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Parallels_Panel
+-photoshopfaq.ru 0x8000ffff undefined undefined 178.208.73.65
+-pia.eeq.com.ec 0x8000ffff undefined undefined Verysign
+-pks.sindominio.net 0x8000ffff undefined undefined flatline.sindominio.net
+-plan.elac.edu 0x8000ffff undefined undefined
+-portal.emu.edu.tr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer e-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi
+-portal.maketechnologies.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate RapidSSL_CA
+-portal.wszia.edu.pl 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate StartCom_Class_1_Primary_Intermediate_Server
+-prof.mi.dk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-pt-br.dudu.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate RapidSSL_CA
+-pt-pt.dudu.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate RapidSSL_CA
+-pt.flashbooking.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate RapidSSL_CA
+-pt.genevalab.ch 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Go_Daddy_Secure_Certificate_Authority_-
+-qsoft.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer *.qsoft.ru
+-quakelife.gameriot.com 0x804b000d undefined undefined
+-reserve.huistenbosch.co.jp 0x8000ffff undefined undefined VeriSign_Class_3_Secure_Server_CA
+-robertmaron.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer H-Sphere
+-rochester-new-york.thesexylist.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate GlobalSign_Domain_Validation_CA_-_SHA256
+-safe.renren.com 0x8000ffff undefined undefined VeriSign_Class_3_International_Server_CA
+-saffronglobnet.um.ac.ir 0x8000ffff undefined undefined CLASS_2_KEYNECTIS_CA
+-san-diego.thesexylist.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate GlobalSign_Domain_Validation_CA_-_SHA256
+-san-francisco.thesexylist.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate GlobalSign_Domain_Validation_CA_-_SHA256
+-sanantonio.parenthood.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Network_Solutions_Certificate_Authority
+-sanfrancisco.parenthood.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Network_Solutions_Certificate_Authority
+-sc.bns.lt 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-scd.univ-poitiers.fr 0x8000ffff undefined undefined TERENA_SSL_CA
+-science.korea.ac.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-scotblogs.wooster.edu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer InCommon_Server_CA
+-secure.emporiocapital.co.nz 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate COMODO_RSA_Domain_Validation_Secure_Server
+-secure.healthizen.com 0x8000ffff undefined undefined VeriSign_Class_3_Secure_Server_CA
+-secure.hostasaurus.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_SSL_CA_-_G2
+-secure.hostingpower.nl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer PositiveSSL_CA
+-secure.menandmice.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer StartCom_Class_2_Primary_Intermediate_Server
+-secure.psbill.com 0x8000ffff undefined undefined COMODO_RSA_Domain_Validation_Secure_Server
+-secure.roomdividerstore.com 0x8000ffff undefined undefined
+-secure.utb-shop.de 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain RapidSSL_CA
+-sedam.cankaya.edu.tr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer T‹RKTRUST_Elektronik_Sunucu_Sertifikas1_Hizmetleri
+-sekaicamera.com 0x804b000d undefined undefined
+-selfservice.rockford.edu 0x8000ffff undefined undefined GeoTrust_SSL_CA_-_G2
+-senate.korea.ac.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial CA134100031
+-seo.aboutus.org 0x8000ffff undefined undefined
+-series60.ru 0x8000ffff undefined undefined
+-service.jj.ac.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial CA134100031
+-servicios.casaley.com.mx 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer PositiveSSL_CA
+-sewhahall.khu.ac.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial CA134100031
+-sharesandbonds.nationalbank.co.nz 0x804b0047 NetworkInterruptError pr_end_of_file_error
+-shelter.khu.ac.kr 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial CA134100031
+-shop.businesscasestudies.co.uk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_SSL_CA
+-shop.bythegrape.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_High-Assurance_Secure_Server_CA
+-shop.cookinggodsway.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Starfield_Secure_Certification_Authority
+-shop.dyepaintball.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_RSA_Extended_Validation_Secure_Server
+-shop.edna.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer PositiveSSL_CA
+-shop.ehc-muenchen.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_High-Assurance_Secure_Server_CA
+-shop.fc-zenit.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer EssentialSSL_CA
+-shop.ksc.net 0x8000ffff undefined undefined thawte_SSL_CA_-_G2
+-shop.mi.dk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-shop.washington.org 0x8000ffff undefined undefined GlobalSign_Organization_Validation_CA_-_G2
+-si.reading.gglec.go.kr 0x805a1ff7 SecurityError sec_error_bad_der
+-sklep.esculap.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Certum_Organization_Validation_CA_SHA2
+-snwmail.shac.gov.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer snwmail
+-sociallysexydeals.com 0x804b000d undefined undefined
+-soft.72ec.com 0x805a1ff8 SecurityError sec_error_invalid_time WoSign_Class_3_OV_Server_CA
+-solution.99bill.com 0x804b0014 NetworkError pr_connect_reset_error VeriSign_Class_3_Secure_Server_CA
+-sortejos.regio7.cat 0x805a1ff7 SecurityError sec_error_bad_der
+-splice.xignite.com 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate DigiCert_Global_CA
+-ssl.sc.gov 0x8000ffff undefined undefined DigiCert_SHA2_High_Assurance_Server_CA
+-ssl.tuxlogin.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate PositiveSSL_CA_2
+-ssltest16.bbtest.net/ 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-ssx.xebio-online.com 0x8000ffff undefined undefined GlobalSign_Domain_Validation_CA_-_G2
+-st-louis.thesexylist.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate GlobalSign_Domain_Validation_CA_-_SHA256
+-status.stack.nl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain StartCom_Class_1_Primary_Intermediate_Server
+-stayfriends.t-online.de 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate VeriSign_Class_3_International_Server_CA
+-stihome.stpsb.org 0x804b001e undefined undefined
+-stopjunk.iammoving.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate COMODO_High-Assurance_Secure_Server_CA
+-store.applegatefarms.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer store.applegatefarms.com
+-store.brightsign.biz 0x804b000d undefined undefined
+-store.cc.cc 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate COMODO_SSL_CA
+-store.gameriot.com 0x8000ffff undefined undefined
+-store.gonu.com 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
+-store.greenvana.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain COMODO_High-Assurance_Secure_Server_CA
+-store.nsvrc.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-subfinder.mcpss.com 0x8000ffff undefined undefined
+-subscriptions.jse.co.za 0x8000ffff undefined undefined Entrust_Certification_Authority_-_L1C
+-suburbanorganics.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer DigiCert_High_Assurance_EV_CA-1
+-suburbia.sindominio.net 0x8000ffff undefined undefined flatline.sindominio.net
+-suchagent.gwa.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-sudoku.spieleck.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-suntv.canoe.ca 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain GeoTrust_SSL_CA_-_G3
+-support.ei42.com 0x8000ffff undefined undefined
+-support.peakcandle.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-takvim.marmara.edu.tr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer e-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi
+-tax.changwon.go.kr 0x804b001e undefined undefined
+-techsupport.dodea.edu 0x805a1f90 SecurityError sec_error_cert_not_in_name_space
+-terminal.bileter.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer bileter.ru
+-test.sd42.ca 0x8000ffff undefined undefined Go_Daddy_Secure_Certification_Authority
+-thehipster.co 0x8000ffff undefined undefined
+-tilidom.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certificate_Authority_-
+-topdj.ua 0x8000ffff undefined undefined
+-travel.svyaznoy.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_SSL_CA
+-travel.withphoto.co.jp 0x804b001e undefined undefined
+-travelagents.marriott.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Symantec_Class_3_Secure_Server_CA
+-trendsetter.com.ar 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_DV_SSL_CA
+-trichord.change-vision.com 0x8000ffff undefined undefined
+-triniandsusana.nana10.co.il 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer PositiveSSL_CA_2
+-ubezpieczenia.deutsche-bank-pbc.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Symantec_Class_3_Secure_Server_CA
+-udb.sc2.com.cn 0x804b001e undefined undefined
+-uhost.rmutp.ac.th 0x8000ffff undefined undefined uhost.rmutp.ac.th
+-unternehmen.ernstings-family.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer VeriSign_Class_3_International_Server_CA
+-uvahealth.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_DV_SSL_CA
+-v3.eurorevenue.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_SSL_CA
+-vectroproxy.com 0x8000ffff undefined undefined
+-vmd.swcc.gov.sa 0x804b0014 NetworkError pr_end_of_file_error
+-vmutpp.vu-wien.ac.at 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Cybertrust_Educational_CA
+-vodafonemail.vodafone.co.nz 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Vodafone_(Corporate_Services_2009)
+-vpa.um.ac.ir 0x8000ffff undefined undefined CLASS_2_KEYNECTIS_CA
+-wafl.net 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain GlobalSign_Domain_Validation_CA
+-wager2.sbgglobal.com 0x8000ffff undefined undefined RapidSSL_CA
+-walkit.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GlobalSign_Extended_Validation_CA_-_SHA256
+-warminsko-mazurskie.regiopedia.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Certum_Level_II_CA
+-webmail.ait.ac.th 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer ait.asia
+-webmail.cca.edu 0x8000ffff undefined undefined RapidSSL_CA
+-webmail.iau-ahar.ac.ir 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer webmail.iau-ahar.ac.ir
+-webmail.uma.ac.ir 0x8000ffff undefined undefined Mohaqeq_Ardabili_Univ._WebAdmin_CA
+-wfdd.org 0x805a1ff6 SecurityError sec_error_bad_signature Network_Solutions_Certificate_Authority
+-wielkopolskie.regiopedia.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Certum_Level_II_CA
+-wiki.soholaunch.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-wiki.spieleck.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-win.7m.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer 7mCA
+-wipfilms.net 0x8000ffff undefined undefined 195.43.82.222
+-wireless.shopnbc.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain COMODO_High-Assurance_Secure_Server_CA
+-wittlebee.com 0x804b000d undefined undefined
+-wonderwall.msn.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate MSIT_Machine_Auth_CA_2
+-wordrio.com 0x8000ffff undefined undefined
+-wssb3.szsi.gov.cn 0x8000ffff undefined undefined
+-www.0595bbs.cn 0x804b0014 NetworkError pr_connect_reset_error GeoTrust_Extended_Validation_SSL_CA_-
+-www.111.com.cn 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain VeriSign_Class_3_International_Server_CA
+-www.33i.co.jp 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain GeoTrust_DV_SSL_CA_-_G4
+-www.4blackyouth.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.96-10.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.abilie.com 0x805a1ff4 SecurityRevokedCertificateError sec_error_revoked_certificate
+-www.acquaintable.com 0x804b000d undefined undefined
+-www.acronymfinder.com 0x804b0014 NetworkError pr_connect_reset_error
+-www.aerosvit.com 0x804b000d undefined undefined
+-www.agigen.se 0x804b000d undefined undefined
+-www.ahidistribution.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer wtfs2213.aus.us.siteprotect.com
+-www.airizu.com 0x8000ffff undefined undefined mail.airizu.com
+-www.airservicesaustralia.com 0x804b0014 undefined undefined Symantec_Class_3_Secure_Server_CA
+-www.airsoftcanada.com 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate StartCom_Class_1_Primary_Intermediate_Server
+-www.akat.dk 0x805a1ff7 SecurityError sec_error_bad_der
+-www.akmos.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_DV_SSL_CA
+-www.alexanderhiggins.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Starfield_Secure_Certificate_Authority_-_G2
+-www.alibabahost.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_RSA_Domain_Validation_Secure_Server
+-www.alibabike.com 0x8000ffff undefined undefined thawte_EV_SSL_CA_-_G3
+-www.allancer.com 0x8000ffff undefined undefined
+-www.allprosoftware.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer VeriSign_Class_3_Extended_Validation_SSL
+-www.amcorrpjobs.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain GeoTrust_DV_SSL_CA_-_G4
+-www.analytics.bmocm.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Entrust_Certification_Authority_-_L1K
+-www.anb.com.sa 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer thawte_SHA256_SSL_CA
+-www.angolaxyami.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate sni.dreamhost.com
+-www.anheng.com.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer CA
+-www.anitan.tv 0x8000ffff undefined undefined RapidSSL_SHA256_CA_-_G3
+-www.app.myseoapp.de 0x8000ffff undefined undefined COMODO_RSA_Organization_Validation_Secure_Server
+-www.architektura.put.poznan.pl 0x8000ffff undefined undefined TERENA_SSL_CA
+-www.arthur.gr.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_Premium_Server_CA
+-www.aspirant.vstu.edu.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Snake_Oil_CA
+-www.atfbank.kz 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.atlantichockey.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.awbox.de 0x8000ffff undefined undefined thawte_DV_SSL_CA_-_G2
+-www.b2bmarketing.net 0x804b000d undefined undefined
+-www.babyjays.com 0x804b000d undefined undefined Starfield_Secure_Certificate_Authority_-_G2
+-www.bagking.com 0x8000ffff undefined undefined Symantec_Class_3_Secure_Server_CA
+-www.ballarat.edu.au 0x8000ffff undefined undefined AusCERT_Server_CA
+-www.bamarang.co.uk 0x805a1ff4 SecurityRevokedCertificateError sec_error_revoked_certificate
+-www.bancoconsorcio.cl 0x8000ffff undefined undefined VeriSign_Class_3_Secure_Server_CA
+-www.bancoripley.com.pe 0x8000ffff undefined undefined
+-www.bandworm.de 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain GeoTrust_DV_SSL_CA
+-www.bassanglermag.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain EssentialSSL_CA
+-www.battdepot.ca 0x8000ffff undefined undefined Thawte_DV_SSL_CA
+-www.battdepot.com 0x8000ffff undefined undefined Thawte_DV_SSL_CA
+-www.bdonline.co.uk 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate GeoTrust_SSL_CA_-_G2
+-www.bdsmdiscountstore.com 0x804b000d undefined undefined COMODO_Extended_Validation_Secure_Server_CA
+-www.beauty-navi.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.behigh.org 0x804b0014 undefined undefined StartCom_Class_1_Primary_Intermediate_Server
+-www.best.tuke.sk 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain TERENA_SSL_CA
+-www.best1-host.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Snake_Oil_CA
+-www.bestcolouredcontacts.co.uk 0x8000ffff undefined undefined COMODO_RSA_Organization_Validation_Secure_Server
+-www.bestmall.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.bestrentsnyc.com 0x8000ffff undefined undefined
+-www.bfmdev1.com 0x8000ffff undefined undefined bfmdev1.com
+-www.bg.umlub.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Certum_Level_II_CA
+-www.bgfl.org 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate GlobalSign_Organization_Validation_CA
+-www.bidshop.com.br 0x8000ffff undefined undefined
+-www.billingboss.com 0x804b000d undefined undefined
+-www.bills.com 0x8000ffff undefined undefined RapidSSL_SHA256_CA_-_G3
+-www.bip.umww.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Certum_Level_II_CA
+-www.bis.put.poznan.pl 0x8000ffff undefined undefined TERENA_SSL_CA
+-www.biwebco.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer StartCom_Class_2_Primary_Intermediate_Server
+-www.blackeyedpeas.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.blackstoneaudio.com 0x8000ffff undefined undefined
+-www.blogads.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer thawte_DV_SSL_CA_-_G2
+-www.bmgev.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer thawte_DV_SSL_CA_-_G2
+-www.boconline.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.booc.co.za 0x8000ffff undefined undefined PositiveSSL_CA_2
+-www.book-your-driving-test.co.uk 0x8000ffff undefined undefined
+-www.bookstudio.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer www.bookstudio.com
+-www.boribori.co.kr 0x8000ffff undefined undefined
+-www.bradescofinanciamentos.com.br 0x8000ffff undefined undefined
+-www.brigade97kat.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Snake_Oil_CA
+-www.broderbund.com 0x8000ffff undefined undefined GeoTrust_DV_SSL_CA
+-www.brokensaints.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.bsr.org 0x8000ffff undefined undefined
+-www.buildstore.co.uk 0x8000ffff undefined undefined
+-www.bulkemailtools.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.butterflymarketing.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.buynowornever.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certificate_Authority_-
+-www.caesarscasino.com 0x804b0014 NetworkError pr_connect_reset_error Network_Solutions_Certificate_Authority
+-www.californiacozy.com 0x805a1ff7 SecurityError sec_error_bad_der
+-www.camden.rutgers.edu 0x8000ffff undefined undefined InCommon_RSA_Server_CA
+-www.camerahot.com.br 0x804b000d undefined undefined
+-www.cankaya.edu.tr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer T‹RKTRUST_Elektronik_Sunucu_Sertifikas1_Hizmetleri
+-www.capcrossfit.com 0x804b000d undefined undefined
+-www.capitaltaxltd.com 0x8000ffff undefined undefined Starfield_Secure_Certification_Authority
+-www.caroto.gr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Parallels_Panel
+-www.cass.city.ac.uk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer TERENA_SSL_CA_2
+-www.casting.fr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer localhost_CA
+-www.cat-5-cable-company.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.cavesa.ch 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Snake_Oil_CA
+-www.cclassiphosting.com 0x804b001e undefined undefined
+-www.ccpnet.poste.tn 0x8000ffff undefined undefined Agence_Nationale_de_Certification_Electronique
+-www.cdrecordingsoftware.com 0x8000ffff undefined undefined
+-www.chama.ne.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.chaosmen.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.charaletter.com 0x804b000d undefined undefined
+-www.charma.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certificate_Authority_-
+-www.chinaewindow.net 0x804b000d undefined undefined
+-www.chrismartenson.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.cias.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain EssentialSSL_CA
+-www.cicloceap.com.br 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain RapidSSL_SHA256_CA_-_G3
+-www.cienciatk.csic.es 0x805a1ff7 SecurityError sec_error_bad_der
+-www.circuitcity.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Symantec_Class_3_Secure_Server_CA
+-www.cjadvertising.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Network_Solutions_Certificate_Authority
+-www.clevercomm.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.clickedeals.com 0x8000ffff undefined undefined thawte_DV_SSL_CA_-_G2
+-www.clickfragrance.co.uk 0x8000ffff undefined undefined
+-www.clickshappen.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.cocinayvino.net 0x8000ffff undefined undefined GlobalSign_Domain_Validation_CA_-_G2
+-www.codeofthenatural.com 0x805a1ff7 SecurityError sec_error_bad_der
+-www.cometd.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.comprediretodachina.com.br 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_High-Assurance_Secure_Server_CA
+-www.compujob.com.br 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer AlphaSSL_CA_-_SHA256_-_G2
+-www.computers4sure.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer VeriSign_Class_3_Secure_Server_CA
+-www.concentric.co.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer VeriSign_Class_3_Secure_Server_CA
+-www.cordeals.nl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_High-Assurance_Secure_Server_CA
+-www.cornerhardware.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certificate_Authority_-
+-www.cotmattressfactory.co.uk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_RSA_Domain_Validation_Secure_Server
+-www.coudal.com 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate Alpha_CA
+-www.cpk.put.poznan.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain TERENA_SSL_CA
+-www.cqgp.gov.cn 0x8000ffff undefined undefined
+-www.crazymonkeygames.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.crecla.jp 0x8000ffff undefined undefined
+-www.crmoncall.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Go_Daddy_Secure_Certification_Authority
+-www.ctio.noao.edu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer ctio.noao.edu_CA
+-www.cts.tv 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer SGTRUST_CERTIFICATION_AUTHORITY
+-www.culver.org 0x8000ffff undefined undefined
+-www.cut.ac.za 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer wordpress.cut.ac.za
+-www.cyberteams.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_Server_CA
+-www.dannylipford.com 0x8000ffff undefined undefined
+-www.daysofknights.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.dbs.ie 0x804b000d undefined undefined
+-www.dealcloud.co.uk 0x804b000d undefined undefined
+-www.deepmix.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.defensenutrition.com 0x8000ffff undefined undefined GeoTrust_DV_SSL_CA
+-www.deodeo.co.jp 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate
+-www.designerclothing.com 0x804b000d undefined undefined
+-www.detur.fi 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.detur.no 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.detur.se 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.dialadeliverykenya.co.ke 0x8000ffff undefined undefined server.e-kb.net
+-www.diaridegirona.cat 0x804b000d undefined undefined Editorial_Prensa_Iberica_CA
+-www.diariodeibiza.es 0x804b000d undefined undefined Editorial_Prensa_Iberica_CA
+-www.diariodemallorca.es 0x804b000d undefined undefined Editorial_Prensa_Iberica_CA
+-www.diarioinformacion.com 0x804b000d undefined undefined Editorial_Prensa_Iberica_CA
+-www.diblogotus.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer www.diblogotus.com
+-www.digitalvalley.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
+-www.diskfaktory.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_Premium_Server_CA
+-www.djoss.tv 0x8000ffff undefined undefined RapidSSL_CA
+-www.dodeweb.com 0x804b0014 NetworkError pr_connect_reset_error
+-www.dopesmokingdonkeys.com 0x804b000d undefined undefined
+-www.dreamisland.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer localhost_CA
+-www.drj.com 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
+-www.dubaifestivalcity.com 0x804b0047 NetworkInterruptError pr_end_of_file_error
+-www.durangomountainresort.com 0x8000ffff undefined undefined
+-www.e-fudou.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain GlobalSign_Domain_Validation_CA_-_SHA256
+-www.e-planning.net 0x805a3ffd SecurityError mozilla_pkix_error_v1_cert_used_as_ca Starfield_Secure_Certification_Authority
+-www.e-sacombank.com.vn 0x8000ffff undefined undefined VeriSign_Class_3_Extended_Validation_SSL
+-www.eas.com 0x8000ffff undefined undefined GeoTrust_DV_SSL_CA_-_G4
+-www.easternmiles.com 0x8000ffff undefined undefined
+-www.eazycollect.co.uk 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate GlobalSign_Organization_Validation_CA
+-www.ecigarettesusa.com 0x8000ffff undefined undefined Trustwave_Organization_Validation_CA,_Level_2
+-www.ecigsunlimited.com 0x8000ffff undefined undefined
+-www.econ.ucsb.edu 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain InCommon_Server_CA
+-www.edition01.com 0x804b000d undefined undefined
+-www.edomexico.gob.mx 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate VeriSign_Class_3_Extended_Validation_SSL
+-www.egoist-inc.com 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate
+-www.egpal.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate VeriSign_Class_3_Extended_Validation_SSL
+-www.ehbox.com 0x804b000d undefined undefined
+-www.einblick.dgb.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_SSL_CA
+-www.eisbaeren.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Go_Daddy_Secure_Certification_Authority
+-www.eleadstracker.com 0x8000ffff undefined undefined
+-www.electran.org 0x804b000d undefined undefined
+-www.electroworld.gr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer VeriSign_Class_3_Extended_Validation_SSL
+-www.elgar.govt.nz 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
+-www.eliteweb.cc 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.elmwoodmagic.com 0x8000ffff undefined undefined Gandi_Standard_SSL_CA_2
+-www.elsevier.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Trustwave_Organization_Validation_CA,_Level_2
+-www.emailaprisoner.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer AlphaSSL_CA_-_SHA256_-_G2
+-www.emergency.msstate.edu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer InCommon_Server_CA
+-www.en.awf.gda.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.en4u.co.kr 0x8000ffff undefined undefined RapidSSL_CA
+-www.ep.io 0x804b000d undefined undefined
+-www.equipement-automobile.eu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Snake_Oil_CA
+-www.equitablegas.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Network_Solutions_DV_Server_CA
+-www.eshopbahamas.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer VeriSign_Class_3_Extended_Validation_SSL
+-www.espoma.com 0x8000ffff undefined undefined
+-www.essayforum.com 0x8000ffff undefined undefined host.essayforum.com
+-www.estrellaroja.com.mx 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer VeriSign_Class_3_Extended_Validation_SSL
+-www.et.gr 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate
+-www.exphase.com 0x8000ffff undefined undefined COMODO_RSA_Domain_Validation_Secure_Server
+-www.extension.ucsb.edu 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain GeoTrust_SSL_CA
+-www.extremnews.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain StartCom_Class_1_Primary_Intermediate_Server
+-www.ezcontrol.de 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate RapidSSL_CA
+-www.faceofmankind.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate COMODO_RSA_Domain_Validation_Secure_Server
+-www.fakultaet1.fh-hannover.de 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain HS_Hannover_CA_-_G01
+-www.fakultaet2.fh-hannover.de 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain HS_Hannover_CA_-_G01
+-www.fantasiawear.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Starfield_Secure_Certification_Authority
+-www.fbr.gov.pk 0x804b0014 NetworkError pr_connect_reset_error
+-www.ferrere.com 0x804b000d undefined undefined
+-www.ferrycheap.com 0x8000ffff undefined undefined
+-www.fhwa.dot.gov 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain VeriSign_Class_3_International_Server_CA
+-www.fiat.co.uk 0x8000ffff undefined undefined GeoTrust_SSL_CA
+-www.filamnation.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certificate_Authority_-
+-www.fiona-cooper.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Thawte_DV_SSL_CA
+-www.firstflight.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Cyberoam_SSL_CA_C095000061
+-www.firstplacebank.com 0x8000ffff undefined undefined
+-www.firstplacebankecomm.net 0x8000ffff undefined undefined
+-www.fishbase.us 0x8000ffff undefined undefined
+-www.fitnessblowout.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.fla-keys.com 0x8000ffff undefined undefined
+-www.fmscout.com 0x805a2fe7 SecurityError ssl_error_rx_record_too_long COMODO_ECC_Domain_Validation_Secure_Server
+-www.folgers.com 0x8000ffff undefined undefined Symantec_Class_3_EV_SSL_CA
+-www.formulaformiracles.net 0x8000ffff undefined undefined
+-www.foundanimals.org 0x805a2ffe SecurityError ssl_error_no_cypher_overlap Go_Daddy_Secure_Certificate_Authority_-
+-www.foursquarestore.com 0x804b001e undefined undefined
+-www.fq.uh.cu 0x8000ffff undefined undefined
+-www.fullbloomhydroponics.com 0x8000ffff undefined undefined host2.adventurebound.com
+-www.funeralhomes.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer funeralhomes.com
+-www.furb.br 0x8000ffff undefined undefined Entrust_Certification_Authority_-_L1K
+-www.furniture-collection.co.uk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GlobalSign_Domain_Validation_CA_-_SHA256
+-www.galileo.ronson.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Certum_Level_IV_CA
+-www.geishatokyo.com 0x804b000d undefined undefined
+-www.getperx.com 0x8000ffff undefined undefined COMODO_SSL_CA
+-www.gifttrap.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.gigatorrents.ws 0x804b000d undefined undefined
+-www.global-laptop-batteries.com 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
+-www.goaruna.com 0x8000ffff undefined undefined RapidSSL_CA
+-www.goldendeals.ro 0x8000ffff undefined undefined
+-www.gomadrid.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Temp_Certificate!
+-www.gonetready.com 0x8000ffff undefined undefined
+-www.gopetsamerica.com 0x8000ffff undefined undefined
+-www.gost.ru 0x805a2ff1 SecurityError ssl_error_bad_mac_read KCKCompany
+-www.gout.com 0x8000ffff undefined undefined
+-www.gptengine.com 0x8000ffff undefined undefined RapidSSL_CA
+-www.grad.ucalgary.ca 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain COMODO_High-Assurance_Secure_Server_CA
+-www.grafighters.com 0x8000ffff undefined undefined
+-www.granatum.com.br 0x8000ffff undefined undefined
+-www.greatamericanphotocontests.com 0x8000ffff undefined undefined
+-www.greatlance.com 0x8000ffff undefined undefined
+-www.greenbang.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certification_Authority
+-www.greencine.com 0x8000ffff undefined undefined Starfield_Secure_Certificate_Authority_-_G2
+-www.gressive.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GlobalSign_Domain_Validation_CA_-_SHA256
+-www.guardia.mil.ve 0x8000ffff undefined undefined www.guardia.mil.ve
+-www.gwa.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.gwstuff.org 0x8000ffff undefined undefined COMODO_RSA_Domain_Validation_Secure_Server
+-www.habbo.se 0x8000ffff undefined undefined thawte_SSL_CA_-_G2
+-www.hakodate.ne.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.halfclub.com 0x8000ffff undefined undefined Symantec_Class_3_Secure_Server_CA
+-www.hancocks-paducah.com 0x8000ffff undefined undefined
+-www.hartrans.gov.in 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate
+-www.hbcuconnect.com 0x8000ffff undefined undefined RapidSSL_CA
+-www.hbd.nl 0x804b0014 NetworkError pr_connect_reset_error
+-www.hcl-axon.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate GeoTrust_SSL_CA
+-www.hd.ca 0x8000ffff undefined undefined
+-www.healthiervending.com 0x804b0047 NetworkInterruptError pr_end_of_file_error
+-www.healthymagination.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Trusted_Secure_Certificate_Authority
+-www.hearingdirect.com 0x8000ffff undefined undefined
+-www.hemenevinde.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain COMODO_Extended_Validation_Secure_Server_CA
+-www.hemrid.com 0x8000ffff undefined undefined Starfield_Secure_Certificate_Authority_-_G2
+-www.heptahost.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.hermes.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
+-www.hillas.com 0x8000ffff undefined undefined
+-www.hispaweb.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.hksh.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer cms.hksh.com
+-www.home-entertainment.toshiba.co.uk 0x804b000d undefined undefined
+-www.hotelesmexico.com 0x8000ffff undefined undefined Thawte_DV_SSL_CA
+-www.hx168.com.cn 0x8000ffff undefined undefined Symantec_Class_3_EV_SSL_SGC
+-www.iclick.com 0x8000ffff undefined undefined
+-www.iconoculture.com 0x8000ffff undefined undefined Trusted_Secure_Certificate_Authority
+-www.idtgv.com 0x8000ffff undefined undefined
+-www.ifal.uh.cu 0x8000ffff undefined undefined CA_UH
+-www.ift.edu.mo 0x8000ffff undefined undefined
+-www.igxhost.com 0x8000ffff undefined undefined RapidSSL_CA
+-www.ihelpyou.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_Server_CA
+-www.ilbraccoitaliano.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer ilbraccoitaliano.net
+-www.imeetzu.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certification_Authority
+-www.imsuperelite.com 0x804b000d undefined undefined
+-www.imzalagonder.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer e-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi
+-www.inforge.net 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain COMODO_RSA_Domain_Validation_Secure_Server
+-www.instantinvestor.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.intelligencecareers.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer RapidSSL_CA
+-www.internetarmory.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.intuniv.com 0x804b0014 NetworkError pr_connect_reset_error Go_Daddy_Secure_Certificate_Authority_-
+-www.ipad2books.com 0x8000ffff undefined undefined host.ipad2books.com
+-www.iparkiet.pl 0x8000ffff undefined undefined RapidSSL_CA
+-www.iprimus.com.au 0x804b0014 NetworkError pr_connect_reset_error
+-www.itechline.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Starfield_Secure_Certificate_Authority_-_G2
+-www.itmnetworks.com.br 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_SSL_CA_-_G2
+-www.ito-ya.co.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer VeriSign_Class_3_Secure_Server_CA
+-www.itri.org.tw 0x804b0014 NetworkError pr_connect_reset_error TWCA_Secure_Certification_Authority
+-www.itsjustjewelry.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer DigiCert_SHA2_High_Assurance_Server_CA
+-www.ivf.com 0x805a1ff6 SecurityError sec_error_bad_signature Network_Solutions_Certificate_Authority
+-www.ivisa.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer StartCom_Class_1_Primary_Intermediate_Server
+-www.iwantcollectibles.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.j-hobby.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
+-www.jabtac.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certification_Authority
+-www.jagat.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_SSL_CA
+-www.jamit.com.au 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer PositiveSSL_CA
+-www.janmedia.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_SSL_CA
+-www.jinjiang.com 0x8000ffff undefined undefined VeriSign_Class_3_International_Server_CA
+-www.jongordon.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.joomlajunkie.com 0x8000ffff undefined undefined host.themebutler.com
+-www.joox.com.br 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain COMODO_RSA_Organization_Validation_Secure_Server
+-www.jorf.co.jp 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate GlobalSign_Domain_Validation_CA_-_G2
+-www.jottit.com 0x8000ffff undefined undefined RapidSSL_CA
+-www.joyeriacardell.com 0x8000ffff undefined undefined
+-www.jpps.cyc.edu.tw 0x8000ffff undefined undefined TWCA_Secure_Certification_Authority
+-www.jumpbox.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certification_Authority
+-www.just4design.co.uk 0x8000ffff undefined undefined
+-www.jusuhoroskopai.lt 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Starfield_Secure_Certificate_Authority_-_G2
+-www.juvepoland.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer juvepoland.com
+-www.kanda-office.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain RapidSSL_CA
+-www.kashbet.com 0x8000ffff undefined undefined
+-www.kenmuir.co.uk 0x8000ffff undefined undefined Parallels_Panel
+-www.kiditroc.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Snake_Oil_CA
+-www.killerglass.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Go_Daddy_Secure_Certificate_Authority_-
+-www.kinerja.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer ns3.kinerjahosting.com
+-www.kino-mir.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer www.kino-mir.ru
+-www.kino.com 0x8000ffff undefined undefined Thawte_DV_SSL_CA
+-www.kis.uni-kl.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer RHRK-CA_-_G02
+-www.kita-colle.com 0x804b000d undefined undefined
+-www.kladilnica.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.knittersreview.com 0x805a1ff7 SecurityError sec_error_bad_der
+-www.ksi.is 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate
+-www.lacensebeef.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Go_Daddy_Secure_Certification_Authority
+-www.lagrange-vacances.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.landure.fr 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain StartCom_Class_2_Primary_Intermediate_Server
+-www.laopinion.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-www.laopinioncoruna.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-www.laopiniondemalaga.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-www.laopiniondemurcia.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-www.laopiniondezamora.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-www.laprovincia.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-www.latsportswear.com 0x804b0047 NetworkInterruptError pr_end_of_file_error
+-www.laurensilva.com 0x8000ffff undefined undefined COMODO_RSA_Domain_Validation_Secure_Server
+-www.leamancomputing.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer HSphere
+-www.legroom.net 0x8000ffff undefined undefined LegRoom.net_CA
+-www.levante-emv.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Editorial_Prensa_Iberica_CA
+-www.library.vstu.edu.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Snake_Oil_CA
+-www.limata.com 0x8000ffff undefined undefined
+-www.limo.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.linqia.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Go_Daddy_Secure_Certificate_Authority_-
+-www.live.com.eg 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer ssd001.inhosting.com.br
+-www.livinglifefully.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.livingsocial.co.id 0x8000ffff undefined undefined DigiCert_High_Assurance_CA-3
+-www.lonelyway.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.longtermcareinsurancetree.com 0x8000ffff undefined undefined RapidSSL_CA
+-www.luciennes.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer StartCom_Class_1_Primary_Intermediate_Server
+-www.luckymanonline.com 0x8000ffff undefined undefined
+-www.lvccld.org 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Go_Daddy_Secure_Certificate_Authority_-
+-www.lytogame.com 0x8000ffff undefined undefined
+-www.magna.isa.gov.il 0x8000ffff undefined undefined
+-www.maherterminals.com 0x804b000d undefined undefined
+-www.mail.kz 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_Test_CA_Root
+-www.mallexpress.cl 0x8000ffff undefined undefined
+-www.mallorca-today.de 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate COMODO_Extended_Validation_Secure_Server_CA
+-www.mallorcazeitung.es 0x805a1ff7 SecurityError sec_error_bad_der
+-www.mamypoko.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_SSL_CA_-_G2
+-www.maruchan.co.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_SSL_CA_-_G2
+-www.masterlock.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_SSL_CA_-_G2
+-www.mattersofsize.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.maxispor.net 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate StartCom_Class_1_Primary_Intermediate_Server
+-www.meadbrown.com 0x8000ffff undefined undefined COMODO_RSA_Organization_Validation_Secure_Server
+-www.mediajmp.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.medienberater-werden.de 0x8000ffff undefined undefined
+-www.meijergroceryexpress.com 0x8000ffff undefined undefined
+-www.metlife.co.in 0x8000ffff undefined undefined VeriSign_Class_3_Extended_Validation_SSL
+-www.metricfire.com 0x804b000d undefined undefined
+-www.mfa.gov.cy 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Go_Daddy_Secure_Certificate_Authority_-
+-www.mgoon.com 0x8000ffff undefined undefined RapidSSL_CA
+-www.mid-east.com 0x804b000d undefined undefined
+-www.mijntelegraaf.nl 0x8000ffff undefined undefined
+-www.minimoy.com 0x8000ffff undefined undefined
+-www.mlmbusinessblueprint.com 0x8000ffff undefined undefined RapidSSL_CA
+-www.mobsterboss.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.monipla.jp 0x8000ffff undefined undefined
+-www.monistat.com 0x8000ffff undefined undefined
+-www.montesanos.com 0x8000ffff undefined undefined GeoTrust_DV_SSL_CA
+-www.mortons.hu 0x804b0014 NetworkError pr_connect_reset_error
+-www.mosgid.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Snake_Oil_CA
+-www.mp3passion.net 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain GeoTrust_Extended_Validation_SSL_CA_-
+-www.mpreviews.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certification_Authority
+-www.mrinetwork.com 0x8000ffff undefined undefined
+-www.mtsindia.in 0x8000ffff undefined undefined
+-www.myallianz.com.mx 0x805a2ff7 SecurityUnsupportedTLSVersionError ssl_error_unsupported_version
+-www.mybirthcare.com 0x804b0014 NetworkError pr_connect_reset_error
+-www.mycityexplorer.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.mydickssportinggoods.com 0x8000ffff undefined undefined Symantec_Class_3_EV_SSL_CA
+-www.mythtrips.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.nacoonline.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer 118533
+-www.national.com 0x804b000d undefined undefined
+-www.naturalis.ronson.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Certum_Level_IV_CA
+-www.naughtyalysha.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Go_Daddy_Secure_Certification_Authority
+-www.nautica.ronson.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Certum_Level_IV_CA
+-www.naxpgaming.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer 118533
+-www.ncb.coop 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer thawte_DV_SSL_CA_-_G2
+-www.ncc-volga.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_High-Assurance_Secure_Server_CA
+-www.ncl.edu.tw 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.ncyu.edu.tw 0x8000ffff undefined undefined TWCA_Secure_Certification_Authority
+-www.neiron.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer StartCom_Class_2_Primary_Intermediate_Server
+-www.nektra.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer PositiveSSL_CA_2
+-www.neosport.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Certum_Level_II_CA
+-www.neotel.co.za 0x804b0047 NetworkInterruptError pr_end_of_file_error
+-www.netdesignhost.com 0x8000ffff undefined undefined
+-www.netwellness.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer InCommon_RSA_Server_CA
+-www.newbalancetoronto.ca 0x804b0014 NetworkError pr_connect_reset_error
+-www.newegg.com.cn 0x8000ffff undefined undefined RapidSSL_CA
+-www.newlymaid.com 0x804b0014 NetworkError pr_connect_reset_error
+-www.newnetmail.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer 118533
+-www.news-on.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.newsmth.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.newyorkironworks.com 0x8000ffff undefined undefined
+-www.nexenta.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_High_Assurance_Secure_Server_CA
+-www.nexicore.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Entrust_Certification_Authority_-_L1C
+-www.nexum.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GlobalSign_Domain_Validation_CA
+-www.nexus.org.uk 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain localhost.localdomain
+-www.ngo.kujawsko-pomorskie.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Certum_Organization_Validation_CA_SHA2
+-www.nic.mx 0x8000ffff undefined undefined
+-www.noa.gr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer TERENA_SSL_CA_2
+-www.nonviolentpeaceforce.org 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain COMODO_SSL_CA
+-www.nord.dgb.de 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Thawte_SSL_CA
+-www.notebookwebsite.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate PositiveSSL_CA
+-www.notowania.allianz.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Thawte_SSL_CA
+-www.npa2009.org 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Gandi_Standard_SSL_CA
+-www.nrf.eu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.nri.co.jp 0x8000ffff undefined undefined
+-www.nttpc.ne.jp 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate GlobalSign_Domain_Validation_CA
+-www.nurserymanagementonline.com 0x8000ffff undefined undefined
+-www.nutrex.com 0x8000ffff undefined undefined
+-www.nysm.nysed.gov 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Symantec_Class_3_Secure_Server_CA
+-www.obchodobchodov.sk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer nameserver.sk
+-www.oetker.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain GeoTrust_SSL_CA_-_G3
+-www.oixi.jp 0x804b000d undefined undefined
+-www.olume.com 0x804b000d undefined undefined
+-www.onepiece-ten.com 0x8000ffff undefined undefined
+-www.ongcreports.net 0x8000ffff undefined undefined Symantec_Class_3_Secure_Server_CA
+-www.orangeaccessories.co.uk 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Symantec_Class_3_EV_SSL_CA
+-www.orderrogers.ca 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer www.orderrogers.ca
+-www.orientamento.unina2.it 0x8000ffff undefined undefined TERENA_SSL_CA_2
+-www.osrodki.put.poznan.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain TERENA_SSL_CA
+-www.outdous.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Symantec_Class_3_Secure_Server_CA
+-www.ozfreeonline.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.p0c.cc 0x804b000d undefined undefined
+-www.panamacompra.gob.pa 0x8000ffff undefined undefined DigiCert_High_Assurance_EV_CA-1
+-www.panek.eu 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain AlphaSSL_CA_-_G2
+-www.pasgiannina.gr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.patriotoutfitters.com 0x804b000d undefined undefined
+-www.payu.cz 0x804b000d undefined undefined
+-www.people.virginia.edu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.pharma-iq.com 0x804b0014 NetworkError pr_connect_reset_error
+-www.phpcipher.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.planet-elektronik.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Thawte_DV_SSL_CA
+-www.planetashop.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer www.planetashop.ru
+-www.plarenovat.cat 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Symantec_Class_3_Secure_Server_CA
+-www.platforma.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Certum_Level_IV_CA
+-www.playinstar.com 0x804b000d undefined undefined
+-www.playntrade.com 0x8000ffff undefined undefined
+-www.plsweb.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer PositiveSSL_CA
+-www.pokerdeal.nl 0x8000ffff undefined undefined COMODO_RSA_Domain_Validation_Secure_Server
+-www.pokershop.nl 0x8000ffff undefined undefined COMODO_RSA_Domain_Validation_Secure_Server
+-www.polizei.sachsen-anhalt.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GlobalSign_Extended_Validation_CA_-_SHA256
+-www.pompa.co.il 0x804b0014 NetworkError pr_connect_reset_error
+-www.popmedia.co.nz 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.poppin.com 0x8000ffff undefined undefined
+-www.premiofoods.com 0x8000ffff undefined undefined GeoTrust_SSL_CA_-_G3
+-www.premios-cine.com 0x804b000d undefined undefined
+-www.prestigetechnologies.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_Extended_Validation_SSL_CA_-
+-www.prisonstruggle.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.processexcellencenetwork.com 0x8000ffff undefined undefined
+-www.prodottiunicef.it 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer VeriSign_Class_3_Extended_Validation_SSL
+-www.professionalgambler.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer www.professionalgambler.com
+-www.professionalsoldiers.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.publikationen.h-da.de 0x8000ffff undefined undefined Hochschule_Darmstadt
+-www.puremaison.fr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Snake_Oil_CA
+-www.purwater.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Network_Solutions_DV_Server_CA_2
+-www.puzzle.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Snake_Oil_CA
+-www.qiar.com.br 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain EssentialSSL_CA
+-www.qpublic.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.qualityservice.com.mx 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.radiolabs.com 0x8000ffff undefined undefined COMODO_SSL_CA
+-www.railtourismindia.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_Extended_Validation_SSL_CA_-
+-www.rdln.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.reembolsofederal.com 0x8000ffff undefined undefined RapidSSL_SHA256_CA_-_G3
+-www.resellercluster.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer www.resellercluster.com
+-www.retronaut.co 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer 118533
+-www.ridepros.com 0x8000ffff undefined undefined PositiveSSL_CA_2
+-www.rocbattle.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer beat.beatwebs1.com
+-www.roommatespeelandstick.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain COMODO_Extended_Validation_Secure_Server_CA
+-www.roppongiartnight.com 0x8000ffff undefined undefined
+-www.routhost.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.royalcruisematrix.com 0x8000ffff undefined undefined
+-www.rsrtcors.co.in 0x8000ffff undefined undefined
+-www.rt.com.br 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain GeoTrust_SSL_CA
+-www.ruelsoft.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer ruelsoft.org
+-www.rukazan.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.run2sport.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain thawte_Extended_Validation_SSL_CA
+-www.russianbare.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.rythercamera.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate COMODO_Extended_Validation_Secure_Server_CA
+-www.sadabandeira.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Go_Daddy_Secure_Certificate_Authority_-
+-www.saleschase.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.salescrunch.com 0x804b000d undefined undefined
+-www.scd.inpl-nancy.fr 0x8000ffff undefined undefined TERENA_SSL_CA
+-www.schueler.cc 0x8000ffff undefined undefined
+-www.scilor.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer PositiveSSL_CA
+-www.sclivelearningcenter.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.scrippscollege.edu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer DigiCert_Secure_Server_CA
+-www.secure-payment-solutions.com 0x8000ffff undefined undefined
+-www.securitycamerasdirect.com 0x805a2fe7 SecurityError ssl_error_rx_record_too_long Go_Daddy_Secure_Certificate_Authority_-
+-www.seda.org.za 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Entrust_Certification_Authority_-_L1C
+-www.seeber-immobilien.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer web-crossing_OEG
+-www.sensualsteals.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer 118533
+-www.serious-partners.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.set.rn.gov.br 0x805a1ff7 SecurityError sec_error_bad_der
+-www.sewingworld.co.uk 0x8000ffff undefined undefined
+-www.sfi.org.tw 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer TaiCA_Secure_CA
+-www.shangmail.com 0x8000ffff undefined undefined
+-www.shdf.gov.cn 0x804b0047 NetworkInterruptError pr_end_of_file_error
+-www.shenghuojia.com 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
+-www.shinhansecret.com 0x804b000d undefined undefined
+-www.shmec.gov.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer www.shmec.gov.cn
+-www.shoebiz.com.br 0x8000ffff undefined undefined
+-www.shoeperman.com 0x804b000d undefined undefined
+-www.shopperhive.co.uk 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer 118533
+-www.showitfast.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.shuame.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain
+-www.sig.ufla.br 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain GlobalSign_Organization_Validation_CA_-_G2
+-www.simplyaccounting.com 0x804b000d undefined undefined
+-www.sip.cnsaas.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain RapidSSL_CA
+-www.skateshop.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Certum_Level_II_CA
+-www.skitown.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate COMODO_RSA_Organization_Validation_Secure_Server
+-www.sklepkati.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer nazwaSSL
+-www.skyboximaging.com 0x805a1ff7 SecurityError sec_error_bad_der
+-www.slaskie.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Certum_Level_IV_CA
+-www.slimstacticalguns.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer 118533
+-www.smart-c.jp 0x8000ffff undefined undefined Cybertrust_Japan_Public_CA_G3
+-www.snaps.co.kr 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Thawte_DV_SSL_CA
+-www.solidarnosc.org.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer www.solidarnosc.org.pl
+-www.soovle.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.soundspectrum.com 0x8000ffff undefined undefined VeriSign_Class_3_Secure_Server_CA
+-www.spanndeckenzubehoer.de 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain PositiveSSL_CA_2
+-www.spieleck.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.spillape.no 0x8000ffff undefined undefined
+-www.sport2000rent.at 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate VeriSign_Class_3_Extended_Validation_SSL
+-www.sprayfoam.com 0x804b0014 NetworkError pr_connect_reset_error
+-www.square-enix-shop.com 0x804b000d undefined undefined
+-www.standard.org.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer SIST_CA
+-www.staples.be 0x805a1f76 SecurityError sec_error_reused_issuer_and_serial
+-www.star-magazine.co.uk 0x8000ffff undefined undefined RapidSSL_SHA256_CA_-_G3
+-www.starscape.co.uk 0x8000ffff undefined undefined Alpha_CA
+-www.stationsportsconnection.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate VeriSign_Class_3_Extended_Validation_SSL
+-www.stonepages.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.subdreamer.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.superclick.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer AWS_Managed_Device_CA_G2
+-www.superdeporte.es 0x805a1ff7 SecurityError sec_error_bad_der
+-www.supportindeed.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain RapidSSL_CA
+-www.surveyusa.com 0x804b000d undefined undefined
+-www.sustainability.fcps.net 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain COMODO_RSA_Organization_Validation_Secure_Server
+-www.swatchandbeyond.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.swedishhasbeens.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain DigiCert_Secure_Server_CA
+-www.syndicatekahuna.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer RapidSSL_CA
+-www.synergentcorp.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer RapidSSL_CA
+-www.system.co.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer EssentialSSL_CA
+-www.tafesa.edu.au 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer COMODO_High-Assurance_Secure_Server_CA
+-www.tambara.co.jp 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_SSL_CA
+-www.tarifadetaxi.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer PositiveSSL_CA
+-www.tcpglobal.com 0x8000ffff undefined undefined
+-www.teacode.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer StartCom_Class_1_Primary_Intermediate_Server
+-www.tealit.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.teamhost.org 0x8000ffff undefined undefined thawte_DV_SSL_CA_-_G2
+-www.tec-direkt.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer 118533
+-www.temf.co.kr 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_SSL_CA_-_G3
+-www.thcnet.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Network_Solutions_DV_Server_CA
+-www.theatertv.co.jp 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain RapidSSL_SHA256_CA_-_G3
+-www.thefurniturewarehouse.net 0x805a2fe7 SecurityError ssl_error_rx_record_too_long
+-www.themes-mgnto.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain COMODO_RSA_Organization_Validation_Secure_Server
+-www.ths-net.jp 0x8000ffff undefined undefined VeriSign_Class_3_Extended_Validation_SSL
+-www.ti.tohmatsu.co.jp 0x804b000d undefined undefined
+-www.ticket.com 0x8000ffff undefined undefined
+-www.tiendaempresasvodafone.com 0x8000ffff undefined undefined
+-www.timeimports.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer 118533
+-www.timesplus.co.uk 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain COMODO_High-Assurance_Secure_Server_CA
+-www.tinyshopping.com 0x804b000d undefined undefined
+-www.tiptopshoes.com 0x8000ffff undefined undefined RapidSSL_SHA256_CA_-_G3
+-www.tmn.pt 0x805a3ffd SecurityError mozilla_pkix_error_v1_cert_used_as_ca MULTICERT_-_Entidade_de_CertificaÁ„o_001
+-www.tokyo-islands.com 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate GlobalSign_Domain_Validation_CA
+-www.torranceca.gov 0x8000ffff undefined undefined Go_Daddy_Secure_Certificate_Authority_-
+-www.total.fr 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain thawte_SSL_CA_-_G2
+-www.tourisme67.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Gandi_Standard_SSL_CA
+-www.tradetang.com.cn 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer WoSign_Class_3_OV_Server_CA
+-www.trainingchannel.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer hl302.hosteurope.es
+-www.tribetoyota.com.my 0x8000ffff undefined undefined Symantec_Class_3_Secure_Server_CA
+-www.tricyclelabs.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Go_Daddy_Secure_Certificate_Authority_-
+-www.trueroots.ca 0x8000ffff undefined undefined
+-www.trustlink.de 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain thawte_DV_SSL_CA_-_G2
+-www.trustpower.co.nz 0x8000ffff undefined undefined DigiCert_High_Assurance_CA-3
+-www.truthalliance.net 0x8000ffff undefined undefined
+-www.truus.nl 0x8000ffff undefined undefined PositiveSSL_CA_2
+-www.try.wikidot.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certificate_Authority_-
+-www.tryflexseal.com 0x8000ffff undefined undefined
+-www.tryincrediblyslim.com 0x8000ffff undefined undefined
+-www.trymedia.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certification_Authority
+-www.trymuscleextreme.co.uk 0x8000ffff undefined undefined
+-www.trynuescience.com 0x8000ffff undefined undefined
+-www.tsc.gov.in 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer NDC-WVA-DDWSAP1.ndcad.nic.in
+-www.tse.fi 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain TERENA_SSL_CA
+-www.tuckahoe.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.turners.com 0x8000ffff undefined undefined Go_Daddy_Secure_Certificate_Authority_-
+-www.tvn.hu 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer TVN.HU
+-www.tylershields.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.ucc.edu.gh 0x8000ffff undefined undefined ucc.edu.gh
+-www.uck.put.poznan.pl 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain TERENA_SSL_CA
+-www.ulat.ac.pa 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.unibanco.pt 0x805a3ffd SecurityError mozilla_pkix_error_v1_cert_used_as_ca MULTICERT_-_Entidade_de_CertificaÁ„o_001
+-www.unigift.unibanco.pt 0x805a3ffd SecurityError mozilla_pkix_error_v1_cert_used_as_ca MULTICERT_-_Entidade_de_CertificaÁ„o_001
+-www.upanshi.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate GeoTrust_SSL_CA
+-www.upsale.fr 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate COMODO_High_Assurance_Secure_Server_CA
+-www.urscorp.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Trusted_Secure_Certificate_Authority
+-www.ust.hk 0x8000ffff undefined undefined
+-www.uxd.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Network_Solutions_DV_Server_CA
+-www.vancouverhomestayagency.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Secure_Business_Services_CA
+-www.vaneduc.edu.ar 0x8000ffff undefined undefined Go_Daddy_Secure_Certificate_Authority_-
+-www.vanitytollfreenumbers.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GlobalSign_Domain_Validation_CA_-_SHA256
+-www.vanns.com 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain Default
+-www.vbhelp.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer StartCom_Class_2_Primary_Intermediate_Server
+-www.vbsupport.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer StartCom_Class_1_Primary_Intermediate_Server
+-www.vcc-shops.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer 118533
+-www.velida.net 0x805a1fe2 SecurityError sec_error_expired_issuer_certificate StartCom_Class_1_Primary_Intermediate_Server
+-www.verdis.ronson.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Certum_Level_IV_CA
+-www.vesteda.com 0x8000ffff undefined undefined GlobalSign_Domain_Validation_CA_-_SHA256
+-www.viafacil.com.br 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Entrust_Certification_Authority_-_L1C
+-www.viaverio.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_SSL_CA_-_G2
+-www.victorious.org 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.videoportal.mar.mil.br 0x8000ffff undefined undefined Symantec_Class_3_Secure_Server_CA
+-www.viega.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GeoTrust_SSL_CA_-_G2
+-www.vinfax.ru 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate PositiveSSL_CA_2
+-www.visionforum.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.vodahits.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.vstu.edu.ru 0x8000ffff undefined undefined Snake_Oil_CA
+-www.vumero.com 0x804b000d undefined undefined
+-www.wallacesacks.com 0x8000ffff undefined undefined RapidSSL_SHA256_CA_-_G3
+-www.wannasurf.com 0x8000ffff undefined undefined www.wannasurf.com
+-www.wattspremier.com 0x8000ffff undefined undefined
+-www.wavepanel.net 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GlobalSign_Domain_Validation_CA_-_G2
+-www.waynesarcade.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer 118533
+-www.web-modules.net 0x8000ffff undefined undefined thawte_DV_SSL_CA_-_G2
+-www.webinarconferencecalls.com 0x8000ffff undefined undefined thawte_DV_SSL_CA_-_G2
+-www.websystems.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Certum_Level_II_CA
+-www.wh-rsv.com 0x805a3ffd SecurityError mozilla_pkix_error_v1_cert_used_as_ca Cybertrust_Japan_Public_CA_G1
+-www.wheatsales.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate VeriSign_Class_3_Secure_Server_CA
+-www.whypaymore.co.kr 0x805a2ff4 SecurityCertificateDomainMismatchError ssl_error_bad_cert_domain VeriSign_Class_3_Secure_Server_CA
+-www.widzew.pl 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Starfield_Secure_Certification_Authority
+-www.winkelkraam.nl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.wmmail.ru 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Snake_Oil_CA
+-www.workfor3dollars.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.wow-gem.com 0x804b0014 NetworkError pr_connect_reset_error
+-www.wustenrot24.cz 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Thawte_SSL_CA
+-www.wwdb.biz 0x804b0014 NetworkError pr_connect_reset_error
+-www.www.gov.tw 0x804b001e undefined undefined
+-www.wydawnictwo.librus.pl 0x8000ffff undefined undefined RapidSSL_SHA256_CA_-_G3
+-www.wynikilotto.com.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer
+-www.xxxhq.com 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Gandi_Standard_SSL_CA
+-www.yinshi.es 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.zedzone.it 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www.zeroforfait.fr 0x805a1ff5 SecurityExpiredCertificateError sec_error_expired_certificate Gandi_Standard_SSL_CA
+-www1.caixa.gov.br 0x8000ffff undefined undefined AC_CAIXA_PJ_v2
+-www2.dgb-jugend.de 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Equifax_Secure_Global_eBusiness_CA-1
+-www2.ghc.com.br 0x8000ffff undefined undefined COMODO_High-Assurance_Secure_Server_CA
+-xweb.algonquincollege.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer GlobalSign_Extended_Validation_CA_-_G2
+-zachodniopomorskie.regiopedia.pl 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer Certum_Level_II_CA
+-zippykid.com 0x805a1ff3 SecurityUntrustedCertificateIssuerError sec_error_unknown_issuer EssentialSSL_CA
+-zozotown.com 0x8000ffff undefined undefined

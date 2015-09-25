@@ -1,0 +1,16 @@
+2015-08-14-10-13-16	Fx42.0a2 vs Fx40 release
+2015-08-13-14-58-49	Fx41.0b1 vs Fx40 release
+2015-07-14-16-13-10	Fx41.0a2 vs Fx39 release
+2015-07-13-09-56-00	Fx40.0b3 vs Fx39 release
+2015-06-04-10-29-58	Fx39.0b2 vs Fx38.0.5
+2015-05-28-16-47-42	Fx40.0a2 vs Fx40.0a1, Logjam
+2015-05-13-14-41-16	Fx40.0a2 vs Fx38
+2015-05-12-14-44-59	Fx38.0.5b1 vs Fx38
+2015-05-04-12-00-00	Fx38.0b8 vs Fx37.0.2 release - modified for Issuer Common Name field
+2015-04-29-09-38-29	Fx38.0b8 vs Fx37.0.2 release
+2015-04-28-15-16-12	Fx39.0a2 vs Fx37.0.2 release
+2015-04-24-14-51-11	Fx40 vs Fx37.0.2 release
+2015-04-06-14-07-53	Fx39.0a2 vs Fx37.0.2 release
+2015-04-02-14-52-15	Fx38.0b1 vs Fx37.0.2 release
+2015-01-13-11-56-43	Fx36 Aurora vs Fx34 release
+2014-11-21-12-32-35	Fx34 beta vs Fx33 release
