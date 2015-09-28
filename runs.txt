@@ -1,5 +1,0 @@
-{"run":"2015-09-16-16-52-51","branch":"NIGHTLY","errors":"7","description":"Generic test description"}
-{"run":"2015-09-16-17-09-34","branch":"NIGHTLY","errors":"748","description":"Generic test description"}
-{"run":"2015-09-17-13-22-32","branch":"NIGHTLY","errors":"6","description":"Generic test description"}
-{"run":"2015-09-18-13-22-32","branch":"AURORA","errors":"9","description":"Generic test description"}
-{"run":"2015-09-18-14-22-32","branch":"BETA","errors":"29","description":"Generic test description"}
