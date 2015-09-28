@@ -8,14 +8,15 @@ This project:
 
 Requirements:
 * Mac, for now.
+* Forge TLS JS library, minimized, from https://github.com/digitalbazaar/forge
 
 Directions:
 * Use the main.sh script to run the test.
 * Mandatory parameter:
   * -b branch (beta, aurora, nightly)
 * Optional parameters:
-  * -s Source list of sites - try test if you are just testing this out 
-  * -d Decription of test
+  * -s Source list of sites - try 'test' if you are just testing this out 
+  * -d Description of test
   * -h Lists other optional parameters
 
 Example:
