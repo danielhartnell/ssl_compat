@@ -1,6 +1,9 @@
 # TLS Canary version 2
 Automated testing of Firefox for SSL web compatibility
 
+Results live here:
+http://tlscanary.mozilla.org
+
 This project:
 * Downloads a branch build and a release build of Firefox.
 * Automatically runs thousands of secure sites on those builds.
@@ -11,6 +14,9 @@ Requirements:
 * Forge TLS JS library, minimized, from https://github.com/digitalbazaar/forge
 
 Directions:
+* Sync to the Forge TLS library mentioned above
+  * Build the repo to produce the file forge.min.js
+  * Place this file in the js/forge directory here
 * Use the main.sh script to run the test.
 * Mandatory parameter:
   * -b branch (beta, aurora, nightly)
