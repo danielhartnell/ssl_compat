@@ -94,7 +94,6 @@ URIGrid.prototype.createFieldsFromRow = function(row,view,index)
 	{
 		var td= Utility.createElement("td");
 		var a = Utility.createElement("a");
-		//a.href="#";
 		a.obj = this;
 		a.onclick = this.onClick;
 		a.onmouseover = this.onMouseOver.bind(this);

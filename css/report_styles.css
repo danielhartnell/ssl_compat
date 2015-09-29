@@ -3,14 +3,21 @@ table, th, td {
 	font-size: small;
 	#background: white;
 }
-tr:nth-child(even) {background: #EEE}
-tr:nth-child(odd) {background: #FFF}
+a {
+	cursor:pointer;
+}
+tr:nth-child(even) {
+	background: #EEE
+}
+tr:nth-child(odd) {
+	background: #FFF
+}
 body {
 	font: small arial, helvetica, sans-serif;
 }
 select {
 	background: #ccffff;
-    	overflow-y: scroll;
+    overflow-y: scroll;
 }
 #filters {
 	position: absolute; 
@@ -42,7 +49,6 @@ select {
 
 #floater li {
 	display: inline;
-	#margin: 2px 2px 2px 2px;
 }
 #floater ul {
 	list-style: none;
@@ -82,21 +88,19 @@ select {
 	color: #000000;
 	font-weight: bold;
 	background: #ccffff;
-    	border: 1px solid #ffffff;
+    border: 1px solid #ffffff;
 }
 #controls #expired a {
 	padding: 0 1em;
 	text-decoration: none;
 	color: #333333;
 	background: #333333;
-    	border: 10px solid #ffffff;
+    border: 10px solid #ffffff;
 }
 
 #controls a:hover {
 	background: #ccffff;
 	color: #540;
-}
-#filter_header #selected_filter {
 }
 #filter_header #selected_filter a {
 	padding-bottom: 2px;
@@ -120,7 +124,6 @@ select {
 #content a:hover {
 	background: #ccffff;
 	color: #540;
-	#font-weight: bold;
 }
 
 #header {
@@ -128,10 +131,6 @@ select {
 	top: 10px; 
 	left: 10px;
 	width:95%;
-
-}
-#tabs {
-	#width:100%;
 
 }
 #tabs ul {
@@ -189,8 +188,8 @@ select {
 {
 	width:100%;
 	height:400;
-    	overflow-x: scroll;
-    	overflow-y: scroll;
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
 #content p {
 	margin: 0;
@@ -212,17 +211,12 @@ select {
 	padding: 0 4px;
 	text-decoration: none;
 	color: #000000;
-	#background: #ccffff;
 }
 #grid
 {
 	width:100%;
 	height:100%;
 
-}
-#field a {
-	#padding: 0 1em;
-	text-decoration: none;
 }
 #page_controller a
 {
@@ -232,5 +226,4 @@ select {
 }
 h1 {
 	font-size: 1.5em;
-	#color: #99ffff;
 }
