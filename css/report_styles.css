@@ -1,7 +1,7 @@
 table, th, td {
 	border: 0px solid black;
 	font-size: small;
-	#background: white;
+	white-space: nowrap;
 }
 a {
 	cursor:pointer;
