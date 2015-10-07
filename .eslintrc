@@ -1,0 +1,27 @@
+extends: eslint:recommended
+
+env:
+  browser: true
+  es6: true
+
+globals:
+  Cc: false
+  Chart: false
+  Components: false
+  Cu: false
+  Data: false
+  FileUtils: false
+  forge: false
+  PageController: false
+  Services: false
+  TabContainer: false
+  Timer: false
+  TLSCanary: false
+  URIGrid: false
+  Utility: false
+  XPCOMUtils: false
+
+rules:
+  indent: [0, 4]
+  no-console: 0
+  quotes: [0, single]

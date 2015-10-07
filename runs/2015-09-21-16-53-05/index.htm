@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>PAGE_TITLE</title>
+  <title>PAGE_TITLE</title>
   <link rel="stylesheet" href="../../css/report_styles.css">
-
 </head>
 <body>
-<div id="main"></div>
-<script src="../../js/forge/forge.min.js"></script>
-<script src="../../js/Utility.js"></script>
-<script src="../../js/PageController.js"></script>
-<script src="../../js/TabContainer.js"></script>
-<script src="../../js/Chart.js"></script>
-<script src="../../js/Data.js"></script>
-<script src="../../js/URIGrid.js"></script>
-<script src="../../js/TLSCanary.js"></script>
+  <div id="main"></div>
 
-<script>
-var canary = new TLSCanary(document.getElementById("main"));
-canary.load("log.txt");
-</script>
+  <script src="../../js/vendor/forge/js/forge.min.js"></script>
+  <script src="../../js/vendor/Chart.js/Chart.min.js"></script>
+  <script src="../../js/Utility.js"></script>
+  <script src="../../js/PageController.js"></script>
+  <script src="../../js/TabContainer.js"></script>
+  <script src="../../js/Data.js"></script>
+  <script src="../../js/URIGrid.js"></script>
+  <script src="../../js/TLSCanary.js"></script>
 
+  <script>
+    var canary = new TLSCanary(document.getElementById("main"));
+    canary.load("log.txt");
+  </script>
 </body>
 </html>

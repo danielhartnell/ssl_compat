@@ -1,0 +1,20 @@
+{
+  "name": "ssl_compat",
+  "version": "1.0.0",
+  "homepage": "https://github.com/pdehaan/ssl_compat",
+  "authors": [
+    "Matt Wobensmith"
+  ],
+  "license": "MPL-2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Chart.js": "chartjs#~1.0.2",
+    "forge": "~0.6.35"
+  }
+}
