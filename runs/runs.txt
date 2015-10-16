@@ -16,3 +16,5 @@
 {"run":"2015-09-21-16-53-05","branch":"Nightly","errors":"893","description":"Fx43.0a1 Nightly vs Fx40 release"}
 {"run":"2015-09-24-13-19-46","branch":"Beta","errors":"14","description":"Fx42b1 vs Fx41.0 release"}
 {"run":"2015-09-24-17-43-23","branch":"Aurora","errors":"864","description":"Fx43.0a2 Aurora vs Fx41.0 release"}
+{"run":"2015-10-06-21-51-46","branch":"Beta","errors":"0","description":"Just trying this out"}
+{"run":"2015-10-06-22-20-21","branch":"Beta","errors":"0","description":"Just trying this out"}
