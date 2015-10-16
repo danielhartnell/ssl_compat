@@ -1,9 +1,9 @@
 table,
 th,
 td {
-  background: white;
   border: 0 solid black;
   font-size: small;
+  white-space: nowrap;
 }
 
 a {
@@ -45,6 +45,7 @@ select {
 #floater a {
   background: #9f9;
   color: black;
+  margin: 4px 4px 4px 4px;
   padding: 0 1em;
   text-decoration: none;
 }
@@ -102,7 +103,6 @@ select {
   padding: 0 1em;
   text-decoration: none;
 }
-
 #controls #expired a {
   background: #333;
   border: 10px solid white;
@@ -125,6 +125,8 @@ select {
 
 #content #controls {
   background: #0c3;
+  border-top: 2px solid white;
+  padding: 1em;
 }
 
 #content #controls p {
@@ -136,10 +138,6 @@ select {
 #content a:hover {
   background: #9f9;
   color: #540;
-}
-
-#content #page_controller {
-  width: 100%;
 }
 
 #header {
@@ -196,20 +194,32 @@ select {
   height: 100%;
   padding: 1em;
   width: 100%;
-  z-index: 0
+  z-index: 0;
+}
+
+#content #page_controller {
+  width: 98%;
+}
+
+#content textarea {
+  height: 400px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  width: 100%;
 }
 
 #content p {
   background: none;
   margin: 0;
   padding: 1em;
-  width:98%;
+  width: 100%;
 }
 
 #content div {
   background: white;
   height: 100%;
   margin: 0;
+  overflow-x: auto;
   padding: 1em;
   width: 97%;
 }
@@ -224,10 +234,6 @@ select {
 #grid {
   height: 100%;
   width: 100%;
-}
-
-#field a {
-  text-decoration: none;
 }
 
 #page_controller a {

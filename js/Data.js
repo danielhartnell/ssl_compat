@@ -64,7 +64,7 @@ Data.getPieGraphData = function(uriList, fieldName) {
   {
     var str = eval ("uriList[" + i + "]." + fieldName);
     var temp = eval ("obj['" + str +"']");
-    if (temp === null) {
+    if (temp == null) {
       eval ("obj['" + str + "']=1;");
     } else {
       temp++;

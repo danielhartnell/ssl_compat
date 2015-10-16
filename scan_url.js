@@ -102,7 +102,7 @@ for (var i=0;i<arguments.length;i++)
 
 try
 {
-  Cu.import("file:///" + current_directory + "/js/forge/forge.min.js");
+  Cu.import("file:///" + current_directory + "/js/vendor/forge/forge.min.js");
 } catch (e)
 {
   failRun (e.message + "\n\n")

@@ -7,7 +7,6 @@
 <body>
   <div id="main"></div>
 
-  <script src="../../js/vendor/forge/js/forge.min.js"></script>
   <script src="../../js/vendor/Chart.js/Chart.min.js"></script>
   <script src="../../js/Utility.js"></script>
   <script src="../../js/PageController.js"></script>
@@ -17,9 +16,8 @@
   <script src="../../js/TLSCanary.js"></script>
 
   <script>
-  var canary = new TLSCanary(document.getElementById("main"));
-  canary.load("log.txt");
+    var canary = new TLSCanary(document.getElementById("main"));
+    canary.load("log.txt");
   </script>
-
 </body>
 </html>
