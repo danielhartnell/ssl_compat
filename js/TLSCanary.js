@@ -143,11 +143,6 @@ TLSCanary.prototype.makeChart = function(arg) {
   Utility.appendChildren (myDiv, table, Utility.createElement("p"));
   ctx2 = myCanvas.getContext("2d");
   this.tc.setContent (myDiv);
-
-  for (var i in chartData[0])
-  {
-    alert ( chartData[0][i] + " : " + i)
-  }
   var myPieChart = new Chart(ctx2).Pie(chartData, {animation:false});
 };
 
