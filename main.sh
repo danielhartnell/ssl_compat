@@ -50,7 +50,7 @@ then
     echo $'\t'-b name of branch: beta, aurora, nightly
     echo $'\n'Optional:
     echo $'\t'-s name of source list: 
-    echo $'\t'$'\t'smoke, test, pulse \(default\), google, combined
+    echo $'\t'$'\t'smoke, test, pulse \(default\), google
     echo $'\t'$'\t'OR custom URL to source list
     echo $'\t'-u URL of Firefox DMG to test 
     echo $'\t'-d description of test run \(use quotes\)
@@ -87,10 +87,6 @@ pulse)
 google)
     source_name="Google CT"
     url_source="google_ct_list.txt"
-;;
-combined)
-    source_name="Combined list"
-    url_source="combined_site_list.txt"
 ;;
 *)
     source_name="Custom list"
