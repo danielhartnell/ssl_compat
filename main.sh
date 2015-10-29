@@ -94,7 +94,7 @@ google)
 esac
 
 # auto branch detection
-master_url="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/latest-beta/mac/en-US/"
+master_url="http://ftp.mozilla.org/pub/firefox/releases/latest-beta/mac/en-US/"
 curl -# -C - -o 'temp.htm' $master_url
 
 src=$( cat temp.htm )
@@ -181,7 +181,7 @@ cd $DIR
 hdiutil detach "/Volumes/"$volume
 
 # download latest release build to test against
-release_url="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/latest/mac/en-US/"
+release_url="http://ftp.mozilla.org/pub/firefox/releases/latest/mac/en-US/"
 curl -# -C - -o $TEMP'release.htm' $release_url
 sleep 2
 src=$( cat $TEMP'release.htm' )
