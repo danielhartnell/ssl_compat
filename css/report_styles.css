@@ -8,6 +8,7 @@ td {
 
 a {
   cursor:pointer;
+  text-decoration:none;
 }
 
 tr:nth-child(even) {
