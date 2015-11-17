@@ -94,21 +94,31 @@ google)
 esac
 
 # auto branch detection
-master_url="http://ftp.mozilla.org/pub/firefox/releases/latest-beta/mac/en-US/"
-curl -# -C - -o 'temp.htm' $master_url
+#master_url="http://ftp.mozilla.org/pub/firefox/releases/latest/mac/en-US/"
+master_url="https://www.mozilla.org/en-US/firefox/notes/"
+
+wget -O 'temp.htm' $master_url
+
+#curl -# -C - -o 'temp.htm' $master_url
 
 src=$( cat temp.htm )
-src=${src##*Firefox%20}
-src=${src%%.dmg*}
-beta=$src
+src=${src##*Notes (}
+src=${src%%.0*}
 src=${src%%.*}
-aurora=$(($src+1))".0a2"
-nightly=$(($src+2))".0a1"
+beta=$(($src+1))
+aurora=$(($src+2))".0a2"
+nightly=$(($src+3))".0a1"
 rm -rf temp.htm
 
-beta_build_url=$master_url"Firefox%20"$beta".dmg"
-aurora_build_url="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-mozilla-aurora/firefox-"$aurora".en-US.mac.dmg"
-nightly_build_url="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-mozilla-central/firefox-"$nightly".en-US.mac.dmg"
+release_build_url="https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US"
+beta_build_url="https://download.mozilla.org/?product=firefox-beta-latest&os=osx&lang=en-US"
+aurora_build_url="https://download.mozilla.org/?product=firefox-aurora-latest&os=osx&lang=en-US"
+nightly_build_url="https://download.mozilla.org/?product=firefox-nightly-latest&os=osx&lang=en-US"
+
+# temp
+#nightly_build_url="http://ftp.mozilla.org/pub/firefox/nightly/latest-mozilla-central/firefox-45.0a1.en-US.mac.dmg"
+#nightly="45.0a1"
+
 
 case $branch in
 *"beta"*)
@@ -139,6 +149,8 @@ case $branch in
 ;;
 esac
 
+echo $version
+
 # required to allow for file system operations
 file_system_pause_time=5
 
@@ -167,7 +179,8 @@ cd $DIR
 TEMP=$TEST_DIR"/temp/"
 
 # download test build
-curl -# -C - -o 'Firefox '$version'.dmg' $test_build_url
+#curl -# -C - -o 'Firefox '$version'.dmg' $test_build_url
+wget -O 'Firefox '$version'.dmg' $test_build_url
 mv 'Firefox '$version'.dmg' $TEMP
 open $TEMP'Firefox '$version'.dmg'
 sleep 15
@@ -181,18 +194,21 @@ cd $DIR
 hdiutil detach "/Volumes/"$volume
 
 # download latest release build to test against
-release_url="http://ftp.mozilla.org/pub/firefox/releases/latest/mac/en-US/"
-curl -# -C - -o $TEMP'release.htm' $release_url
-sleep 2
-src=$( cat $TEMP'release.htm' )
-src=${src##*Firefox%20}
-src=${src%%.dmg*}
+#release_url="http://ftp.mozilla.org/pub/firefox/releases/latest/mac/en-US/"
+#curl -# -C - -o $TEMP'release.htm' $release_url
+#wget -O $TEMP'release.htm' $release_url
+#sleep 2
+#src=$( cat $TEMP'release.htm' )
+#src=${src##*Firefox%20}
+#src=${src%%.dmg*}
 
-file_name="Firefox "$src".dmg"
-build_url=$release_url"Firefox%20"$src".dmg"
-curl -# -C - -o "Firefox "$src".dmg" $build_url
+file_name='Firefox '$src'.dmg'
+#build_url=$release_build_url
+wget -O 'Firefox '$src'.dmg' $release_build_url
+
+#curl -# -C - -o "Firefox "$src".dmg" $release_build_url
 sleep 10
-mv "Firefox "$src".dmg" $TEMP
+mv 'Firefox '$src'.dmg' $TEMP
 sleep $file_system_pause_time
 
 # move Firefox build from dmg to local test folder
