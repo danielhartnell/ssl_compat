@@ -235,7 +235,7 @@ l2="branch : "$branch
 l3="description : "$description
 l4="source : "$source_name" "$num_sites
 l5="test build : "$test_build_url
-l6="release build : "$build_url
+l6="release build : "$release_build_url
 
 echo $l1$'\n'$l2$'\n'$l3$'\n'$l4$'\n'$l5$'\n'$l6 > $TEST_DIR/temp/metadata.txt
 

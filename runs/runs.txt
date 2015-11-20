@@ -21,3 +21,4 @@
 {"run":"2015-11-12-14-59-23","branch":"Aurora","errors":"697","description":"Fx44.0a2 Aurora vs Fx42.0 release (pre-NSS 3.21)"}
 {"run":"2015-11-16-10-56-06","branch":"Nightly","errors":"700","description":"Fx45.0a1 Nightly vs Fx42.0 release (post-NSS 3.21)"}
 {"run":"2015-11-16-16-18-00","branch":"Beta","errors":"1","description":"Fx43 Beta vs Fx42 release"}
+{"run":"2015-11-19-15-12-30","branch":"Aurora","errors":"673","description":"Fx44.0a2 Aurora vs Fx42 release (post-NSS 3.21)"}
