@@ -72,6 +72,12 @@ for (var i=0;i<arguments.length;i++)
   if (arguments[i].indexOf("-u=") != -1)
   {
     host = arguments[i].split("-u=")[1].toLowerCase();
+    var temp = host.split(",");
+    if (temp.length > 1)
+    {
+      rank = temp[0];
+      host = temp[1];
+    }
   }
   if (arguments[i].indexOf("-r=") != -1)
   {
@@ -285,8 +291,15 @@ function analyzeSecurityInfo(xhr, error, hostname, errorCode) {
       
       if (error)
       {
+        var rawError = secInfo.errorMessage;
         try{
-          test_obj.error.message = secInfo.errorMessage.split("(Error code: ")[1].split(")")[0];
+          if (rawError.split("(Error code: ").length > 1 )
+          {
+            test_obj.error.message = rawError.split("(Error code: ")[1].split(")")[0];
+          } else {
+            // new error string format in Fx46/Nightly?
+            test_obj.error.message = rawError.split("Error code: ")[1].split("title=\"")[1].split("\">")[0].toLowerCase();
+          }
         } catch (e) {
           infoMessage ("Can't get error message: " + e.message)
         }
@@ -466,7 +479,7 @@ function loadURI(uri) {
     analyzeSecurityInfo(xhr, currentError, hostname, error);
     if (error)
     {
-      var msg = test_obj.site_info.uri;
+      var msg = test_obj.site_info.rank + "," + test_obj.site_info.uri;
       if (print_json)
       {
         msg += "\t" + JSON.stringify(test_obj);
@@ -513,7 +526,7 @@ function createTestObject()
   var o = {};
   o.site_info = {};
   o.site_info.uri= host;
-  //o.site_info.rank=rank.toString();
+  o.site_info.rank=rank.toString();
   o.site_info.connectionSpeed = new Date().getTime();
   o.site_info.timestamp= new Date().getTime().toString();
   
