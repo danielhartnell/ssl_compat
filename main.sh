@@ -50,7 +50,7 @@ then
     echo $'\t'-b name of branch: beta, aurora, nightly
     echo $'\n'Optional:
     echo $'\t'-s name of source list: 
-    echo $'\t'$'\t'smoke, test, pulse \(default\), google
+    echo $'\t'$'\t'smoke, test, alexa, pulse \(default\), google
     echo $'\t'$'\t'OR custom URL to source list
     echo $'\t'-u URL of Firefox DMG to test 
     echo $'\t'-d description of test run \(use quotes\)
@@ -87,6 +87,10 @@ pulse)
 google)
     source_name="Google CT"
     url_source="google_ct_list.txt"
+;;
+alexa)
+    source_name="Alexa top sites"
+    url_source="alexa_top_sites.txt"
 ;;
 *)
     source_name="Custom list"
@@ -229,15 +233,43 @@ then
     description="Fx"$version" "$branch" vs Fx"$src" release"
 fi
 
+
+# get build metadata
+
+cd $DIR
+
+app_dir=$( dirname $test_build )
+gre_dir=$( dirname $app_dir )"/Resources"
+export DYLD_LIBRARY_PATH=$app_dir
+echo $($DIR/xpcshell -g $gre_dir -a $app_dir -s $DIR/build_data.js -log=$TEST_DIR/temp/test_build_metadata.txt)
+
+app_dir=$( dirname $control_build )
+gre_dir=$( dirname $app_dir )"/Resources"
+export DYLD_LIBRARY_PATH=$app_dir
+echo $($DIR/xpcshell -g $gre_dir -a $app_dir -s $DIR/build_data.js -log=$TEST_DIR/temp/release_build_metadata.txt)
+
+sleep 5
+
+test_metadata=$( cat $TEST_DIR/temp/test_build_metadata.txt )
+release_metadata=$( cat $TEST_DIR/temp/release_build_metadata.txt )
+
 # generate metadata
 l1="timestamp : "$timestamp
 l2="branch : "$branch
 l3="description : "$description
 l4="source : "$source_name" "$num_sites
-l5="test build : "$test_build_url
-l6="release build : "$release_build_url
+l5="test build url : "$test_build_url
+l6="release build url : "$release_build_url
+l7="test build metadata : "$test_metadata
+l8="release build metadata : "$release_metadata
 
-echo $l1$'\n'$l2$'\n'$l3$'\n'$l4$'\n'$l5$'\n'$l6 > $TEST_DIR/temp/metadata.txt
+echo $l1$'\n'$l2$'\n'$l3$'\n'$l4$'\n'$l5$'\n'$l6$'\n'$l7$'\n'$l8 > $TEST_DIR/temp/metadata.txt
+
+
+
+
+
+
 
 # run scans
 run ()
@@ -395,6 +427,6 @@ mv $TEST_DIR/temp/runs.txt $DIR/runs/runs.txt
 cp $DIR/report_template.htm $TEST_DIR/index.htm
 
 # optional: delete temp folder
-rm -r $TEMP
+#rm -r $TEMP
 
 

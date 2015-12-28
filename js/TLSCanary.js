@@ -214,6 +214,7 @@ TLSCanary.prototype.onColumnSelect = function (arg) {
   // TODO: better way of determining which sort to apply
   //
   if (arg.field.indexOf("connectionSpeed") !== -1 ||
+      arg.field.indexOf("rank") !== -1 ||
       arg.field.indexOf("chainLength") !== -1 ||
       arg.field.indexOf("errors") !== -1) {
     newData = Data.numericSortByField(currentTab.data, arg.field);
