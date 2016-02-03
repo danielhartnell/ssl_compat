@@ -24,6 +24,7 @@
 {"run":"2015-11-19-15-12-30","branch":"Aurora","errors":"673","description":"Fx44.0a2 Aurora vs Fx42 release (post-NSS 3.21)"}
 {"run":"2015-12-28-10-26-44","branch":"Nightly","errors":"519","description":"Fx46.0a1 Nightly vs Fx43 release"}
 {"run":"2015-12-28-15-48-51","branch":"Aurora","errors":"519","description":"Fx45.0a2 Aurora vs Fx43 release"}
-{"run":"2015-12-29-11-36-51","branch":"Beta","errors":"523","description":"Fx44 Beta vs Fx43 release"}{"run":"2016-02-01-15-43-23","branch":"Beta","errors":"16","description":"Fx45 Beta vs Fx44 release"}
+{"run":"2015-12-29-11-36-51","branch":"Beta","errors":"523","description":"Fx44 Beta vs Fx43 release"}
+{"run":"2016-02-01-15-43-23","branch":"Beta","errors":"16","description":"Fx45 Beta vs Fx44 release"}
 {"run":"2016-02-02-09-39-12","branch":"Aurora","errors":"14","description":"Fx46.0a2 Aurora vs Fx44 release"}
 {"run":"2016-02-02-14-16-33","branch":"Nightly","errors":"21","description":"Fx47.0a1 Nightly vs Fx44 release"}
