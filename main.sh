@@ -97,8 +97,17 @@ alexa)
     url_source=$source
 esac
 
+if [[ $OSTYPE =~ .*darwin*. ]]
+then
+    platform=osx
+    file_extension=.dmg
+else
+    # we will assume linux
+    platform=linux
+    file_extension=.tar.bz2
+fi
+
 # auto branch detection
-#master_url="http://ftp.mozilla.org/pub/firefox/releases/latest/mac/en-US/"
 master_url="https://www.mozilla.org/en-US/firefox/notes/"
 
 wget -O 'temp.htm' $master_url
@@ -114,15 +123,22 @@ aurora=$(($src+2))".0a2"
 nightly=$(($src+3))".0a1"
 rm -rf temp.htm
 
-release_build_url="https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US"
-beta_build_url="https://download.mozilla.org/?product=firefox-beta-latest&os=osx&lang=en-US"
-aurora_build_url="https://download.mozilla.org/?product=firefox-aurora-latest&os=osx&lang=en-US"
-nightly_build_url="https://download.mozilla.org/?product=firefox-nightly-latest&os=osx&lang=en-US"
+# b2g URL - used to get xpcshell binary
+b2g_url=http://ftp.mozilla.org/pub/b2g/nightly/latest-mozilla-central/
 
-# temp
-#nightly_build_url="http://ftp.mozilla.org/pub/firefox/nightly/latest-mozilla-central/firefox-45.0a1.en-US.mac.dmg"
-#nightly="45.0a1"
+if [[ $platform==osx ]]
+then
+    xpcshell_url=$b2g_url"firefox-"$nightly".en-US.mac64.dmg"
+else
+    xpcshell_url=$b2g_url"graphene-"$nightly".en-US.linux-x86_64.tar.bz2"
+fi
 
+
+# construct URLs based on platform
+release_build_url="https://download.mozilla.org/?product=firefox-latest&os="$platform"&lang=en-US"
+beta_build_url="https://download.mozilla.org/?product=firefox-beta-latest&os="$platform"&lang=en-US"
+aurora_build_url="https://download.mozilla.org/?product=firefox-aurora-latest&os="$platform"&lang=en-US"
+nightly_build_url="https://download.mozilla.org/?product=firefox-nightly-latest&os="$platform"&lang=en-US"
 
 case $branch in
 *"beta"*)
@@ -173,55 +189,70 @@ time=$(date +%H-%M-%S)
 timestamp=$run_date'-'$time
 
 # generate run ID
-
 mkdir runs/$timestamp
 TEST_DIR=$DIR"/runs/"$timestamp
+
 cd $TEST_DIR
 mkdir certs
 mkdir temp
-cd $DIR
+#cd $DIR
 TEMP=$TEST_DIR"/temp/"
+cd $TEMP
+
+# download xpcshell binary, if needed
+xpcshell_path=$DIR'/xpcshell'
+if [ -e "$xpcshell_path" ]
+then
+    echo Has xpcshell installed
+else
+    echo Downloading xpcshell
+    echo $xpcshell_url
+    wget -O 'temp'$file_extension $xpcshell_url
+    if [[ $platform==osx ]]
+    then
+        open $TEMP'temp.dmg'
+        sleep 15
+        cp -rf "/Volumes/Nightly/FirefoxNightly.app/Contents/MacOS/xpcshell" $DIR
+        hdiutil detach "/Volumes/Nightly"
+    else
+        # linux - unzip archive
+        foo=1
+    fi
+fi
 
 # download test build
-#curl -# -C - -o 'Firefox '$version'.dmg' $test_build_url
-wget -O 'Firefox '$version'.dmg' $test_build_url
-mv 'Firefox '$version'.dmg' $TEMP
-open $TEMP'Firefox '$version'.dmg'
+wget -O 'Firefox '$version$file_extension $test_build_url
+
+if [[ $platform==osx ]]
+then
+    open $TEMP'Firefox '$version$file_extension
+    sleep 15
+    # move Firefox build from volume to local test folder
+    cp -rf "/Volumes/"$volume"/"$app_name $TEMP
+    mv $app_name "Firefox_"$branch".app"
+    test_build=$TEMP"Firefox_"$branch".app/Contents/MacOS/firefox"
+    hdiutil detach "/Volumes/"$volume
+else
+    # linux - unzip archive
+    foo=1
+fi
+
+wget -O 'Firefox '$src$file_extension $release_build_url
 sleep 15
 
-# move Firefox build from dmg to local test folder
-cp -rf "/Volumes/"$volume"/"$app_name $TEMP
-cd $TEMP
-mv $app_name "Firefox_"$branch".app"
-test_build=$TEMP"Firefox_"$branch".app/Contents/MacOS/firefox"
-cd $DIR
-hdiutil detach "/Volumes/"$volume
-
-# download latest release build to test against
-#release_url="http://ftp.mozilla.org/pub/firefox/releases/latest/mac/en-US/"
-#curl -# -C - -o $TEMP'release.htm' $release_url
-#wget -O $TEMP'release.htm' $release_url
-#sleep 2
-#src=$( cat $TEMP'release.htm' )
-#src=${src##*Firefox%20}
-#src=${src%%.dmg*}
-
-file_name='Firefox '$src'.dmg'
-#build_url=$release_build_url
-wget -O 'Firefox '$src'.dmg' $release_build_url
-
-#curl -# -C - -o "Firefox "$src".dmg" $release_build_url
-sleep 10
-mv 'Firefox '$src'.dmg' $TEMP
-sleep $file_system_pause_time
-
-# move Firefox build from dmg to local test folder
-open $TEMP"Firefox "$src".dmg"
-sleep 15
-cp -rf "/Volumes/Firefox/Firefox.app" $TEMP
-mv $TEMP"Firefox.app" $TEMP"Firefox_Release.app"
-control_build=$TEMP"Firefox_Release.app/Contents/MacOS/firefox"
-hdiutil detach /Volumes/Firefox
+if [[ $platform==osx ]]
+then
+    # move Firefox build from dmg to local test folder
+    open "Firefox "$src$file_extension
+    sleep 15
+    cp -rf "/Volumes/Firefox/Firefox.app" $TEMP
+    mv Firefox.app Firefox_Release.app
+    control_build=$TEMP"Firefox_Release.app/Contents/MacOS/firefox"
+    hdiutil detach /Volumes/Firefox
+else
+    # linux
+    foo=1
+fi
 
 # grab number of sites in source file
 temp=( $( wc -l $DIR"/sources/"$url_source ) )
@@ -234,7 +265,10 @@ then
 fi
 
 
-# get build metadata
+# get metadata from each build of Firefox
+#
+# opening each build will generate a log file,
+# which we'll use again when we make a master log file
 
 cd $DIR
 
