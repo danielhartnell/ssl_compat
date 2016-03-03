@@ -102,17 +102,14 @@ then
     platform=osx
     file_extension=.dmg
 else
-    # we will assume linux
+    # we will assume linux64
     platform=linux64
     file_extension=.tar.bz2
 fi
 
 # auto branch detection
 master_url="https://www.mozilla.org/en-US/firefox/notes/"
-
 wget -O 'temp.htm' $master_url
-
-#curl -# -C - -o 'temp.htm' $master_url
 
 src=$( cat temp.htm )
 src=${src##*Notes (}
@@ -124,22 +121,15 @@ aurora=$(($src+2))".0a2"
 nightly=$(($src+3))".0a1"
 rm -rf temp.htm
 
-# b2g URL - used to get xpcshell binary
-b2g_url=http://ftp.mozilla.org/pub/b2g/nightly/latest-mozilla-central/
-
-
-
 # construct URLs based on platform
 if [[ $platform == "osx" ]]
 then
-    xpcshell_url=$b2g_url"firefox-"$nightly".en-US.mac64.dmg"
+    xpcshell_url="http://ftp.mozilla.org/pub/b2g/nightly/latest-mozilla-central/firefox-"$nightly".en-US.mac64.dmg"
     release_build_url="https://download.mozilla.org/?product=firefox-latest&os="$platform"&lang=en-US"
     beta_build_url="https://download.mozilla.org/?product=firefox-beta-latest&os="$platform"&lang=en-US"
     aurora_build_url="https://download.mozilla.org/?product=firefox-aurora-latest&os="$platform"&lang=en-US"
     nightly_build_url="https://download.mozilla.org/?product=firefox-nightly-latest&os="$platform"&lang=en-US"
 else
-    #xpcshell_url=$b2g_url"graphene-"$nightly".en-US.linux-x86_64.tar.bz2"
-    xpcshell_url=$xpcshell_nightly_url
 	beta_build_url='http://download.cdn.mozilla.net/pub/firefox/releases/'$beta'b1/linux-x86_64/en-US/sdk/firefox-'$beta'b1.sdk.tar.bz2'
 	aurora_build_url='http://download.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/firefox-'$aurora'.en-US.linux-x86_64.sdk.tar.bz2'
 	nightly_build_url='http://download.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central/firefox-'$nightly'.en-US.linux-x86_64.sdk.tar.bz2'
@@ -177,13 +167,20 @@ case $branch in
 ;;
 esac
 
-echo $version
+#echo $version
 
 # required to allow for file system operations
 file_system_pause_time=5
 
 # number of simultaneous requests
-batch_quantity=10
+if [[ $platform == "osx" ]]
+then
+    batch_quantity=100
+else
+    # linux is running out of file handles, so
+    # we're going to throttle this lower for now
+    batch_quantity=10
+fi
 
 # time between making batches of requests
 pause_time=5
@@ -210,17 +207,13 @@ cd $TEMP
 # temporary
 #
 # changes are coming that will eventually obsolete this section
-# but for now, we'll need to hard-code some URLs for xpcshell,
-# and only for linux
 #
-#
-# download xpcshell binary, if needed
+# download xpcshell binary, if needed, Mac only
 xpcshell_path=$DIR'/xpcshell'
 if [ -e "$xpcshell_path" ]
 then
     echo Has xpcshell installed
 else
-
     if [[ $platform == "osx" ]]
     then
     	echo Downloading xpcshell
@@ -262,24 +255,23 @@ else
     sleep 5
     tar -xf $TEMP'Firefox '$version'.tar'
     sleep 10
-    #rm -rf $TEMP'Firefox '$version'.tar'
     mv firefox-sdk firefox_test
     test_build=$TEMP"firefox_test/bin/firefox"
     cp -r firefox_test/sdk/bin/* firefox_test/bin
     chmod u+x firefox_test/bin/xpcshell
 fi
 
-wget -O 'Firefox '$src$file_extension $release_build_url
+wget -O 'Firefox '$release$file_extension $release_build_url
 sleep 15
 
 if [[ $platform == "osx" ]]
 then
     # move Firefox build from dmg to local test folder
-    open "Firefox "$src$file_extension
+    open "Firefox "$release$file_extension
     sleep 15
     cp -rf "/Volumes/Firefox/Firefox.app" $TEMP
     mv Firefox.app Firefox_Release.app
-    control_build=$TEMP"Firefox_Release.app/Contents/MacOS/firefox"
+    release_build=$TEMP"Firefox_Release.app/Contents/MacOS/firefox"
     hdiutil detach /Volumes/Firefox
 else
     # linux
@@ -287,20 +279,12 @@ else
     sleep 5
     tar -xf $TEMP'Firefox '$src'.tar'
     sleep 10
-    #rm -rf $TEMP'Firefox '$src'.tar'
     mv firefox-sdk firefox_release
-    #mv $DIR/xpcshell $TEMP"firefox_release/"
-    control_build=$TEMP"firefox_release/bin/firefox"
+    release_build=$TEMP"firefox_release/bin/firefox"
     cp -r firefox_release/sdk/bin/* firefox_release/bin
     chmod u+x firefox_release/bin/xpcshell
     sleep 5
 fi
-
-
-echo PATHS
-echo $test_build
-echo $control_build
-
 
 # grab number of sites in source file
 temp=( $( wc -l $DIR"/sources/"$url_source ) )
@@ -309,7 +293,7 @@ num_sites="${temp[0]}"
 # if description doesn't exist, autogenerate here
 if [ -z ${description+x} ]
 then
-    description="Fx"$version" "$branch" vs Fx"$src" release"
+    description="Fx"$version" "$branch" vs Fx"$release" release"
 fi
 
 
@@ -323,31 +307,29 @@ cd $DIR
 app_dir=$( dirname $test_build )
 if [[ $platform == "osx" ]]
 then
+    xpcshell_path_test=$DIR'/xpcshell'
 	gre_dir=$( dirname $app_dir )"/Resources"
 else
+    xpcshell_path_test=$TEMP'firefox_test/bin/xpcshell'
 	gre_dir=$( dirname $test_build )
 fi
 
-# linux: move xpcshell plus librarys into bin folder
-# chmod u+x xpcshell
-# export LD_LIBRARY_PATH=.
-
 export DYLD_LIBRARY_PATH=$app_dir
 export LD_LIBRARY_PATH=$app_dir
-echo $($TEMP'firefox_test/bin/xpcshell' -g $gre_dir -a $app_dir -s $DIR/build_data.js -log=$TEST_DIR/temp/test_build_metadata.txt)
+echo $($xpcshell_path_test -g $gre_dir -a $app_dir -s $DIR/build_data.js -log=$TEST_DIR/temp/test_build_metadata.txt)
 
-
-
-app_dir=$( dirname $control_build )
+app_dir=$( dirname $release_build )
 if [[ $platform == "osx" ]]
 then
+    xpcshell_path_release=$DIR'/xpcshell'
 	gre_dir=$( dirname $app_dir )"/Resources"
 else
-	gre_dir=$( dirname $control_build )
+    xpcshell_path_release=$TEMP'firefox_release/bin/xpcshell'
+	gre_dir=$( dirname $release_build )
 fi
 export DYLD_LIBRARY_PATH=$app_dir
 export LD_LIBRARY_PATH=$app_dir
-echo $($TEMP'firefox_release/bin/xpcshell' -g $gre_dir -a $app_dir -s $DIR/build_data.js -log=$TEST_DIR/temp/release_build_metadata.txt)
+echo $($xpcshell_path_release -g $gre_dir -a $app_dir -s $DIR/build_data.js -log=$TEST_DIR/temp/release_build_metadata.txt)
 
 sleep 5
 
@@ -423,72 +405,67 @@ run ()
 	sleep $file_system_pause_time
 }
 
-# nightly --> nightly-errors
+# First pass: run list against test build
 run $DIR/sources/$url_source test_error_urls.txt $test_build $pref1
 
-# run nightly urls against release --> release-errors
-run $TEST_DIR/temp/test_error_urls.txt control_error_urls.txt $control_build $pref2
+# First pass: run error URLs against release build
+run $TEST_DIR/temp/test_error_urls.txt release_error_urls.txt $release_build $pref2
 
 
-# diff results --> diff
+# diff results and make a new URL list
 cd $TEST_DIR
 cd temp
 sort -u test_error_urls.txt > test_errors_first_pass.txt
-sort -u control_error_urls.txt > control_errors_first_pass.txt
+sort -u release_error_urls.txt > release_errors_first_pass.txt
 sleep $file_system_pause_time
-awk -F" " 'FILENAME=="control_errors_first_pass.txt"{A[$1]=$1} FILENAME=="test_errors_first_pass.txt"{if(A[$1]){}else{print}}' control_errors_first_pass.txt test_errors_first_pass.txt > first-pass-diff.txt
-
-
-# cut urls --> diff-urls
+awk -F" " 'FILENAME=="release_errors_first_pass.txt"{A[$1]=$1} FILENAME=="test_errors_first_pass.txt"{if(A[$1]){}else{print}}' release_errors_first_pass.txt test_errors_first_pass.txt > first-pass-diff.txt
 sleep $file_system_pause_time
 cut -f1,1 -d " " first-pass-diff.txt | sort -u > first_pass_error_urls.txt
 cd $DIR
 
-# run urls once again in nightly, save final nightly log --> final-nightly-errors
+# Second pass: run error URL list once again
 sleep $file_system_pause_time
 run $TEST_DIR/temp/first_pass_error_urls.txt test_error_urls_2.txt $test_build $pref1
 
 
-# run these urls in release once again --> final-release-errors
-run $TEST_DIR/temp/test_error_urls_2.txt control_error_urls_2.txt $control_build $pref2
+# Second pass: run error URL list from above against release build again
+run $TEST_DIR/temp/test_error_urls_2.txt release_error_urls_2.txt $release_build $pref2
 
 
-# diff error logs --> final-diff
+# diff results once again and make a new URL list
 cd $TEST_DIR
 cd temp
 sort -u test_error_urls_2.txt > test_errors_second_pass.txt
-sort -u control_error_urls_2.txt > control_errors_second_pass.txt
+sort -u release_error_urls_2.txt > release_errors_second_pass.txt
 sleep $file_system_pause_time
-awk -F" " 'FILENAME=="control_errors_second_pass.txt"{A[$1]=$1} FILENAME=="test_errors_second_pass.txt"{if(A[$1]){}else{print}}' control_errors_second_pass.txt test_errors_second_pass.txt > second-pass-diff.txt
+awk -F" " 'FILENAME=="release_errors_second_pass.txt"{A[$1]=$1} FILENAME=="test_errors_second_pass.txt"{if(A[$1]){}else{print}}' release_errors_second_pass.txt test_errors_second_pass.txt > second-pass-diff.txt
 cd $DIR
 
+# final pass
+# slow down number of requests for maximum accuracy
+batch_quantity=10
 
-# run urls once again in nightly, save final nightly log --> final-nightly-errors
+# Third pass: run error URL list once again
 sleep $file_system_pause_time
 run $TEST_DIR/temp/second-pass-diff.txt test_error_urls_3.txt $test_build $pref1
 
-# run these urls in release once again --> final-release-errors
-run $TEST_DIR/temp/test_error_urls_3.txt control_error_urls_3.txt $control_build $pref2
+# Third pass: run error URL list from above against release build again
+run $TEST_DIR/temp/test_error_urls_3.txt release_error_urls_3.txt $release_build $pref2
 
-# diff error logs --> final-diff
+# diff results once again and make a new URL list
 cd $TEST_DIR
 cd temp
 sort -u test_error_urls_3.txt > test_errors_third_pass.txt
-sort -u control_error_urls_3.txt > control_errors_third_pass.txt
+sort -u release_error_urls_3.txt > release_errors_third_pass.txt
 sleep $file_system_pause_time
-awk -F" " 'FILENAME=="control_errors_third_pass.txt"{A[$1]=$1} FILENAME=="test_errors_third_pass.txt"{if(A[$1]){}else{print}}' control_errors_third_pass.txt test_errors_third_pass.txt > final-diff.txt
-
-
-# cut urls from diff
-# run again and generate certs
-
+awk -F" " 'FILENAME=="release_errors_third_pass.txt"{A[$1]=$1} FILENAME=="test_errors_third_pass.txt"{if(A[$1]){}else{print}}' release_errors_third_pass.txt test_errors_third_pass.txt > final-diff.txt
 sleep $file_system_pause_time
 cut -f1,1 -d " " final-diff.txt | sort -u > final_urls.txt
 sleep $file_system_pause_time
 cd $DIR
 
+# Run final error URL list just to grab SSL certificates
 run $TEMP"final_urls.txt" final_errors.txt $test_build $pref1 -j=true -c=$TEST_DIR"/certs/" 
-
 sort -u $TEMP"final_errors.txt" > $TEMP"final_errors_sorted.txt"
 
 # total time
