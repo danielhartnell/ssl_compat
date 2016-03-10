@@ -18,7 +18,7 @@ cd $DIR
 # run scans
 run ()
 {
-    input_file=$DIR"/sources/top-1m.csv"
+    input_file=$DIR"/sources/"$url_source
     app_dir=$( dirname $test_build )
     gre_dir=$( dirname $app_dir )"/Resources"
 
@@ -27,7 +27,7 @@ run ()
     path_arg=" -d="$PWD
 
     js=$DIR/find_ssl_sites.js
-    LOG=$DIR"/sources/alexa_top_sites.txt"
+    LOG=$DIR"/sources/alexa_top_n_sites.txt"
 
     site_list=$( cat $input_file )
 
