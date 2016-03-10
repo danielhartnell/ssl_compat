@@ -9,17 +9,7 @@ const Ci = Components.interfaces;
 const Cu = Components.utils;
 const Cr = Components.results;
 
-// Register resource://app/ URI
-
-let ios = Cc["@mozilla.org/network/io-service;1"].getService(Ci.nsIIOService);
-let resHandler = ios.getProtocolHandler("resource").QueryInterface(Ci.nsIResProtocolHandler);
-let mozDir = Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties).get("CurProcD", Ci.nsILocalFile);
-let mozDirURI = ios.newFileURI(mozDir);
-resHandler.setSubstitution("app", mozDirURI);
-
-
 Cu.import("resource://gre/modules/Services.jsm");
-//Cu.import("resource://gre/modules/FileUtils.jsm");
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/NetUtil.jsm");
 XPCOMUtils.defineLazyGetter(this, "Timer", function() {
@@ -28,26 +18,19 @@ XPCOMUtils.defineLazyGetter(this, "Timer", function() {
   return timer;
 });
 
-
 if (!arguments || arguments.length < 1) {
   throw "Usage: xpcshell sslScan.js <-u=rank,uri>\n";
 }
   
 const DEFAULT_TIMEOUT = 10000;
-var current_directory;
 var completed = false;
 var host;
 var rank = 0;
-var good_domains = [];
+var goodDomains = [];
 var numResults = 0;
-
 
 for (var i=0;i<arguments.length;i++)
 {
-  if (arguments[i].indexOf("-d=") != -1)
-  {
-    current_directory = arguments[i].split("-d=")[1];
-  }
   if (arguments[i].indexOf("-u=") != -1)
   {
     host = arguments[i].split("-u=")[1].toLowerCase();
@@ -58,37 +41,10 @@ for (var i=0;i<arguments.length;i++)
       host = temp[1];
     }
   }
-  if (arguments[i].indexOf("-r=") != -1)
-  {
-    rank = arguments[i].split("-r=")[1];
-  }
-  if (arguments[i].indexOf("-p=") != -1)
-  {
-    var temp1 = arguments[i].split("-p=")[1];
-    var temp2 = temp1.split("=");
-    var o = {};
-    o.name = temp2[0];
-    o.value = temp2[1];
-    prefs.push (o);
-  }
-  if (arguments[i].indexOf("-c=") != -1)
-  {
-    certPath = arguments[i].split("-c=")[1];
-  }
-  if (arguments[i].indexOf("-j=") != -1)
-  {
-    print_json = arguments[i].split("-j=")[1];
-  }
-  if (arguments[i].indexOf("-id=") != -1)
-  {
-    run_id = arguments[i].split("-id=")[1];
-  }
 }
-
 
 function RedirectStopper() {}
 RedirectStopper.prototype = {
-  // nsIChannelEventSink
   asyncOnChannelRedirect: function(oldChannel, newChannel, flags, callback) {
     throw Cr.NS_ERROR_ENTITY_CHANGED;
   },
@@ -97,7 +53,6 @@ RedirectStopper.prototype = {
   },
   QueryInterface: XPCOMUtils.generateQI([Ci.nsIChannelEventSink])
 };
-
 
 function queryHost(hostname, callback) {
   let timeout;
@@ -132,7 +87,6 @@ function queryHost(hostname, callback) {
     req.addEventListener("load", readyHandler, false);
     req.send();
   } catch (e) {
-    infoMessage("Runtime error for XHR: " + e.message)
     completed(-1, req);
   }
 }
@@ -141,7 +95,7 @@ function loadURI(uri) {
   function recordResult(hostname, error, xhr) {
     if ( error == null )
     {
-      good_domains.push ( hostname );
+      goodDomains.push ( hostname );
     }
   }
   function handleResult(uri, err, xhr) {
@@ -149,10 +103,10 @@ function loadURI(uri) {
     numResults++;
     if (numResults == 2)
     {
-      if ( good_domains.length == 1 )
+      if ( goodDomains.length == 1 )
       {
-        dump ( rank + "," + good_domains[0] + "\n" );
-      } else if ( good_domains.length == 2 )
+        dump ( rank + "," + goodDomains[0] + "\n" );
+      } else if ( goodDomains.length == 2 )
       {
         dump ( rank + "," + host + "\n" );
       } 
