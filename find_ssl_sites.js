@@ -10,6 +10,7 @@ const Cu = Components.utils;
 const Cr = Components.results;
 
 // Register resource://app/ URI
+
 let ios = Cc["@mozilla.org/network/io-service;1"].getService(Ci.nsIIOService);
 let resHandler = ios.getProtocolHandler("resource").QueryInterface(Ci.nsIResProtocolHandler);
 let mozDir = Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties).get("CurProcD", Ci.nsILocalFile);
@@ -18,7 +19,7 @@ resHandler.setSubstitution("app", mozDirURI);
 
 
 Cu.import("resource://gre/modules/Services.jsm");
-Cu.import("resource://gre/modules/FileUtils.jsm");
+//Cu.import("resource://gre/modules/FileUtils.jsm");
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/NetUtil.jsm");
 XPCOMUtils.defineLazyGetter(this, "Timer", function() {
@@ -29,41 +30,17 @@ XPCOMUtils.defineLazyGetter(this, "Timer", function() {
 
 
 if (!arguments || arguments.length < 1) {
-
-  throw "Usage: xpcshell sslScan.js <-u=uri>\n";
+  throw "Usage: xpcshell sslScan.js <-u=rank,uri>\n";
 }
-
-/*
-
--u :  uri to scan (without scheme)
-
--d : local directory path
-
--p :  preferences to apply (multiple flags supported)
-      NOTE: Boolean pref values must be passed in as false/true and not 0/1
-
--r : (site) rank (integer)
-
--j : print JSON on error
-
--c : write certificate to disk with this path
-
--id : optional run ID
-
-*/
   
 const DEFAULT_TIMEOUT = 10000;
+var current_directory;
 var completed = false;
-var debug = false; 
-var current_directory = "";
-var certPath = false;
 var host;
-var prefs = [];
 var rank = 0;
-var run_id;
-var print_json = false;
-var secure_without_prefix = false;
+var good_domains = [];
 var numResults = 0;
+
 
 for (var i=0;i<arguments.length;i++)
 {
@@ -80,6 +57,31 @@ for (var i=0;i<arguments.length;i++)
       rank = temp[0];
       host = temp[1];
     }
+  }
+  if (arguments[i].indexOf("-r=") != -1)
+  {
+    rank = arguments[i].split("-r=")[1];
+  }
+  if (arguments[i].indexOf("-p=") != -1)
+  {
+    var temp1 = arguments[i].split("-p=")[1];
+    var temp2 = temp1.split("=");
+    var o = {};
+    o.name = temp2[0];
+    o.value = temp2[1];
+    prefs.push (o);
+  }
+  if (arguments[i].indexOf("-c=") != -1)
+  {
+    certPath = arguments[i].split("-c=")[1];
+  }
+  if (arguments[i].indexOf("-j=") != -1)
+  {
+    print_json = arguments[i].split("-j=")[1];
+  }
+  if (arguments[i].indexOf("-id=") != -1)
+  {
+    run_id = arguments[i].split("-id=")[1];
   }
 }
 
@@ -135,30 +137,30 @@ function queryHost(hostname, callback) {
   }
 }
 
-function writeCertToDisk(outputStream, data) {
-  outputStream.write(data, data.length);
-}
-
 function loadURI(uri) {
   function recordResult(hostname, error, xhr) {
-
-    if (error == null && numResults == 0)
+    if ( error == null )
     {
-      dump ( rank + "," + host + "\n");
-      completed = true;
-    } else if ( numResults == 1 && !error )
-    {
-      dump ( rank + ",www." + host + "\n");
-      completed = true;     
-    } else {
-      numResults++;
-      queryHost("www." + uri, recordResult)
+      good_domains.push ( hostname );
     }
   }
-  function handleResult(err, xhr) {
+  function handleResult(uri, err, xhr) {
     recordResult(uri, err, xhr);
+    numResults++;
+    if (numResults == 2)
+    {
+      if ( good_domains.length == 1 )
+      {
+        dump ( rank + "," + good_domains[0] + "\n" );
+      } else if ( good_domains.length == 2 )
+      {
+        dump ( rank + "," + host + "\n" );
+      } 
+      completed = true;
+    }
   }
-  queryHost(uri, recordResult);
+  queryHost(uri, handleResult);
+  queryHost("www." + uri, handleResult);
   waitForAResponse(() => completed != true);
 }
 
@@ -174,28 +176,7 @@ function waitForAResponse(condition) {
     failRun(e.message); 
   }
 }
- 
-function openFile(path, mode) {
-  let file = Cc["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
-  file.initWithPath(path);
-  try
-  {
-    var fos = FileUtils.openFileOutputStream(file, mode);
-    return fos;
-  } catch (e)
-  {
-    dump ("FILE ISSUE\n")
-    failRun (e.message)
-  }
-}
 
-function infoMessage(arg)
-{
-  if (debug)
-  {
-    dump ("ERROR: " + arg + "\n");
-  }
-}
 function failRun(arg)
 {
   dump ("FAIL: fatal error: " + arg + + "\t" + host + "\n")

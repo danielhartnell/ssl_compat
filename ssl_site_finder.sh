@@ -27,7 +27,7 @@ run ()
     path_arg=" -d="$PWD
 
     js=$DIR/find_ssl_sites.js
-    LOG=$DIR"/sources/alexa_top_n_sites.txt"
+    LOG=$DIR"/sources/alexa_log.txt"
 
     site_list=$( cat $input_file )
 
@@ -58,6 +58,8 @@ run ()
 }
 
 run  
-
+cd $DIR
+cd sources
+sort -u -g alexa_log.txt > alexa_sorted.txt
 
 
