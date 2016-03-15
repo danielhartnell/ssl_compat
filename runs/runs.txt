@@ -28,3 +28,4 @@
 {"run":"2016-02-01-15-43-23","branch":"Beta","errors":"16","description":"Fx45 Beta vs Fx44 release"}
 {"run":"2016-02-02-09-39-12","branch":"Aurora","errors":"14","description":"Fx46.0a2 Aurora vs Fx44 release"}
 {"run":"2016-02-02-14-16-33","branch":"Nightly","errors":"21","description":"Fx47.0a1 Nightly vs Fx44 release"}
+{"run":"2016-03-15-11-33-23","branch":"Nightly","errors":"5","description":"Fx48.0a1 Nightly vs Fx45.0 release"}
