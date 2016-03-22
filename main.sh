@@ -112,8 +112,9 @@ master_url="https://www.mozilla.org/en-US/firefox/notes/"
 wget -O 'temp.htm' $master_url
 
 src=$( cat temp.htm )
-src=${src##*Notes (}
-release=${src%%)*}
+#src=${src##*Notes (}
+src=${src##*Version }
+release=${src%%,*}
 src=${src%%.0*}
 src=${src%%.*}
 beta=$(($src+1))
