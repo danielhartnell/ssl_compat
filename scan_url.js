@@ -135,7 +135,8 @@ try
   infoMessage (e.message + "\n\n")
 }
 
-
+// temp
+Services.prefs.setIntPref("security.tls.version.max", 4)
 
 const nsINSSErrorsService = Ci.nsINSSErrorsService;
 let nssErrorsService = Cc['@mozilla.org/nss_errors_service;1'].getService(nsINSSErrorsService);

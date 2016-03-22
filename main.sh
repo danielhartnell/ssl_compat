@@ -371,7 +371,7 @@ run ()
 		shell_path=$app_dir"/xpcshell"
 	fi
 
-	path_arg=" -d="$PWD
+	path_arg=" -d="$DIR"/"
 
 	js=$DIR/scan_url.js
 	LOG=$TEST_DIR"/temp/"$log_file
