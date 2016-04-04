@@ -287,15 +287,6 @@ else
     sleep 5
 fi
 
-# grab number of sites in source file
-temp=( $( wc -l $DIR"/sources/"$url_source ) )
-num_sites="${temp[0]}"
-
-# if description doesn't exist, autogenerate here
-if [ -z ${description+x} ]
-then
-    description="Fx"$version" "$branch" vs Fx"$release" release"
-fi
 
 
 # get metadata from each build of Firefox
@@ -334,8 +325,29 @@ echo $($xpcshell_path_release -g $gre_dir -a $app_dir -s $DIR/build_data.js -log
 
 sleep 5
 
-test_metadata=$( cat $TEST_DIR/temp/test_build_metadata.txt )
-release_metadata=$( cat $TEST_DIR/temp/release_build_metadata.txt )
+# although we already know some of this data, 
+# we are going to capture it again,
+# to be sure that we've grabbed the right builds
+
+test_metadata=$( sed '1q;d' $TEST_DIR/temp/test_build_metadata.txt )
+test_branch=$( sed '2q;d' $TEST_DIR/temp/test_build_metadata.txt )
+test_version=$( sed '3q;d' $TEST_DIR/temp/test_build_metadata.txt )
+
+release_metadata=$( sed '1q;d' $TEST_DIR/temp/release_build_metadata.txt )
+release_branch=$( sed '2q;d' $TEST_DIR/temp/release_build_metadata.txt )
+release_version=$( sed '3q;d' $TEST_DIR/temp/release_build_metadata.txt )
+
+# grab number of sites in source file
+temp=( $( wc -l $DIR"/sources/"$url_source ) )
+num_sites="${temp[0]}"
+
+# if description doesn't exist, autogenerate here
+if [ -z ${description+x} ]
+then
+    #description="Fx"$version" "$branch" vs Fx"$release" release"
+    description="Fx"$test_version" "$test_branch" vs Fx"$release_version" "$release_branch
+fi
+
 
 # generate metadata
 l1="timestamp : "$timestamp

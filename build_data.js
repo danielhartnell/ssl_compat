@@ -47,10 +47,10 @@ Cu.import("resource://gre/modules/AppConstants.jsm");
 
 let nssInfo = Cc["@mozilla.org/security/nssversion;1"].getService(Ci.nsINSSVersion);
 let nssVersion = "NSS " + nssInfo.NSS_Version;
-let nsprVersion = "\nNSPR " + nssInfo.NSPR_Version;
+let nsprVersion = "NSPR " + nssInfo.NSPR_Version;
 
 // currently unused
-let appVersion = AppConstants.MOZ_APP_VERSION;
+let appVersion = AppConstants.MOZ_APP_VERSION_DISPLAY;
 let branch = AppConstants.MOZ_UPDATE_CHANNEL;
 
 
@@ -59,9 +59,10 @@ function writeLog() {
   file.initWithPath(log);
   let fos = FileUtils.openSafeFileOutputStream(file);
   dump("Opened " + file.path + " for log\n");
-  var msg = nssVersion + ", " + nsprVersion;
+  var msg = nssVersion + ", " + nsprVersion + "\n" + branch + "\n" + appVersion;
 
   fos.write(msg, msg.length);
+
   FileUtils.closeSafeFileOutputStream(fos);
 }
 
