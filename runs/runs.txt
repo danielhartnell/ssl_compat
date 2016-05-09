@@ -33,3 +33,4 @@
 {"run":"2016-03-22-13-55-36","branch":"Beta","errors":"11","description":"Fx46 Beta vs Fx45.0.1 release"}
 {"run":"2016-04-04-10-56-25","branch":"Nightly","errors":"286","description":"Fx48.0a1 Nightly changes for bug 1245280"}
 {"run":"2016-05-02-13-13-04","branch":"Beta","errors":"3","description":"Fx47.0b1 beta vs Fx46.0 release"}
+{"run":"2016-05-06-16-25-36","branch":"Aurora","errors":"22","description":"Fx48.0a2 aurora vs Fx46.0.1 release"}
