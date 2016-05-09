@@ -171,7 +171,7 @@ TLSCanary.prototype.makeFieldsUI = function(arg) {
   var rightColumn = Utility.createElement("td", [{width:"50%"}]);
   var fields = this.tabs[arg].data;
   for (var i=0;i<fields.length;i++) {
-    var checkboxAttributes = [{type:"checkbox"}, {name:"ui_fields"}, {value:fields[i]}];
+    var checkboxAttributes = [{type:"checkbox"}, {name:fields[i]}, {value:fields[i]}];
     if (eval("this.viewObject." + fields[i])) {
       checkboxAttributes.push({checked:"checked"});
     }
@@ -202,7 +202,7 @@ TLSCanary.prototype.onUpdateCheckbox = function (arg) {
   if (arg.target.checked) {
     checked = true;
   }
-  var name = arg.target.attributes[2].value;
+  var name = arg.target.attributes[1].value;
   eval ("this.viewObject." + name + "=" + checked + ";");
   this.updateView();
 };
