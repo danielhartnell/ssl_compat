@@ -136,7 +136,7 @@ try
 }
 
 // temp
-Services.prefs.setIntPref("security.tls.version.max", 4)
+// Services.prefs.setIntPref("security.pki.netscape_step_up_policy", 3)
 
 const nsINSSErrorsService = Ci.nsINSSErrorsService;
 let nssErrorsService = Cc['@mozilla.org/nss_errors_service;1'].getService(nsINSSErrorsService);

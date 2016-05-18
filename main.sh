@@ -244,7 +244,7 @@ wget -O 'Firefox '$version$file_extension $test_build_url
 if [[ $platform == "osx" ]]
 then
     open $TEMP'Firefox '$version$file_extension
-    sleep 15
+    sleep 20
     # move Firefox build from volume to local test folder
     cp -rf "/Volumes/"$volume"/"$app_name $TEMP
     mv $app_name "Firefox_"$branch".app"
