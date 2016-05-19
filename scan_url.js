@@ -135,7 +135,7 @@ try
   infoMessage (e.message + "\n\n")
 }
 
-// temp
+// custom prefs can go here
 // Services.prefs.setIntPref("security.pki.netscape_step_up_policy", 3)
 
 const nsINSSErrorsService = Ci.nsINSSErrorsService;
@@ -143,7 +143,7 @@ let nssErrorsService = Cc['@mozilla.org/nss_errors_service;1'].getService(nsINSS
 const UNKNOWN_ERROR = 0;
 
 function getErrorType(status) {
-  let errType;
+  let errType = "unknown";
   if ((status & 0xff0000) === 0x5a0000) { // Security module
     let errorClass;
     // getErrorClass will throw a generic 
@@ -151,16 +151,16 @@ function getErrorType(status) {
     // somehow not in the set of covered errors.
     try {
       errorClass = nssErrorsService.getErrorClass(status);
-    } catch (ex) {
-      errorClass = 'protocol';
-    }
-    if (errorClass == nsINSSErrorsService.ERROR_CLASS_BAD_CERT) {
-      errType = 'certificate';
-    } else {
-      errType = 'protocol';
+      if (errorClass == nsINSSErrorsService.ERROR_CLASS_BAD_CERT) {
+        errType = "certificate";
+      } else {
+        errType = "protocol";
+      }
+    } catch (e) {
+      infoMessage ("Can't retrieve error type");
     }
   } else {
-    errType = 'network';
+    errType = "network";
   }
   return errType;
 }
@@ -173,13 +173,11 @@ function analyzeSecurityInfo(xhr, error, hostname, errorCode) {
     test_obj.error.code = "0x" + errorCode.toString(16);
     test_obj.error.message = errorCodeLookup (errorCode);
   } 
-  
   if (!xhr) {
     infoMessage("Request failed: no information available");
     return false;
   }
   try {
-    
     let channel = xhr.channel;
     let secInfo = channel.securityInfo;
 
@@ -188,22 +186,21 @@ function analyzeSecurityInfo(xhr, error, hostname, errorCode) {
     if (secInfo instanceof Ci.nsISSLStatusProvider) {
       if (secInfo.QueryInterface(Ci.nsISSLStatusProvider).SSLStatus != null)
       {
-        
         try
         {
           var status = secInfo.QueryInterface(Ci.nsISSLStatusProvider).SSLStatus.QueryInterface(Ci.nsISSLStatus);
+          /*
           let versions = ["SSL3", "1.0", "1.1", "1.2"];
           test_obj.tls_info.version = versions[status.protocolVersion];
           test_obj.tls_info.cipherName = status.cipherName;
           test_obj.tls_info.keyLength = status.keyLength.toString();
           test_obj.tls_info.secretKeyLength = status.secretKeyLength.toString();
+          */
         } catch (e)
         {
-          infoMessage ("Can't get TLS info: " + e.message)
+          infoMessage ("Can't get TLS status: " + e.message)
         }
-       
         try{
-
           var cert = status.serverCert;
           if (cert.sha1Fingerprint) 
           {
@@ -232,7 +229,6 @@ function analyzeSecurityInfo(xhr, error, hostname, errorCode) {
           test_obj.cert_info.issuerOrganization = cert.issuerOrganization;
           test_obj.cert_info.sha1Fingerprint = cert.sha1Fingerprint;
           test_obj.cert_info.sha256Fingerprint = cert.sha256Fingerprint;
-          
           test_obj.cert_info.chainLength = cert.getChain().length.toString();
 
           try
@@ -249,7 +245,6 @@ function analyzeSecurityInfo(xhr, error, hostname, errorCode) {
           let validity = cert.validity.QueryInterface(Ci.nsIX509CertValidity);
           test_obj.cert_info.validityNotBefore = validity.notBeforeGMT;
           test_obj.cert_info.validityNotAfter = validity.notAfterGMT;
-          
           test_obj.cert_info.isEV = status.isExtendedValidation.toString();
           
           var forgeCert = forge.pki.certificateFromPem(certToPEM(cert));
@@ -276,18 +271,15 @@ function analyzeSecurityInfo(xhr, error, hostname, errorCode) {
           }
 
           var rootCert = getRootCert(cert); 
-          
           test_obj.cert_info.rootCertificateSubjectName=rootCert.subjectName;
           test_obj.cert_info.rootCertificateOrganization=rootCert.organization;
           test_obj.cert_info.rootCertificateOrganizationalUnit=rootCert.organizationalUnit;
           test_obj.cert_info.rootCertificateSHA1Fingerprint=rootCert.sha1Fingerprint;
-         
         } 
         catch (e)
         {
           infoMessage ("Can't get certificate: " + e.message)
         }
-        
       }
       
       if (error)
@@ -309,8 +301,8 @@ function analyzeSecurityInfo(xhr, error, hostname, errorCode) {
   } catch(e) {
     failRun (e.message);
   }
-
 }
+
 function errorCodeLookup(error)
 {
   // For network error messages that are not obtainable otherwise 
@@ -346,6 +338,7 @@ function buildDER(chars){
         result += String.fromCharCode(chars[i]);
     return result;
 }
+
 function certToPEM(cert) {
   let der = cert.getRawDER({});
   let derString = buildDER(der);
@@ -521,7 +514,6 @@ function openFile(path, mode) {
   }
 }
 
-
 function createTestObject()
 {
   var o = {};
@@ -535,20 +527,23 @@ function createTestObject()
   o.error.code="";
   o.error.type="";
   o.error.message="";
+
+  // This part temporarily disabled, because our script only reports
+  // on errors, and in error situations, we don't have a valid TLS
+  // connection to obtain these values.
+
   /*
   o.tls_info = {};
   o.tls_info.version="";
   o.tls_info.cipherName="";
   o.tls_info.keyLength="";
   o.tls_info.secretKeyLength="";
-  
   */
+
   o.cert_info = {};
   o.cert_info.isEV="";
-  
   o.cert_info.certifiedUsages="";
   o.cert_info.chainLength="";
-  
   o.cert_info.nickname="";
   o.cert_info.emailAddress="";
   o.cert_info.subjectName="";
@@ -558,10 +553,8 @@ function createTestObject()
   o.cert_info.extKeyUsage="";
   o.cert_info.organization="";
   o.cert_info.organizationalUnit="";
-  
   o.cert_info.validityNotBefore="";
   o.cert_info.validityNotAfter="";
-  
   o.cert_info.signatureAlgorithm = "";
   o.cert_info.sha1Fingerprint="";
   o.cert_info.sha256Fingerprint="";

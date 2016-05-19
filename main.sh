@@ -168,8 +168,6 @@ case $branch in
 ;;
 esac
 
-#echo $version
-
 # required to allow for file system operations
 file_system_pause_time=5
 
