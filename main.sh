@@ -67,8 +67,8 @@ fi
 
 if [ $pref ] 
 then
-	pref1=$pref
-	pref2=$pref
+    pref1=$pref
+    pref2=$pref
 fi
 
 case $source in
@@ -108,19 +108,19 @@ else
 fi
 
 # auto branch detection
-master_url="https://www.mozilla.org/en-US/firefox/notes/"
-wget -O 'temp.htm' $master_url
+#master_url="https://www.mozilla.org/en-US/firefox/notes/"
+#wget -O 'temp.htm' $master_url
 
-src=$( cat temp.htm )
+#src=$( cat temp.htm )
 #src=${src##*Notes (}
-src=${src##*Version }
-release=${src%%,*}
-src=${src%%.0*}
-src=${src%%.*}
-beta=$(($src+1))
-aurora=$(($src+2))".0a2"
-nightly=$(($src+3))".0a1"
-rm -rf temp.htm
+#src=${src##*Version }
+#release=${src%%,*}
+#src=${src%%.0*}
+#src=${src%%.*}
+#beta=$(($src+1))
+#aurora=$(($src+2))".0a2"
+#nightly=$(($src+3))".0a1"
+#rm -rf temp.htm
 
 # construct URLs based on platform
 if [[ $platform == "osx" ]]
@@ -131,10 +131,11 @@ then
     aurora_build_url="https://download.mozilla.org/?product=firefox-aurora-latest&os="$platform"&lang=en-US"
     nightly_build_url="https://download.mozilla.org/?product=firefox-nightly-latest&os="$platform"&lang=en-US"
 else
-	beta_build_url='http://download.cdn.mozilla.net/pub/firefox/releases/'$beta'b1/linux-x86_64/en-US/sdk/firefox-'$beta'b1.sdk.tar.bz2'
-	aurora_build_url='http://download.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/firefox-'$aurora'.en-US.linux-x86_64.sdk.tar.bz2'
-	nightly_build_url='http://download.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central/firefox-'$nightly'.en-US.linux-x86_64.sdk.tar.bz2'
-	release_build_url='http://ftp.mozilla.org/pub/firefox/releases/'$release'/linux-x86_64/en-US/firefox-'$release'.sdk.tar.bz2'
+    # once Fx47 goes to release, remove all of this and just use a normal build (not SDK build)
+    beta_build_url='http://download.cdn.mozilla.net/pub/firefox/releases/'$beta'b1/linux-x86_64/en-US/sdk/firefox-'$beta'b1.sdk.tar.bz2'
+    aurora_build_url='http://download.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/firefox-'$aurora'.en-US.linux-x86_64.sdk.tar.bz2'
+    nightly_build_url='http://download.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central/firefox-'$nightly'.en-US.linux-x86_64.sdk.tar.bz2'
+    release_build_url='http://ftp.mozilla.org/pub/firefox/releases/'$release'/linux-x86_64/en-US/firefox-'$release'.sdk.tar.bz2'
 
 fi
 
@@ -215,33 +216,33 @@ then
 else
     if [[ $platform == "osx" ]]
     then
-    	echo Downloading xpcshell
-    	echo $xpcshell_url
-    	wget -O 'temp'$file_extension $xpcshell_url
+        echo Downloading xpcshell
+        echo $xpcshell_url
+        wget -O 'temp'$file_extension $xpcshell_url
         open $TEMP'temp.dmg'
         sleep 15
         cp -rf "/Volumes/Nightly/FirefoxNightly.app/Contents/MacOS/xpcshell" $DIR
         hdiutil detach "/Volumes/Nightly"
     else
         # linux - unzip archive
-	#bzip2 -d $TEMP'temp.tar.bz2'
-	#sleep 5
-	#tar -xf $TEMP'temp.tar'
-	#sudo rm -rf $TEMP'Firefox '$version'.tar'
-	#sleep 10
-	#cp -rf $TEMP'graphene/xpcshell' $DIR
-	#rm -rf $TEMP'graphene'
-	#rm -rf $TEMP'temp.tar'
+    #bzip2 -d $TEMP'temp.tar.bz2'
+    #sleep 5
+    #tar -xf $TEMP'temp.tar'
+    #sudo rm -rf $TEMP'Firefox '$version'.tar'
+    #sleep 10
+    #cp -rf $TEMP'graphene/xpcshell' $DIR
+    #rm -rf $TEMP'graphene'
+    #rm -rf $TEMP'temp.tar'
         foo=1
     fi
 fi
 
 # download test build
-wget -O 'Firefox '$version$file_extension $test_build_url
+wget -O 'FirefoxTestBuild'$file_extension $test_build_url
 
 if [[ $platform == "osx" ]]
 then
-    open $TEMP'Firefox '$version$file_extension
+    open $TEMP'FirefoxTestBuild'$file_extension
     sleep 20
     # move Firefox build from volume to local test folder
     cp -rf "/Volumes/"$volume"/"$app_name $TEMP
@@ -250,9 +251,9 @@ then
     hdiutil detach "/Volumes/"$volume
 else
     # linux - unzip archive
-    bzip2 -d $TEMP'Firefox '$version'.tar.bz2'
+    bzip2 -d $TEMP'FirefoxTestBuild.tar.bz2'
     sleep 5
-    tar -xf $TEMP'Firefox '$version'.tar'
+    tar -xf $TEMP'FirefoxTestBuild.tar'
     sleep 10
     mv firefox-sdk firefox_test
     test_build=$TEMP"firefox_test/bin/firefox"
@@ -260,13 +261,13 @@ else
     chmod u+x firefox_test/bin/xpcshell
 fi
 
-wget -O 'Firefox '$release$file_extension $release_build_url
+wget -O 'FirefoxReleaseBuild'$file_extension $release_build_url
 sleep 15
 
 if [[ $platform == "osx" ]]
 then
     # move Firefox build from dmg to local test folder
-    open "Firefox "$release$file_extension
+    open "FirefoxReleaseBuild"$file_extension
     sleep 15
     cp -rf "/Volumes/Firefox/Firefox.app" $TEMP
     mv Firefox.app Firefox_Release.app
@@ -274,9 +275,9 @@ then
     hdiutil detach /Volumes/Firefox
 else
     # linux
-    bzip2 -d $TEMP'Firefox '$src'.tar.bz2'
+    bzip2 -d $TEMP'FirefoxReleaseBuild.tar.bz2'
     sleep 5
-    tar -xf $TEMP'Firefox '$src'.tar'
+    tar -xf $TEMP'FirefoxReleaseBuild.tar'
     sleep 10
     mv firefox-sdk firefox_release
     release_build=$TEMP"firefox_release/bin/firefox"
@@ -298,10 +299,10 @@ app_dir=$( dirname $test_build )
 if [[ $platform == "osx" ]]
 then
     xpcshell_path_test=$DIR'/xpcshell'
-	gre_dir=$( dirname $app_dir )"/Resources"
+    gre_dir=$( dirname $app_dir )"/Resources"
 else
     xpcshell_path_test=$TEMP'firefox_test/bin/xpcshell'
-	gre_dir=$( dirname $test_build )
+    gre_dir=$( dirname $test_build )
 fi
 
 export DYLD_LIBRARY_PATH=$app_dir
@@ -312,10 +313,10 @@ app_dir=$( dirname $release_build )
 if [[ $platform == "osx" ]]
 then
     xpcshell_path_release=$DIR'/xpcshell'
-	gre_dir=$( dirname $app_dir )"/Resources"
+    gre_dir=$( dirname $app_dir )"/Resources"
 else
     xpcshell_path_release=$TEMP'firefox_release/bin/xpcshell'
-	gre_dir=$( dirname $release_build )
+    gre_dir=$( dirname $release_build )
 fi
 export DYLD_LIBRARY_PATH=$app_dir
 export LD_LIBRARY_PATH=$app_dir
@@ -362,58 +363,58 @@ echo $l1$'\n'$l2$'\n'$l3$'\n'$l4$'\n'$l5$'\n'$l6$'\n'$l7$'\n'$l8 > $TEST_DIR/tem
 # run scans
 run ()
 {
-	input_file="$1"
-	log_file="$2"
-	app_dir=$( dirname "$3" )
-	if [[ $platform == "osx" ]]
-	then
-		gre_dir=$( dirname $app_dir )"/Resources"
-	else
-		gre_dir=$app_dir
-	fi
-	pref_arg=' -p='"$4"
-	json_arg="$5"
-	cert_arg="$6"
-	if [[ $platform == "osx" ]]
-	then
-		shell_path=$DIR"/xpcshell" 
-	else
-		shell_path=$app_dir"/xpcshell"
-	fi
+    input_file="$1"
+    log_file="$2"
+    app_dir=$( dirname "$3" )
+    if [[ $platform == "osx" ]]
+    then
+        gre_dir=$( dirname $app_dir )"/Resources"
+    else
+        gre_dir=$app_dir
+    fi
+    pref_arg=' -p='"$4"
+    json_arg="$5"
+    cert_arg="$6"
+    if [[ $platform == "osx" ]]
+    then
+        shell_path=$DIR"/xpcshell" 
+    else
+        shell_path=$app_dir"/xpcshell"
+    fi
 
-	path_arg=" -d="$DIR"/"
+    path_arg=" -d="$DIR"/"
 
-	js=$DIR/scan_url.js
-	LOG=$TEST_DIR"/temp/"$log_file
+    js=$DIR/scan_url.js
+    LOG=$TEST_DIR"/temp/"$log_file
 
-	site_list=$( cat $input_file )
+    site_list=$( cat $input_file )
 
-	n=0
-	for line in $site_list; do
-		uri_array[n]=$line
-		n=$(($n+1))
-	done
+    n=0
+    for line in $site_list; do
+        uri_array[n]=$line
+        n=$(($n+1))
+    done
 
-	exec 6>&1
-	exec > $LOG
+    exec 6>&1
+    exec > $LOG
 
-	export DYLD_LIBRARY_PATH=$app_dir
-	export LD_LIBRARY_PATH=$app_dir
+    export DYLD_LIBRARY_PATH=$app_dir
+    export LD_LIBRARY_PATH=$app_dir
 
-	index=0
+    index=0
 
-	for uri in $site_list; do
-		index=$(($index+1))
-		uri_arg=" -u="$uri
+    for uri in $site_list; do
+        index=$(($index+1))
+        uri_arg=" -u="$uri
 
-		echo $($shell_path -g $gre_dir -a $app_dir -s $js$uri_arg$path_arg $pref_arg$json_arg$cert_arg) &
-		if [ $index -gt $batch_quantity ]; then
-			index=0
-			sleep $pause_time
-		fi
-	done
+        echo $($shell_path -g $gre_dir -a $app_dir -s $js$uri_arg$path_arg $pref_arg$json_arg$cert_arg) &
+        if [ $index -gt $batch_quantity ]; then
+            index=0
+            sleep $pause_time
+        fi
+    done
 
-	sleep $file_system_pause_time
+    sleep $file_system_pause_time
 }
 
 # First pass: run list against test build
