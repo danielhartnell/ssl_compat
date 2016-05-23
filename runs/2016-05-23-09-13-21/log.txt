@@ -1,6 +1,6 @@
 timestamp : 2016-05-23-09-13-21
 branch : Nightly
-description : TLS 1.3 compat testing
+description : Fx49.0a1 nightly - TLS 1.3 compat testing
 source : Alexa top sites 290773
 test build url : https://download.mozilla.org/?product=firefox-nightly-latest&os=osx&lang=en-US
 release build url : https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US
