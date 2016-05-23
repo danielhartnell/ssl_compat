@@ -35,4 +35,5 @@
 {"run":"2016-05-02-13-13-04","branch":"Beta","errors":"3","description":"Fx47.0b1 beta vs Fx46.0 release"}
 {"run":"2016-05-06-16-25-36","branch":"Aurora","errors":"22","description":"Fx48.0a2 aurora vs Fx46.0.1 release"}
 {"run":"2016-05-06-11-34-53","branch":"Nightly","errors":"19","description":"Fx49.0a1 nightly vs Fx46.0.1 release"}
-{"run":"2016-05-18-11-49-18","branch":"Nightly","errors":"88","description":"Fx49.0a1 nightly - compatibility for netscape_step_up"}{"run":"2016-05-23-09-13-21","branch":"Nightly","errors":"50”,”description":"Fx49.0a1 nightly - TLS 1.3 compat testing"}
+{"run":"2016-05-18-11-49-18","branch":"Nightly","errors":"88","description":"Fx49.0a1 nightly - compatibility for netscape_step_up"}
+{"run":"2016-05-23-09-13-21","branch":"Nightly","errors":"50","description":"Fx49.0a1 nightly - TLS 1.3 compat testing"}
