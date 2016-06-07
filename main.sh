@@ -50,7 +50,7 @@ then
     echo $'\t'-b name of branch: beta, aurora, nightly
     echo $'\n'Optional:
     echo $'\t'-s name of source list: 
-    echo $'\t'$'\t'smoke, test, alexa, pulse \(default\), google
+    echo $'\t'$'\t'smoke, test, alexa \(default\), pulse, google
     echo $'\t'$'\t'OR custom URL to source list
     echo $'\t'-u URL of Firefox DMG to test 
     echo $'\t'-d description of test run \(use quotes\)
@@ -62,7 +62,7 @@ fi
   
 if [ -z $source ]
 then
-    source=pulse
+    source=alexa
 fi  
 
 if [ $pref ] 
@@ -107,38 +107,11 @@ else
     file_extension=.tar.bz2
 fi
 
-# auto branch detection
-#master_url="https://www.mozilla.org/en-US/firefox/notes/"
-#wget -O 'temp.htm' $master_url
-
-#src=$( cat temp.htm )
-#src=${src##*Notes (}
-#src=${src##*Version }
-#release=${src%%,*}
-#src=${src%%.0*}
-#src=${src%%.*}
-#beta=$(($src+1))
-#aurora=$(($src+2))".0a2"
-#nightly=$(($src+3))".0a1"
-#rm -rf temp.htm
-
 # construct URLs based on platform
-if [[ $platform == "osx" ]]
-then
-    xpcshell_url="http://ftp.mozilla.org/pub/b2g/nightly/latest-mozilla-central/firefox-"$nightly".en-US.mac64.dmg"
-    release_build_url="https://download.mozilla.org/?product=firefox-latest&os="$platform"&lang=en-US"
-    beta_build_url="https://download.mozilla.org/?product=firefox-beta-latest&os="$platform"&lang=en-US"
-    aurora_build_url="https://download.mozilla.org/?product=firefox-aurora-latest&os="$platform"&lang=en-US"
-    nightly_build_url="https://download.mozilla.org/?product=firefox-nightly-latest&os="$platform"&lang=en-US"
-else
-    # once Fx47 goes to release, remove all of this and just use a normal build (not SDK build)
-    beta_build_url='http://download.cdn.mozilla.net/pub/firefox/releases/'$beta'b1/linux-x86_64/en-US/sdk/firefox-'$beta'b1.sdk.tar.bz2'
-    aurora_build_url='http://download.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/firefox-'$aurora'.en-US.linux-x86_64.sdk.tar.bz2'
-    nightly_build_url='http://download.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-central/firefox-'$nightly'.en-US.linux-x86_64.sdk.tar.bz2'
-    release_build_url='http://ftp.mozilla.org/pub/firefox/releases/'$release'/linux-x86_64/en-US/firefox-'$release'.sdk.tar.bz2'
-
-fi
-
+release_build_url="https://download.mozilla.org/?product=firefox-latest&os="$platform"&lang=en-US"
+beta_build_url="https://download.mozilla.org/?product=firefox-beta-latest&os="$platform"&lang=en-US"
+aurora_build_url="https://download.mozilla.org/?product=firefox-aurora-latest&os="$platform"&lang=en-US"
+nightly_build_url="https://download.mozilla.org/?product=firefox-nightly-latest&os="$platform"&lang=en-US"
 
 case $branch in
 *"beta"*)
@@ -200,42 +173,8 @@ TEST_DIR=$DIR"/runs/"$timestamp
 cd $TEST_DIR
 mkdir certs
 mkdir temp
-#cd $DIR
 TEMP=$TEST_DIR"/temp/"
 cd $TEMP
-
-# temporary
-#
-# changes are coming that will eventually obsolete this section
-#
-# download xpcshell binary, if needed, Mac only
-xpcshell_path=$DIR'/xpcshell'
-if [ -e "$xpcshell_path" ]
-then
-    echo Has xpcshell installed
-else
-    if [[ $platform == "osx" ]]
-    then
-        echo Downloading xpcshell
-        echo $xpcshell_url
-        wget -O 'temp'$file_extension $xpcshell_url
-        open $TEMP'temp.dmg'
-        sleep 15
-        cp -rf "/Volumes/Nightly/FirefoxNightly.app/Contents/MacOS/xpcshell" $DIR
-        hdiutil detach "/Volumes/Nightly"
-    else
-        # linux - unzip archive
-    #bzip2 -d $TEMP'temp.tar.bz2'
-    #sleep 5
-    #tar -xf $TEMP'temp.tar'
-    #sudo rm -rf $TEMP'Firefox '$version'.tar'
-    #sleep 10
-    #cp -rf $TEMP'graphene/xpcshell' $DIR
-    #rm -rf $TEMP'graphene'
-    #rm -rf $TEMP'temp.tar'
-        foo=1
-    fi
-fi
 
 # download test build
 wget -O 'FirefoxTestBuild'$file_extension $test_build_url
@@ -255,10 +194,8 @@ else
     sleep 5
     tar -xf $TEMP'FirefoxTestBuild.tar'
     sleep 10
-    mv firefox-sdk firefox_test
-    test_build=$TEMP"firefox_test/bin/firefox"
-    cp -r firefox_test/sdk/bin/* firefox_test/bin
-    chmod u+x firefox_test/bin/xpcshell
+    mv firefox firefox_test
+    test_build=$TEMP"firefox_test/firefox"
 fi
 
 wget -O 'FirefoxReleaseBuild'$file_extension $release_build_url
@@ -279,14 +216,10 @@ else
     sleep 5
     tar -xf $TEMP'FirefoxReleaseBuild.tar'
     sleep 10
-    mv firefox-sdk firefox_release
-    release_build=$TEMP"firefox_release/bin/firefox"
-    cp -r firefox_release/sdk/bin/* firefox_release/bin
-    chmod u+x firefox_release/bin/xpcshell
+    mv firefox firefox_release
+    release_build=$TEMP"firefox_release/firefox"
     sleep 5
 fi
-
-
 
 # get metadata from each build of Firefox
 #
@@ -294,34 +227,8 @@ fi
 # which we'll use again when we make a master log file
 
 cd $DIR
-
-app_dir=$( dirname $test_build )
-if [[ $platform == "osx" ]]
-then
-    xpcshell_path_test=$DIR'/xpcshell'
-    gre_dir=$( dirname $app_dir )"/Resources"
-else
-    xpcshell_path_test=$TEMP'firefox_test/bin/xpcshell'
-    gre_dir=$( dirname $test_build )
-fi
-
-export DYLD_LIBRARY_PATH=$app_dir
-export LD_LIBRARY_PATH=$app_dir
-echo $($xpcshell_path_test -g $gre_dir -a $app_dir -s $DIR/build_data.js -log=$TEST_DIR/temp/test_build_metadata.txt)
-
-app_dir=$( dirname $release_build )
-if [[ $platform == "osx" ]]
-then
-    xpcshell_path_release=$DIR'/xpcshell'
-    gre_dir=$( dirname $app_dir )"/Resources"
-else
-    xpcshell_path_release=$TEMP'firefox_release/bin/xpcshell'
-    gre_dir=$( dirname $release_build )
-fi
-export DYLD_LIBRARY_PATH=$app_dir
-export LD_LIBRARY_PATH=$app_dir
-echo $($xpcshell_path_release -g $gre_dir -a $app_dir -s $DIR/build_data.js -log=$TEST_DIR/temp/release_build_metadata.txt)
-
+echo $($test_build -xpcshell $DIR/build_data.js -log=$TEST_DIR/temp/test_build_metadata.txt)
+echo $($release_build -xpcshell $DIR/build_data.js -log=$TEST_DIR/temp/release_build_metadata.txt)
 sleep 5
 
 # although we already know some of this data, 
@@ -343,10 +250,8 @@ num_sites="${temp[0]}"
 # if description doesn't exist, autogenerate here
 if [ -z ${description+x} ]
 then
-    #description="Fx"$version" "$branch" vs Fx"$release" release"
     description="Fx"$test_version" "$test_branch" vs Fx"$release_version" "$release_branch
 fi
-
 
 # generate metadata
 l1="timestamp : "$timestamp
@@ -365,28 +270,13 @@ run ()
 {
     input_file="$1"
     log_file="$2"
-    app_dir=$( dirname "$3" )
-    if [[ $platform == "osx" ]]
-    then
-        gre_dir=$( dirname $app_dir )"/Resources"
-    else
-        gre_dir=$app_dir
-    fi
+    app_path="$3"
     pref_arg=' -p='"$4"
     json_arg="$5"
     cert_arg="$6"
-    if [[ $platform == "osx" ]]
-    then
-        shell_path=$DIR"/xpcshell" 
-    else
-        shell_path=$app_dir"/xpcshell"
-    fi
-
     path_arg=" -d="$DIR"/"
-
     js=$DIR/scan_url.js
     LOG=$TEST_DIR"/temp/"$log_file
-
     site_list=$( cat $input_file )
 
     n=0
@@ -398,22 +288,16 @@ run ()
     exec 6>&1
     exec > $LOG
 
-    export DYLD_LIBRARY_PATH=$app_dir
-    export LD_LIBRARY_PATH=$app_dir
-
     index=0
-
     for uri in $site_list; do
         index=$(($index+1))
         uri_arg=" -u="$uri
-
-        echo $($shell_path -g $gre_dir -a $app_dir -s $js$uri_arg$path_arg $pref_arg$json_arg$cert_arg) &
+        echo $($app_path -xpcshell $js$uri_arg$path_arg $pref_arg$json_arg$cert_arg) &
         if [ $index -gt $batch_quantity ]; then
             index=0
             sleep $pause_time
         fi
     done
-
     sleep $file_system_pause_time
 }
 
@@ -422,7 +306,6 @@ run $DIR/sources/$url_source test_error_urls.txt $test_build $pref1
 
 # First pass: run error URLs against release build
 run $TEST_DIR/temp/test_error_urls.txt release_error_urls.txt $release_build $pref2
-
 
 # diff results and make a new URL list
 cd $TEST_DIR
@@ -439,10 +322,8 @@ cd $DIR
 sleep $file_system_pause_time
 run $TEST_DIR/temp/first_pass_error_urls.txt test_error_urls_2.txt $test_build $pref1
 
-
 # Second pass: run error URL list from above against release build again
 run $TEST_DIR/temp/test_error_urls_2.txt release_error_urls_2.txt $release_build $pref2
-
 
 # diff results once again and make a new URL list
 cd $TEST_DIR
@@ -491,14 +372,12 @@ echo $l6$'\n'$l7 > $TEST_DIR/temp/end_time.txt
 sleep 2
 cat $TEMP"metadata.txt" $TEMP"end_time.txt" $TEMP"final_errors_sorted.txt" > $TEST_DIR/log.txt
 
-
 # update runs file 
 # grab number of sites in final error file
 temp=( $( wc -l $TEMP"final_errors_sorted.txt" ) )
 num_errors="${temp[0]}"
 
 # format report into quasi-JSON
-
 t1={
 t2=\"
 t3=$t2:$t2
@@ -522,5 +401,3 @@ cp $DIR/report_template.htm $TEST_DIR/index.htm
 
 # optional: delete temp folder
 rm -r $TEMP
-
-
