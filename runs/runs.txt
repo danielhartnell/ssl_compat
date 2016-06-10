@@ -37,3 +37,4 @@
 {"run":"2016-05-06-11-34-53","branch":"Nightly","errors":"19","description":"Fx49.0a1 nightly vs Fx46.0.1 release"}
 {"run":"2016-05-18-11-49-18","branch":"Nightly","errors":"88","description":"Fx49.0a1 nightly - compatibility for netscape_step_up"}
 {"run":"2016-05-23-09-13-21","branch":"Nightly","errors":"50","description":"Fx49.0a1 nightly - TLS 1.3 compat testing"}
+{"run":"2016-06-09-15-43-48","branch":"Beta","errors":"6","description":"Fx48.0b1 beta vs Fx47.0 release"}
