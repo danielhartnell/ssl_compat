@@ -42,4 +42,6 @@
 {"run":"2016-08-09-10-04-59","branch":"Beta","errors":"0","description":"Fx49.0b2 beta vs Fx48.0 release"}
 {"run":"2016-08-10-13-32-11","branch":"Aurora","errors":"17","description":"Fx50.0a2 aurora vs Fx48.0 release"}
 {"run":"2016-08-11-09-27-04","branch":"Nightly","errors":"18","description":"Fx51.0a1 nightly vs Fx48.0 release"}
+{"run":"2016-09-27-08-53-27","branch":"Beta","errors":"0","description":"Fx50.0b2 beta vs Fx49.0.1 release"}
+{"run":"2016-09-28-09-51-13","branch":"Aurora","errors":"5313","description":"Fx51.0a2 aurora vs Fx49.0.1 release"}
 {"run":"2016-09-28-16-14-48","branch":"Nightly","errors":"17","description":"Fx52.0a1 nightly vs Fx50.0b2 beta"}
