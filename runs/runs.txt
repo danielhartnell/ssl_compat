@@ -43,3 +43,4 @@
 {"run":"2016-08-10-13-32-11","branch":"Aurora","errors":"17","description":"Fx50.0a2 aurora vs Fx48.0 release"}
 {"run":"2016-08-11-09-27-04","branch":"Nightly","errors":"18","description":"Fx51.0a1 nightly vs Fx48.0 release"}
 {"run":"2016-09-28-16-14-48","branch":"Nightly","errors":"17","description":"Fx52.0a1 nightly vs Fx50.0b2 beta"}
+{"run":"2016-10-06-15-49-14","branch":"Nightly","errors":"11","description":"Fx52.0a1 nightly vs Fx49.0.1 release"}
