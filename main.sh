@@ -402,3 +402,5 @@ cp $DIR/report_template.htm $TEST_DIR/index.htm
 
 # optional: delete temp folder
 rm -r $TEMP
+
+exit 0
