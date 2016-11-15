@@ -148,11 +148,12 @@ file_system_pause_time=5
 # number of simultaneous requests
 if [[ $platform == "osx" ]]
 then
+    # may be too high; 50 might work better, lower for more accuracy
     batch_quantity=100
 else
     # linux is running out of file handles, so
     # we're going to throttle this lower for now
-    batch_quantity=10
+    batch_quantity=50
 fi
 
 # time between making batches of requests
@@ -401,3 +402,5 @@ cp $DIR/report_template.htm $TEST_DIR/index.htm
 
 # optional: delete temp folder
 rm -r $TEMP
+
+exit 0
