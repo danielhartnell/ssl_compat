@@ -441,4 +441,4 @@ mv $TEST_DIR/temp/runs.txt $DIR/runs/runs.txt
 cp $DIR/report_template.htm $TEST_DIR/index.htm
 
 # optional: delete temp folder
-rm -r $TEMP
+# rm -r $TEMP
