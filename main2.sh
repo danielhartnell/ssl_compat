@@ -224,7 +224,9 @@ fi
 
 # TEMP
 # test_build="/Applications/Firefox.app/Contents/MacOS/firefox"
-#release_build=$test_build
+
+# TEMP: allows us to test Nightly vs Nightly if we just want to look at revocations
+release_build=$test_build
 
 
 
