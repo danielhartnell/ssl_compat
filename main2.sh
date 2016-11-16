@@ -223,7 +223,7 @@ fi
 
 
 # TEMP
-test_build="/Applications/Firefox.app/Contents/MacOS/firefox"
+# test_build="/Applications/Firefox.app/Contents/MacOS/firefox"
 #release_build=$test_build
 
 
