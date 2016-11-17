@@ -543,7 +543,7 @@ function loadURI(uri) {
     analyzeSecurityInfo(xhr, currentError, hostname, error);
     if (true)
     {
-      var msg = test_obj.site_info.uri + "," + test_obj.cert_info.validityNotBefore + "," + test_obj.cert_info.validityNotAfter;
+      var msg = test_obj.site_info.rank + "," + test_obj.site_info.uri;
       if (print_json)
       {
         msg += "\t" + JSON.stringify(test_obj);

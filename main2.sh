@@ -152,7 +152,7 @@ then
 else
     # linux is running out of file handles, so
     # we're going to throttle this lower for now
-    batch_quantity=10
+    batch_quantity=15
 fi
 
 # time between making batches of requests
