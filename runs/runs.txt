@@ -48,4 +48,6 @@
 {"run":"2016-10-06-15-49-14","branch":"Nightly","errors":"11","description":"Fx52.0a1 nightly vs Fx49.0.1 release"}
 {"run":"2016-10-06-09-41-22","branch":"Nightly","errors":"23","description":"Fx52.0a1 Nightly: Hong Kong Post root cert removal"}
 {"run":"2016-11-10-09-39-35","branch":"Nightly","errors":"124","description":"Fx52.0a1 nightly vs Fx49.0.2 release"}
+{"run":"2016-12-01-12-07-41","branch":"Nightly","errors":"178","description":"Fx53.0a1 nightly vs Fx50.0.2 release"}
 {"run":"2016-12-01-15-51-22","branch":"Beta","errors":"149","description":"Fx51.0b5 beta vs Fx50.0.2 release"}
+{"run":"2016-12-12-10-46-36","branch":"Aurora","errors":"185","description":"Fx52.0a2 aurora vs Fx50.0.2 release"}
