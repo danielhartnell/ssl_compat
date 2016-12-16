@@ -30,7 +30,7 @@ XPCOMUtils.defineLazyGetter(this, "Timer", function() {
 
 if (!arguments || arguments.length < 1) {
 
-  throw "Usage: xpcshell sslScan.js <-u=uri>\n";
+  throw "Usage: -xpcshell scan_urls.js <-u=uri>\n";
 }
 
 /*
@@ -70,8 +70,11 @@ var num_hosts;
 var num_started = 0;
 var num_completed = 0;
 var counter = 0;
-var connections_per_second = 20; // tuneable
+
+// TBD: make these parameters
+var connections_per_second = 50; // tuneable
 var interval_seconds = 5; // tuneable
+var profile = "default_profile";
 
 for (var i=0;i<arguments.length;i++)
 {
@@ -108,11 +111,15 @@ for (var i=0;i<arguments.length;i++)
   {
     log_file_name = arguments[i].split("-log=")[1];
   }
+  if (arguments[i].indexOf("-prof=") != -1)
+  {
+    profile = arguments[i].split("-prof=")[1];
+  }
 }
 
 try
 {
-  Cu.import("file:///" + current_directory + "/js/vendor/forge/forge.min.js");
+  Cu.import("file:///" + current_directory + "js/vendor/forge/forge.min.js");
 } catch (e)
 {
   failRun (e.message + "\n\n")
@@ -138,6 +145,45 @@ try
 {
   infoMessage (e.message + "\n\n")
 }
+
+
+
+function do_get_profile() {
+  var profd = current_directory + "profiles/" + profile;
+  var file = Components.classes["@mozilla.org/file/local;1"]
+                       .createInstance(Components.interfaces.nsILocalFile);
+  file.initWithPath(profd);
+  var dirSvc = Components.classes["@mozilla.org/file/directory_service;1"]
+                         .getService(Components.interfaces.nsIProperties);
+  var provider = {
+    getFile: function(prop, persistent) {
+      //dump ( "prop: " + prop + "\n");
+      persistent.value = true;
+      if (prop == "ProfD" || prop == "ProfLD" || prop == "ProfDS" ||
+          prop == "ProfLDS" || prop == "PrefD" || prop == "TmpD") {
+        return file.clone();
+      }
+      return null;
+    },
+    QueryInterface: function(iid) {
+      if (iid.equals(Components.interfaces.nsIDirectoryServiceProvider) ||
+          iid.equals(Components.interfaces.nsISupports)) {
+        return this;
+      }
+      throw Components.results.NS_ERROR_NO_INTERFACE;
+    }
+  };
+  dirSvc.QueryInterface(Components.interfaces.nsIDirectoryService)
+        .registerProvider(provider);
+
+  // The methods of 'provider' will retain this scope so null out everything
+  // to avoid spurious leak reports.
+  profd = null;
+  dirSvc = null;
+  provider = null;
+  return file.clone();
+}
+
 
 // custom prefs can go here
 // Services.prefs.setIntPref("security.pki.netscape_step_up_policy", 3)
@@ -184,8 +230,11 @@ function analyzeSecurityInfo(xhr, error, errorCode) {
   }
   try {
     let channel = xhr.channel;
+    if (channel == null)
+    {
+      return;
+    }
     let secInfo = channel.securityInfo;
-
     if (secInfo instanceof Ci.nsITransportSecurityInfo) 
       secInfo.QueryInterface(Ci.nsITransportSecurityInfo);
     if (secInfo instanceof Ci.nsISSLStatusProvider) {
@@ -448,21 +497,21 @@ function queryHost(hostname, callback) {
       timeout = null;
     }  
   }
+  let rank = 0;
+  let host;
+  if (hostname.indexOf(",") != -1)
+  {
+    let temp = hostname.split(",");
+    rank = temp[0];
+    host = temp[1];
+  } else {
+    host = hostname;
+  }
+  let req = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance(Ci.nsIXMLHttpRequest);
+  req.hostname = host;
+  req.test_object = createTestObject(host,rank);
+  timeout = Timer.setTimeout(() => completed(UNKNOWN_ERROR, req), DEFAULT_TIMEOUT+2000);
   try {
-    let rank = 0;
-    let host;
-    if (hostname.indexOf(",") != -1)
-    {
-      let temp = hostname.split(",");
-      rank = temp[0];
-      host = temp[1];
-    } else {
-      host = hostname;
-    }
-    let req = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance(Ci.nsIXMLHttpRequest);
-    req.hostname = host;
-    req.test_object = createTestObject(host,rank);
-    timeout = Timer.setTimeout(() => completed(UNKNOWN_ERROR, req), DEFAULT_TIMEOUT+2000);
     req.open("HEAD", "https://" + host, true);
     req.timeout = DEFAULT_TIMEOUT;
     //req.channel.notificationCallbacks = new RedirectStopper();
@@ -476,7 +525,7 @@ function queryHost(hostname, callback) {
 }
 
 function writeCertToDisk(hostname,data) {
-  let certFile = openFile(current_directory + "/runs/" + run_id + "/certs/" + hostname + ".der");
+  let certFile = openFile(current_directory + "runs/" + run_id + "/certs/" + hostname + ".der");
   certFile.write(data, data.length);
   FileUtils.closeSafeFileOutputStream(certFile); // hope this is OK here, moved from original location
 }
@@ -522,7 +571,6 @@ function waitForAResponse(condition) {
     while (condition()) {
       mainThread.processNextEvent(true);
     }
-
   } catch(e) {
     failRun(e.message); 
   }
@@ -552,11 +600,25 @@ function loadHosts() {
   let file = Cc["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
   file.initWithPath(source);
   let stream = Cc["@mozilla.org/network/file-input-stream;1"].createInstance(Ci.nsIFileInputStream);
-  stream.init(file, -1, 0, 0);
-  let str = NetUtil.readInputStreamToString(stream, stream.available());
-  return str.split("\n").map(e => e.trim()).filter(e => !!e);
+  try
+  {
+    stream.init(file, -1, 0, 0);
+  } catch (e)
+  {
+    failRun ("Source file not found");
+  }
+  let str = "";
+  try
+  {
+    str = NetUtil.readInputStreamToString(stream, stream.available());
+    return str.split("\n").map(e => e.trim()).filter(e => !!e);
+  } catch (e)
+  {
+    // temporary - likely empty file due to no errors, so we stop here
+    // TODO: better logic to detect this
+    return [str];
+  }
 }
-
 
 function createTestObject(host, rank)
 {
@@ -614,6 +676,7 @@ function createTestObject(host, rank)
 
 function finish()
 {
+    log_file.write('', 0); 
     FileUtils.closeSafeFileOutputStream(log_file);
     completed = true;
 }
@@ -649,17 +712,35 @@ function start()
   waitForAResponse(() => completed != true);
 }
 
-try {
-  log_file=openFile(current_directory + "runs/" + run_id + "/temp/" + log_file_name);
+try 
+{
+  do_get_profile();
+} catch (e)
+{
+  failRun ("Can't open profile");
+}
+
+try
+{
+  log_file = openFile(current_directory + "runs/" + run_id + "/temp/" + log_file_name);
+} catch (e)
+{
+  failRun ("Can't open log file");
+  finish();  
+  waitForAResponse(() => completed != true);
+}
+
+try
+{
   hosts = loadHosts();
   num_hosts = hosts.length;
   start();
-  
-
-  // temp
-  finish();
-
-} catch (e) {
-  failRun(e.message);
+} catch (e) 
+{
+  failRun ("Can't open source file");
+  finish();  
+  waitForAResponse(() => completed != true);
 }
+
+
 

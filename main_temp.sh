@@ -266,7 +266,6 @@ l8="release build metadata : "$release_metadata
 
 echo $l1$'\n'$l2$'\n'$l3$'\n'$l4$'\n'$l5$'\n'$l6$'\n'$l7$'\n'$l8 > $TEST_DIR/temp/metadata.txt
 
-
 # run scans
 run ()
 {
@@ -274,9 +273,15 @@ run ()
     app_path="$1"
     source_arg='-s='"$2"
     log_file='-log='"$3"
+
+    # clean up these args to make consistent like the others
     json_arg="$4"
     cert_arg="$5"
+
     pref_arg='-p='"$6"
+
+    #TBD: profile
+    profile_arg='-prof='"$7"
 
     js=$DIR/scan_urls.js
     path_arg=" -d="$DIR"/"
@@ -291,6 +296,8 @@ run ()
 }
 
 # First pass: run list against test build
+
+# Arguments: build path, source URIs, log file name, print json, save certs, prefs, profile
 run $test_build $DIR'/sources/'$url_source 'test_error_urls.txt' '-j=0' '-c=0'
 
 # First pass: run error URLs against release build
@@ -306,6 +313,11 @@ sleep $file_system_pause_time
 awk -F" " 'FILENAME=="release_errors_first_pass.txt"{A[$1]=$1} FILENAME=="test_errors_first_pass.txt"{if(A[$1]){}else{print}}' release_errors_first_pass.txt test_errors_first_pass.txt > first-pass-diff.txt
 sleep $file_system_pause_time
 cut -f1,1 -d " " first-pass-diff.txt | sort -u > first_pass_error_urls.txt
+
+# if there are no errors, stop right now
+temp=( $( wc -l "first_pass_error_urls.txt" ) )
+num_errors="${temp[0]}"
+
 cd $DIR
 
 # Second pass: run error URL list once again
@@ -317,7 +329,6 @@ run $test_build $TEST_DIR/temp/first_pass_error_urls.txt 'test_error_urls_2.txt'
 # Second pass: run error URL list from above against release build again
 #run $TEST_DIR/temp/test_error_urls_2.txt release_error_urls_2.txt $release_build $pref2
 run $release_build $TEST_DIR/temp/test_error_urls_2.txt 'release_error_urls_2.txt' '-j=0' '-c=0' 
-
 
 # diff results once again and make a new URL list
 cd $TEST_DIR
@@ -356,12 +367,18 @@ cut -f1,1 -d " " final-diff.txt | sort -u > final_urls.txt
 sleep $file_system_pause_time
 cd $DIR
 
-# Run final error URL list just to grab SSL certificates
-#run $TEMP"final_urls.txt" final_errors.txt $test_build $pref1 -j=true -c=$TEST_DIR"/certs/" 
-run $test_build $TEST_DIR/temp/final_urls.txt 'final_errors.txt' '-j=1' '-c=1' 
+temp=( $( wc -l $TEMP"final_urls.txt" ) )
+num_errors="${temp[0]}"
 
-
-sort -u $TEMP"final_errors.txt" > $TEMP"final_errors_sorted.txt"
+if [[ $num_errors > 0 ]]
+then
+    # Run final error URL list just to grab SSL certificates
+    #run $TEMP"final_urls.txt" final_errors.txt $test_build $pref1 -j=true -c=$TEST_DIR"/certs/" 
+    run $test_build $TEST_DIR/temp/final_urls.txt 'final_errors.txt' '-j=1' '-c=1' 
+    sort -u $TEMP"final_errors.txt" > $TEMP"final_errors_sorted.txt"
+else
+    sort -u $TEMP"final_urls.txt" > $TEMP"final_errors_sorted.txt"
+fi
 
 # total time
 end_time=$(date +%s)
@@ -376,8 +393,8 @@ cat $TEMP"metadata.txt" $TEMP"end_time.txt" $TEMP"final_errors_sorted.txt" > $TE
 
 # update runs file 
 # grab number of sites in final error file
-temp=( $( wc -l $TEMP"final_errors_sorted.txt" ) )
-num_errors="${temp[0]}"
+#temp=( $( wc -l $TEMP"final_errors_sorted.txt" ) )
+#num_errors="${temp[0]}"
 
 # format report into quasi-JSON
 t1={
