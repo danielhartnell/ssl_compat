@@ -57,6 +57,13 @@ if (!arguments || arguments.length < 1) {
 const DEFAULT_TIMEOUT = 10000;
 var completed = false;
 var debug = false; 
+var hosts;
+var num_hosts;
+var num_started = 0;
+var num_completed = 0;
+var counter = 0;
+
+// via parameters, but defaults are below
 var current_directory = "";
 var write_cert = false;
 var prefs = [];
@@ -65,13 +72,6 @@ var print_json = false;
 var log_file;
 var log_file_name;
 var source;
-var hosts;
-var num_hosts;
-var num_started = 0;
-var num_completed = 0;
-var counter = 0;
-
-// TBD: make these parameters
 var connections_per_second = 50; // tuneable
 var interval_seconds = 5; // tuneable
 var profile = "default_profile";
@@ -114,6 +114,14 @@ for (var i=0;i<arguments.length;i++)
   if (arguments[i].indexOf("-prof=") != -1)
   {
     profile = arguments[i].split("-prof=")[1];
+  }
+  if (arguments[i].indexOf("-cps=") != -1)
+  {
+    connections_per_second = Number(arguments[i].split("-cps=")[1]);
+  }
+  if (arguments[i].indexOf("-i=") != -1)
+  {
+    interval_seconds = Number(arguments[i].split("-i=")[1]);
   }
 }
 

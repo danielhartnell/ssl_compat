@@ -273,11 +273,8 @@ run ()
     app_path="$1"
     source_arg='-s='"$2"
     log_file='-log='"$3"
-
-    # clean up these args to make consistent like the others
-    json_arg="$4"
-    cert_arg="$5"
-
+    json_arg='-j='"$4"
+    cert_arg='-c='"$5"
     pref_arg='-p='"$6"
 
     #TBD: profile
@@ -298,10 +295,10 @@ run ()
 # First pass: run list against test build
 
 # Arguments: build path, source URIs, log file name, print json, save certs, prefs, profile
-run $test_build $DIR'/sources/'$url_source 'test_error_urls.txt' '-j=0' '-c=0'
+run $test_build $DIR'/sources/'$url_source 'test_error_urls.txt' 0 0
 
 # First pass: run error URLs against release build
-run $release_build $TEST_DIR/temp/test_error_urls.txt 'release_error_urls.txt' '-j=0' '-c=0'
+run $release_build $TEST_DIR/temp/test_error_urls.txt 'release_error_urls.txt' 0 0
 
 
 # diff results and make a new URL list
@@ -323,12 +320,12 @@ cd $DIR
 # Second pass: run error URL list once again
 sleep $file_system_pause_time
 #run $TEST_DIR/temp/first_pass_error_urls.txt test_error_urls_2.txt $test_build $pref1
-run $test_build $TEST_DIR/temp/first_pass_error_urls.txt 'test_error_urls_2.txt' '-j=0' '-c=0' 
+run $test_build $TEST_DIR/temp/first_pass_error_urls.txt 'test_error_urls_2.txt' 0 0 
 
 
 # Second pass: run error URL list from above against release build again
 #run $TEST_DIR/temp/test_error_urls_2.txt release_error_urls_2.txt $release_build $pref2
-run $release_build $TEST_DIR/temp/test_error_urls_2.txt 'release_error_urls_2.txt' '-j=0' '-c=0' 
+run $release_build $TEST_DIR/temp/test_error_urls_2.txt 'release_error_urls_2.txt' 0 0 
 
 # diff results once again and make a new URL list
 cd $TEST_DIR
@@ -346,12 +343,12 @@ batch_quantity=10
 # Third pass: run error URL list once again
 sleep $file_system_pause_time
 #run $TEST_DIR/temp/second-pass-diff.txt test_error_urls_3.txt $test_build $pref1
-run $test_build $TEST_DIR/temp/second-pass-diff.txt 'test_error_urls_3.txt' '-j=0' '-c=0' 
+run $test_build $TEST_DIR/temp/second-pass-diff.txt 'test_error_urls_3.txt' 0 0 
 
 
 # Third pass: run error URL list from above against release build again
 #run $TEST_DIR/temp/test_error_urls_3.txt release_error_urls_3.txt $release_build $pref2
-run $release_build $TEST_DIR/temp/test_error_urls_3.txt 'release_error_urls_3.txt' '-j=0' '-c=0' 
+run $release_build $TEST_DIR/temp/test_error_urls_3.txt 'release_error_urls_3.txt' 0 0 
 
 
 
@@ -374,7 +371,7 @@ if [[ $num_errors > 0 ]]
 then
     # Run final error URL list just to grab SSL certificates
     #run $TEMP"final_urls.txt" final_errors.txt $test_build $pref1 -j=true -c=$TEST_DIR"/certs/" 
-    run $test_build $TEST_DIR/temp/final_urls.txt 'final_errors.txt' '-j=1' '-c=1' 
+    run $test_build $TEST_DIR/temp/final_urls.txt 'final_errors.txt' 1 1 
     sort -u $TEMP"final_errors.txt" > $TEMP"final_errors_sorted.txt"
 else
     sort -u $TEMP"final_urls.txt" > $TEMP"final_errors_sorted.txt"
