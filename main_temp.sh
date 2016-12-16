@@ -275,31 +275,20 @@ run ()
     log_file='-log='"$3"
     json_arg='-j='"$4"
     cert_arg='-c='"$5"
-    pref_arg='-p='"$6"
-
-    #TBD: profile
-    profile_arg='-prof='"$7"
-
+    profile_arg='-prof='"$6"
+    pref_arg='-p='"$7"
     js=$DIR/scan_urls.js
     path_arg=" -d="$DIR"/"
-
-    #echo $($app_path -xpcshell $js$uri_arg$path_arg $pref_arg$json_arg$cert_arg) &
-    #echo $id_arg $path_arg $source_arg $log_file $json_arg $cert_arg $pref_arg
-
-    echo $($app_path -xpcshell $js $id_arg $path_arg $source_arg $log_file $json_arg $cert_arg $pref_arg) 
-    #$app_path -xpcshell $js $id_arg $path_arg $source_arg $log_file
-
+    echo $($app_path -xpcshell $js $id_arg $path_arg $source_arg $log_file $json_arg $cert_arg $profile_arg $pref_arg) 
     sleep $file_system_pause_time
 }
 
 # First pass: run list against test build
-
 # Arguments: build path, source URIs, log file name, print json, save certs, prefs, profile
-run $test_build $DIR'/sources/'$url_source 'test_error_urls.txt' 0 0
+run $test_build $DIR'/sources/'$url_source 'test_error_urls.txt' 0 0 'test_profile'
 
 # First pass: run error URLs against release build
-run $release_build $TEST_DIR/temp/test_error_urls.txt 'release_error_urls.txt' 0 0
-
+run $release_build $TEST_DIR/temp/test_error_urls.txt 'release_error_urls.txt' 0 0 'default_profile'
 
 # diff results and make a new URL list
 cd $TEST_DIR
@@ -319,13 +308,11 @@ cd $DIR
 
 # Second pass: run error URL list once again
 sleep $file_system_pause_time
-#run $TEST_DIR/temp/first_pass_error_urls.txt test_error_urls_2.txt $test_build $pref1
-run $test_build $TEST_DIR/temp/first_pass_error_urls.txt 'test_error_urls_2.txt' 0 0 
+run $test_build $TEST_DIR/temp/first_pass_error_urls.txt 'test_error_urls_2.txt' 0 0 'test_profile'
 
 
 # Second pass: run error URL list from above against release build again
-#run $TEST_DIR/temp/test_error_urls_2.txt release_error_urls_2.txt $release_build $pref2
-run $release_build $TEST_DIR/temp/test_error_urls_2.txt 'release_error_urls_2.txt' 0 0 
+run $release_build $TEST_DIR/temp/test_error_urls_2.txt 'release_error_urls_2.txt' 0 0 'default_profile'
 
 # diff results once again and make a new URL list
 cd $TEST_DIR
@@ -336,21 +323,12 @@ sleep $file_system_pause_time
 awk -F" " 'FILENAME=="release_errors_second_pass.txt"{A[$1]=$1} FILENAME=="test_errors_second_pass.txt"{if(A[$1]){}else{print}}' release_errors_second_pass.txt test_errors_second_pass.txt > second-pass-diff.txt
 cd $DIR
 
-# final pass
-# slow down number of requests for maximum accuracy
-batch_quantity=10
-
 # Third pass: run error URL list once again
 sleep $file_system_pause_time
-#run $TEST_DIR/temp/second-pass-diff.txt test_error_urls_3.txt $test_build $pref1
-run $test_build $TEST_DIR/temp/second-pass-diff.txt 'test_error_urls_3.txt' 0 0 
-
+run $test_build $TEST_DIR/temp/second-pass-diff.txt 'test_error_urls_3.txt' 0 0 'test_profile'
 
 # Third pass: run error URL list from above against release build again
-#run $TEST_DIR/temp/test_error_urls_3.txt release_error_urls_3.txt $release_build $pref2
-run $release_build $TEST_DIR/temp/test_error_urls_3.txt 'release_error_urls_3.txt' 0 0 
-
-
+run $release_build $TEST_DIR/temp/test_error_urls_3.txt 'release_error_urls_3.txt' 0 0 'default_profile'
 
 # diff results once again and make a new URL list
 cd $TEST_DIR
@@ -370,8 +348,7 @@ num_errors="${temp[0]}"
 if [[ $num_errors > 0 ]]
 then
     # Run final error URL list just to grab SSL certificates
-    #run $TEMP"final_urls.txt" final_errors.txt $test_build $pref1 -j=true -c=$TEST_DIR"/certs/" 
-    run $test_build $TEST_DIR/temp/final_urls.txt 'final_errors.txt' 1 1 
+    run $test_build $TEST_DIR/temp/final_urls.txt 'final_errors.txt' 1 1 'test_profile'
     sort -u $TEMP"final_errors.txt" > $TEMP"final_errors_sorted.txt"
 else
     sort -u $TEMP"final_urls.txt" > $TEMP"final_errors_sorted.txt"
@@ -387,11 +364,6 @@ l7="++++++++++"
 echo $l6$'\n'$l7 > $TEST_DIR/temp/end_time.txt
 sleep 2
 cat $TEMP"metadata.txt" $TEMP"end_time.txt" $TEMP"final_errors_sorted.txt" > $TEST_DIR/log.txt
-
-# update runs file 
-# grab number of sites in final error file
-#temp=( $( wc -l $TEMP"final_errors_sorted.txt" ) )
-#num_errors="${temp[0]}"
 
 # format report into quasi-JSON
 t1={

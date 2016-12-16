@@ -30,27 +30,32 @@ XPCOMUtils.defineLazyGetter(this, "Timer", function() {
 
 if (!arguments || arguments.length < 1) {
 
+  // TBD: update arg list here
   throw "Usage: -xpcshell scan_urls.js <-u=uri>\n";
 }
 
 /*
 
--u :  uri to scan (without scheme)
-
 -d : local directory path
 
--p :  preferences to apply (multiple flags supported)
-      NOTE: Boolean pref values must be passed in as false/true and not 0/1
+-s : source of URIs
 
--r : (site) rank (integer)
+-id : run ID, used for putting files in correct directory
+
+-log : name of log file to be created
 
 -j : print JSON on error
 
 -c : write certificate to disk with this path
 
--id : run ID, used for putting files in correct directory
+-p :  preferences to apply (multiple flags supported)
+      NOTE: Boolean pref values must be passed in as false/true and not 0/1
 
--log : name of log file to be created
+-prof : name of profile associated with this run
+
+-cps : connections per second
+
+-i : timed interval to make network requests, in seconds
 
 */
   
@@ -61,7 +66,6 @@ var hosts;
 var num_hosts;
 var num_started = 0;
 var num_completed = 0;
-var counter = 0;
 
 // via parameters, but defaults are below
 var current_directory = "";
@@ -154,8 +158,6 @@ try
   infoMessage (e.message + "\n\n")
 }
 
-
-
 function do_get_profile() {
   var profd = current_directory + "profiles/" + profile;
   var file = Components.classes["@mozilla.org/file/local;1"]
@@ -192,8 +194,7 @@ function do_get_profile() {
   return file.clone();
 }
 
-
-// custom prefs can go here
+// custom prefs can go here, or get passed in as parameters
 // Services.prefs.setIntPref("security.pki.netscape_step_up_policy", 3)
 
 const nsINSSErrorsService = Ci.nsINSSErrorsService;
@@ -538,7 +539,6 @@ function writeCertToDisk(hostname,data) {
   FileUtils.closeSafeFileOutputStream(certFile); // hope this is OK here, moved from original location
 }
 
-
 function loadURI(uri) {
   function recordResult(error, xhr) {
     let speed = new Date().getTime() - xhr.test_object.site_info.connectionSpeed;
@@ -547,12 +547,9 @@ function loadURI(uri) {
     let currentError = error ? getErrorType(error) : null;
     analyzeSecurityInfo(xhr, currentError, error);
     if (error)
-    // temp debug
-    //if (true)
     {
       var msg = xhr.test_object.site_info.rank + "," + xhr.test_object.site_info.uri;
       if (print_json)
-      //if (true)
       {
         msg += "\t" + JSON.stringify(xhr.test_object);
       }
@@ -566,10 +563,8 @@ function loadURI(uri) {
     {
       finish();
     }
-    //completed = true;
   }
   queryHost(uri, handleResult);
-  //waitForAResponse(() => completed != true);
 }
 
 function waitForAResponse(condition) {
@@ -602,7 +597,6 @@ function writeToLog(data) {
     log_file.write(message, message.length); 
 }
 
-
 // downloads a file containing host names
 function loadHosts() {
   let file = Cc["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
@@ -622,8 +616,8 @@ function loadHosts() {
     return str.split("\n").map(e => e.trim()).filter(e => !!e);
   } catch (e)
   {
-    // temporary - likely empty file due to no errors, so we stop here
-    // TODO: better logic to detect this
+    // temporary - likely empty file due to no errors
+    // TODO: better logic to detect this condition
     return [str];
   }
 }
@@ -645,7 +639,6 @@ function createTestObject(host, rank)
   // This part temporarily disabled, because our script only reports
   // on errors, and in error situations, we don't have a valid TLS
   // connection to obtain these values.
-
   /*
   o.tls_info = {};
   o.tls_info.version="";
@@ -678,7 +671,6 @@ function createTestObject(host, rank)
   o.cert_info.rootCertificateOrganization="";
   o.cert_info.rootCertificateOrganizationalUnit="";
   o.cert_info.rootCertificateSHA1Fingerprint="";
-  
   return o;
 }
 
@@ -700,7 +692,6 @@ function failRun(arg)
   dump ("FAIL: fatal error: " + arg + "\n")
   completed = true;
 }
-
 
 function makeQueue()
 {
@@ -749,6 +740,3 @@ try
   finish();  
   waitForAResponse(() => completed != true);
 }
-
-
-
