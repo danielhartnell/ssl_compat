@@ -145,15 +145,22 @@ esac
 # required to allow for file system operations
 file_system_pause_time=5
 
-# number of simultaneous requests
+# tuneable parameters for speed/accuracy
+# i.e.,
+# number of simultaneous requests = connections_per_second * interval 
+#
+# TBD: pass in as parameters to scan_urls.js
+#
 if [[ $platform == "osx" ]]
 then
-    # may be too high; 50 might work better, lower for more accuracy
-    batch_quantity=50
+    # higher is faster, lower for more accuracy
+    connections_per_second=20
+    interval=5
 else
-    # linux is running out of file handles, so
-    # we're going to throttle this lower for now
-    batch_quantity=50
+    # linux seems to have issues
+    # we're going to make this lower for now
+    connections_per_second=10
+    interval=5
 fi
 
 # time between making batches of requests
@@ -161,6 +168,15 @@ pause_time=5
 
 DIR=$( cd "$( dirname "$BASH_SOURCE[0]}" )" && pwd )
 cd $DIR
+
+# make sure certificate database files are read-only
+# this prevents intermediate cert caching when we
+# assign custom profiles
+chmod 400 profiles/default_profile/cert8.db
+chmod 400 profiles/default_profile/key3.db
+chmod 400 profiles/test_profile/cert8.db
+chmod 400 profiles/test_profile/key3.db
+
 
 start_time=$(date +%s)
 run_date=$(date +%F)
