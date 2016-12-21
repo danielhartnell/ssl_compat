@@ -482,7 +482,6 @@ RedirectStopper.prototype = {
   QueryInterface: XPCOMUtils.generateQI([Ci.nsIChannelEventSink])
 };
 
-
 function queryHost(hostname, callback) {
   function completed(error, xhr) {
     try
@@ -491,22 +490,19 @@ function queryHost(hostname, callback) {
       callback(error, xhr);
     } catch (e)
     {
-      //dump ("Timer is undefined, hostname: " + xhr.hostname + "\n");
+      //Timer is undefined
     }
   }
   function errorHandler(e) {
-    //clearTimeout(e.target.timeout);
     completed(e.target.channel.QueryInterface(Ci.nsIRequest).status, e.target);
   }
   function readyHandler(e) {
     if (e.target.readyState === 4) {
-      //clearTimeout(e.target.timeout);
       completed(null, e.target); // no error
     }
   }
   function clearTimeout(timeout)
   {
-    // this function handles the error case where no handler is called
     if (timeout) {
       Timer.clearTimeout(timeout);
       timeout = null;
