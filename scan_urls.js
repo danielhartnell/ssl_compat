@@ -76,7 +76,7 @@ var print_json = false;
 var log_file;
 var log_file_name;
 var source;
-var connections_per_second = 50; // tuneable
+var connections_per_second = 10; // tuneable
 var interval_seconds = 5; // tuneable
 var profile = "default_profile";
 
