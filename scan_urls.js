@@ -484,18 +484,23 @@ RedirectStopper.prototype = {
 
 
 function queryHost(hostname, callback) {
-  let timeout;
   function completed(error, xhr) {
-    clearTimeout(xhr.timeout);
-    callback(error, xhr);
+    try
+    {
+      Timer.clearTimeout(xhr.timeout);
+      callback(error, xhr);
+    } catch (e)
+    {
+      //dump ("Timer is undefined, hostname: " + xhr.hostname + "\n");
+    }
   }
   function errorHandler(e) {
-    clearTimeout(xhr.timeout);
+    //clearTimeout(e.target.timeout);
     completed(e.target.channel.QueryInterface(Ci.nsIRequest).status, e.target);
   }
   function readyHandler(e) {
     if (e.target.readyState === 4) {
-      clearTimeout(xhr.timeout);
+      //clearTimeout(e.target.timeout);
       completed(null, e.target); // no error
     }
   }
@@ -520,8 +525,7 @@ function queryHost(hostname, callback) {
   let req = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance(Ci.nsIXMLHttpRequest);
   req.hostname = host;
   req.test_object = createTestObject(host,rank);
-  timeout = Timer.setTimeout(() => completed(UNKNOWN_ERROR, req), DEFAULT_TIMEOUT+2000);
-  req.timeout = timeout;
+  req.timeout = Timer.setTimeout(() => completed(UNKNOWN_ERROR, req), DEFAULT_TIMEOUT+2000);;
   try {
     req.open("HEAD", "https://" + host, true);
     req.timeout = DEFAULT_TIMEOUT;
@@ -561,7 +565,6 @@ function loadURI(uri) {
   function handleResult(err, xhr) {
     recordResult(err, xhr);
     num_completed ++;
-    writeToLog(xhr.hostname + " " + num_completed);
     if (num_completed >= num_hosts)
     {
       finish();
