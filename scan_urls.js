@@ -486,21 +486,22 @@ RedirectStopper.prototype = {
 function queryHost(hostname, callback) {
   let timeout;
   function completed(error, xhr) {
-    clearTimeout();
+    clearTimeout(xhr.timeout);
     callback(error, xhr);
   }
   function errorHandler(e) {
-    clearTimeout();
+    clearTimeout(xhr.timeout);
     completed(e.target.channel.QueryInterface(Ci.nsIRequest).status, e.target);
   }
   function readyHandler(e) {
     if (e.target.readyState === 4) {
-      clearTimeout();
+      clearTimeout(xhr.timeout);
       completed(null, e.target); // no error
     }
   }
-  function clearTimeout()
+  function clearTimeout(timeout)
   {
+    // this function handles the error case where no handler is called
     if (timeout) {
       Timer.clearTimeout(timeout);
       timeout = null;
@@ -520,6 +521,7 @@ function queryHost(hostname, callback) {
   req.hostname = host;
   req.test_object = createTestObject(host,rank);
   timeout = Timer.setTimeout(() => completed(UNKNOWN_ERROR, req), DEFAULT_TIMEOUT+2000);
+  req.timeout = timeout;
   try {
     req.open("HEAD", "https://" + host, true);
     req.timeout = DEFAULT_TIMEOUT;
@@ -559,7 +561,8 @@ function loadURI(uri) {
   function handleResult(err, xhr) {
     recordResult(err, xhr);
     num_completed ++;
-    if ( num_completed >= num_hosts)
+    writeToLog(xhr.hostname + " " + num_completed);
+    if (num_completed >= num_hosts)
     {
       finish();
     }
