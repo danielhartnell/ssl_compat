@@ -560,6 +560,8 @@ function loadURI(uri) {
       }
       writeToLog (msg);
     }
+    xhr = null;
+    error = null;
   }
   function handleResult(err, xhr) {
     recordResult(err, xhr);
