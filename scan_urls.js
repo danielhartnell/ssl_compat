@@ -525,7 +525,10 @@ function queryHost(hostname, callback) {
   try {
     req.open("HEAD", "https://" + host, true);
     req.timeout = DEFAULT_TIMEOUT;
-    //req.channel.notificationCallbacks = new RedirectStopper();
+    // this causes spurious error message - bug 1313252 
+    // comment out next line to avoid
+    req.channel.notificationCallbacks = new RedirectStopper();
+    //
     req.addEventListener("error", errorHandler, false);
     req.addEventListener("load", readyHandler, false);
     req.send();
