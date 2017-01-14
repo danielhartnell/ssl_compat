@@ -148,7 +148,7 @@ file_system_pause_time=5
 # number of simultaneous requests
 if [[ $platform == "osx" ]]
 then
-    batch_quantity=30
+    batch_quantity=35
 else
     # linux is running out of file handles, so
     # we're going to throttle this lower for now

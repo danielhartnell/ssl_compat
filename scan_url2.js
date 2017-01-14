@@ -520,7 +520,7 @@ function queryHost(hostname, callback) {
     timeout = Timer.setTimeout(() => completed(UNKNOWN_ERROR, req), DEFAULT_TIMEOUT+2000);
     req.open("HEAD", "https://" + hostname, true);
     req.timeout = DEFAULT_TIMEOUT;
-    req.channel.notificationCallbacks = new RedirectStopper();
+    //req.channel.notificationCallbacks = new RedirectStopper();
     req.addEventListener("error", errorHandler, false);
     req.addEventListener("load", readyHandler, false);
     req.send();
@@ -541,7 +541,7 @@ function loadURI(uri) {
 
     let currentError = error ? getErrorType(error) : null;
     analyzeSecurityInfo(xhr, currentError, hostname, error);
-    if (true)
+    if (error)
     {
       var msg = test_obj.site_info.rank + "," + test_obj.site_info.uri;
       if (print_json)

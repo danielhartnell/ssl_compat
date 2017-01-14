@@ -51,3 +51,4 @@
 {"run":"2016-12-01-12-07-41","branch":"Nightly","errors":"178","description":"Fx53.0a1 nightly vs Fx50.0.2 release"}
 {"run":"2016-12-01-15-51-22","branch":"Beta","errors":"149","description":"Fx51.0b5 beta vs Fx50.0.2 release"}
 {"run":"2016-12-12-10-46-36","branch":"Aurora","errors":"185","description":"Fx52.0a2 aurora vs Fx50.0.2 release"}
+{"run":"2017-01-13-14-20-21","branch":"Nightly","errors":"1","description":"Latest OneCRL revocations on Nightly Fx53 - bug 1329981"}
