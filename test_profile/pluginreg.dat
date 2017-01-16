@@ -5,42 +5,5 @@ Version:0.18:$
 Arch:x86_64-gcc3:$
 
 [PLUGINS]
-Flash Player.plugin:$
-/Library/Internet Plug-Ins/Flash Player.plugin:$
-23.0.0.185:$
-1476224147000:0:0:0:$
-Shockwave Flash 23.0 r0:$
-Shockwave Flash:$
-2
-0:application/x-shockwave-flash:Shockwave Flash:swf:$
-1:application/futuresplash:FutureSplash Player:spl:$
 
 [INVALID]
-/Library/Internet Plug-Ins/AdobeExManDetect.plugin:$
-1396292751000:$
-/Library/Internet Plug-Ins/Unity Web Player.plugin:$
-1399457978000:$
-/Library/Internet Plug-Ins/Unused:$
-1400979994000:$
-/Library/Internet Plug-Ins/AdobeAAMDetect.plugin:$
-1406065419000:$
-/Library/Internet Plug-Ins/Quartz Composer.webplugin:$
-1410301211000:$
-/Library/Internet Plug-Ins/nsIQTScriptablePlugin.xpt:$
-1410315163000:$
-/Library/Internet Plug-Ins/AdobePDFViewer.plugin:$
-1430499615000:$
-/Library/Internet Plug-Ins/AdobePDFViewerNPAPI.plugin:$
-1430499615000:$
-/Library/Internet Plug-Ins/Default Browser.plugin:$
-1437098095000:$
-/Library/Internet Plug-Ins/QuickTime Plugin.plugin:$
-1437550260000:$
-/Library/Internet Plug-Ins/googletalkbrowserplugin.plugin:$
-1449858085000:$
-/Library/Internet Plug-Ins/o1dbrowserplugin.plugin:$
-1449858085000:$
-/Library/Internet Plug-Ins/JavaAppletPlugin.plugin:$
-1450829424000:$
-/Library/Internet Plug-Ins/flashplayer.xpt:$
-1474677896000:$
