@@ -109,8 +109,8 @@ Data.dateSortByField = function (uriList, fieldName) {
     var temp1 = eval ("arg1." + fieldName);
     var temp2 = eval ("arg2." + fieldName);
 
-    var a = Number (toNumericDateString(temp1));
-    var b = Number (toNumericDateString(temp2));
+    var a = toNumericDateString(temp1);
+    var b = toNumericDateString(temp2);
 
     return a == b ? 0 : (a < b ? -1 : 1);
   });

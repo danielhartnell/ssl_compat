@@ -91,8 +91,9 @@ function toNumericDateString (str)
   {
     hours = "0" + hours;
   }
-  // this is a string
-  return year + month + day + hours + minutes + seconds;
+
+  var dateStr = year + month + day + hours + minutes + seconds
+  return Number (dateStr);
 }
 
 function toReadableDateString(str)
