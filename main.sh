@@ -7,6 +7,7 @@
 # -u build URL
 # -s source URL list - defaults to Pulse top sites list
 # -d description
+# -o OneCRL set
 # -p prefs for both runs
 # -p1 pref for test run only (overrides -p)
 # -p2 pref for release run only (overrides -p)
@@ -28,6 +29,9 @@ case $i in
     ;;
     -p=*)
     pref="${i#*=}"
+    ;;
+    -o=*)
+    one_crl="${i#*=}"
     ;;
     -p1=*)
     pref1="${i#*=}"
@@ -54,6 +58,7 @@ then
     echo $'\t'$'\t'OR custom URL to source list
     echo $'\t'-u URL of Firefox DMG to test 
     echo $'\t'-d description of test run \(use quotes\)
+    echo $'\t'-o OneCRL set to use on test build 
     echo $'\t'-p preference to pass to Firefox 
     echo $'\t'-p1 preference to pass to Firefox test build \(overrides -p\)
     echo $'\t'-p2 preference to pass to Firefox release build \(overrides -p\)$'\n'
@@ -63,6 +68,11 @@ fi
 if [ -z $source ]
 then
     source=alexa
+fi  
+
+if [ -z $one_crl ]
+then
+    one_crl=prod
 fi  
 
 if [ $pref ] 
@@ -174,6 +184,70 @@ TEST_DIR=$DIR"/runs/"$timestamp
 cd $TEST_DIR
 mkdir certs
 mkdir temp
+
+# setting up profile folders
+mkdir profiles
+mkdir profiles/test_profile
+mkdir profiles/release_profile
+test_profile=$TEST_DIR"/profiles/test_profile"
+release_profile=$TEST_DIR"/profiles/release_profile"
+
+cp $DIR"/profiles/default_profile/cert8.db" $test_profile
+cp $DIR"/profiles/default_profile/key3.db" $test_profile
+cp $DIR"/profiles/default_profile/cert8.db" $release_profile
+cp $DIR"/profiles/default_profile/key3.db" $release_profile
+
+# fetch OneCRL list
+export go_orig=$(which go)
+export go_orig_path=$(dirname $go_orig)
+export go_path=$(readlink $go_orig)
+export new_path=$(dirname $go_path)
+cd $go_orig_path
+cd $new_path
+
+if [[ $platform == "osx" ]]
+then
+    cd ../libexec/src
+else
+    # we will assume linux
+    cd ../src
+fi
+
+if [[ $platform == "osx" ]]
+then
+    mkdir github.com
+    cd github.com
+    export src_dir=$PWD
+    mkdir mozmark
+    cd mozmark
+    git clone https://github.com/mozmark/OneCRL-Tools
+else
+    # we will assume linux
+    sudo mkdir github.com
+    cd github.com
+    export src_dir=$PWD
+    sudo mkdir mozmark
+    cd mozmark
+    sudo git clone https://github.com/mozmark/OneCRL-Tools
+fi
+
+cd OneCRL-Tools/oneCRL2RevocationsTxt
+
+# get revocations from live environment and save locally
+go run main.go $one_crl > $test_profile"/revocations.txt"
+go run main.go prod > $release_profile"/revocations.txt"
+
+if [[ $platform == "osx" ]]
+then
+    rm -rf $src_dir
+else
+    # we will assume linux
+    sudo rm -rf $src_dir
+fi
+
+chmod -R 0555 $test_profile
+chmod -R 0555 $release_profile
+
 TEMP=$TEST_DIR"/temp/"
 cd $TEMP
 
@@ -263,8 +337,9 @@ l5="test build url : "$test_build_url
 l6="release build url : "$release_build_url
 l7="test build metadata : "$test_metadata
 l8="release build metadata : "$release_metadata
+l9="OneCRL : "$one_crl
 
-echo $l1$'\n'$l2$'\n'$l3$'\n'$l4$'\n'$l5$'\n'$l6$'\n'$l7$'\n'$l8 > $TEST_DIR/temp/metadata.txt
+echo $l1$'\n'$l2$'\n'$l3$'\n'$l4$'\n'$l5$'\n'$l6$'\n'$l7$'\n'$l8$'\n'$l9 > $TEST_DIR/temp/metadata.txt
 
 # run scans
 run ()
@@ -272,9 +347,12 @@ run ()
     input_file="$1"
     log_file="$2"
     app_path="$3"
-    pref_arg=' -p='"$4"
-    json_arg="$5"
-    cert_arg="$6"
+
+    profile_arg='-profile='$TEST_DIR'/profiles/'"$4"
+
+    pref_arg=' -p='"$5"
+    json_arg="$6"
+    cert_arg="$7"
     path_arg=" -d="$DIR"/"
     js=$DIR/scan_url.js
     LOG=$TEST_DIR"/temp/"$log_file
@@ -293,7 +371,7 @@ run ()
     for uri in $site_list; do
         index=$(($index+1))
         uri_arg=" -u="$uri
-        echo $($app_path -xpcshell $js$uri_arg$path_arg $pref_arg$json_arg$cert_arg) &
+        echo $($app_path -xpcshell $js$uri_arg$path_arg $profile_arg$pref_arg$json_arg$cert_arg) &
         if [ $index -gt $batch_quantity ]; then
             index=0
             sleep $pause_time
@@ -303,10 +381,10 @@ run ()
 }
 
 # First pass: run list against test build
-run $DIR/sources/$url_source test_error_urls.txt $test_build $pref1
+run $DIR/sources/$url_source test_error_urls.txt $test_build "test_profile" $pref1
 
 # First pass: run error URLs against release build
-run $TEST_DIR/temp/test_error_urls.txt release_error_urls.txt $release_build $pref2
+run $TEST_DIR/temp/test_error_urls.txt release_error_urls.txt $release_build "release_profile" $pref2
 
 # diff results and make a new URL list
 cd $TEST_DIR
@@ -321,10 +399,10 @@ cd $DIR
 
 # Second pass: run error URL list once again
 sleep $file_system_pause_time
-run $TEST_DIR/temp/first_pass_error_urls.txt test_error_urls_2.txt $test_build $pref1
+run $TEST_DIR/temp/first_pass_error_urls.txt test_error_urls_2.txt $test_build "test_profile" $pref1
 
 # Second pass: run error URL list from above against release build again
-run $TEST_DIR/temp/test_error_urls_2.txt release_error_urls_2.txt $release_build $pref2
+run $TEST_DIR/temp/test_error_urls_2.txt release_error_urls_2.txt $release_build "release_profile" $pref2
 
 # diff results once again and make a new URL list
 cd $TEST_DIR
@@ -341,10 +419,10 @@ batch_quantity=10
 
 # Third pass: run error URL list once again
 sleep $file_system_pause_time
-run $TEST_DIR/temp/second-pass-diff.txt test_error_urls_3.txt $test_build $pref1
+run $TEST_DIR/temp/second-pass-diff.txt test_error_urls_3.txt $test_build "test_profile" $pref1
 
 # Third pass: run error URL list from above against release build again
-run $TEST_DIR/temp/test_error_urls_3.txt release_error_urls_3.txt $release_build $pref2
+run $TEST_DIR/temp/test_error_urls_3.txt release_error_urls_3.txt $release_build "release_profile" $pref2
 
 # diff results once again and make a new URL list
 cd $TEST_DIR
@@ -359,7 +437,7 @@ sleep $file_system_pause_time
 cd $DIR
 
 # Run final error URL list just to grab SSL certificates
-run $TEMP"final_urls.txt" final_errors.txt $test_build $pref1 -j=true -c=$TEST_DIR"/certs/" 
+run $TEMP"final_urls.txt" final_errors.txt $test_build "test_profile" $pref1 -j=true -c=$TEST_DIR"/certs/" 
 sort -u $TEMP"final_errors.txt" > $TEMP"final_errors_sorted.txt"
 
 # total time

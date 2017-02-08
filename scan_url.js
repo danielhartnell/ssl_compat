@@ -42,6 +42,8 @@ if (!arguments || arguments.length < 1) {
 -p :  preferences to apply (multiple flags supported)
       NOTE: Boolean pref values must be passed in as false/true and not 0/1
 
+-profile : path to profile
+
 -r : (site) rank (integer)
 
 -j : print JSON on error
@@ -62,6 +64,7 @@ var prefs = [];
 var rank = 0;
 var run_id;
 var print_json = false;
+var profile_path;
 
 for (var i=0;i<arguments.length;i++)
 {
@@ -83,6 +86,10 @@ for (var i=0;i<arguments.length;i++)
   {
     rank = arguments[i].split("-r=")[1];
   }
+  if (arguments[i].indexOf("-profile=") != -1)
+  {
+    profile_path = arguments[i].split("-profile=")[1];
+  } 
   if (arguments[i].indexOf("-p=") != -1)
   {
     var temp1 = arguments[i].split("-p=")[1];
@@ -137,6 +144,56 @@ try
 
 // custom prefs can go here
 // Services.prefs.setIntPref("security.pki.netscape_step_up_policy", 3)
+
+
+
+
+function do_get_profile() {
+  let profd = profile_path;
+  let file = Components.classes["@mozilla.org/file/local;1"]
+                       .createInstance(Components.interfaces.nsILocalFile);
+  file.initWithPath(profd);
+  let dirSvc = Components.classes["@mozilla.org/file/directory_service;1"]
+                         .getService(Components.interfaces.nsIProperties);
+  let provider = {
+    getFile: function(prop, persistent) {
+      //dump ( "prop: " + prop + "\n");
+      persistent.value = true;
+      if (prop == "ProfD" || prop == "ProfLD" || prop == "ProfDS" ||
+          prop == "ProfLDS" || prop == "PrefD" || prop == "TmpD") {
+        return file.clone();
+      }
+      return null;
+    },
+    QueryInterface: function(iid) {
+      if (iid.equals(Components.interfaces.nsIDirectoryServiceProvider) ||
+          iid.equals(Components.interfaces.nsISupports)) {
+        return this;
+      }
+      throw Components.results.NS_ERROR_NO_INTERFACE;
+    }
+  };
+  dirSvc.QueryInterface(Components.interfaces.nsIDirectoryService)
+        .registerProvider(provider);
+  let obsSvc = Components.classes["@mozilla.org/observer-service;1"].
+        getService(Components.interfaces.nsIObserverService);
+
+  // The methods of 'provider' will retain this scope so null out everything
+  // to avoid spurious leak reports.
+  profd = null;
+  dirSvc = null;
+  provider = null;
+  obsSvc = null;
+
+  return file.clone();
+
+}
+
+
+
+
+
+
 
 const nsINSSErrorsService = Ci.nsINSSErrorsService;
 let nssErrorsService = Cc['@mozilla.org/nss_errors_service;1'].getService(nsINSSErrorsService);
@@ -582,6 +639,7 @@ function failRun(arg)
 }
 
 try {
+  do_get_profile();
   var test_obj = createTestObject();
   loadURI(host);
 } catch (e) {
