@@ -55,3 +55,4 @@
 {"run":"2017-01-27-23-34-54","branch":"Nightly","errors":"1290","description":"Fx54.0a1 nightly vs Fx51.0.1 release"}
 {"run":"2017-01-27-22-03-59","branch":"Beta","errors":"13","description":"Fx52.0b1 beta vs Fx51.0.1 release"}
 {"run":"2017-01-30-22-42-56","branch":"Aurora","errors":"1274","description":"Fx53.0a2 aurora vs Fx51.0.1 release"}
+{"run":"2017-02-09-20-13-01","branch":"Nightly","errors":"1083","description":"Fx54.0a1 nightly vs Fx51.0.1 release"}
