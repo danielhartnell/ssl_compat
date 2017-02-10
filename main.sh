@@ -481,4 +481,10 @@ cp $DIR/report_template.htm $TEST_DIR/index.htm
 # optional: delete temp folder
 rm -r $TEMP
 
+# change permissions 
+chmod -R 0777 $test_profile
+chmod -R 0777 $release_profile
+
+
+
 exit 0
