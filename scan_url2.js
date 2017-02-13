@@ -42,6 +42,8 @@ if (!arguments || arguments.length < 1) {
 -p :  preferences to apply (multiple flags supported)
       NOTE: Boolean pref values must be passed in as false/true and not 0/1
 
+-profile : path to profile
+
 -r : (site) rank (integer)
 
 -j : print JSON on error
@@ -62,6 +64,7 @@ var prefs = [];
 var rank = 0;
 var run_id;
 var print_json = false;
+var profile_path;
 
 for (var i=0;i<arguments.length;i++)
 {
@@ -83,6 +86,10 @@ for (var i=0;i<arguments.length;i++)
   {
     rank = arguments[i].split("-r=")[1];
   }
+  if (arguments[i].indexOf("-profile=") != -1)
+  {
+    profile_path = arguments[i].split("-profile=")[1];
+  } 
   if (arguments[i].indexOf("-p=") != -1)
   {
     var temp1 = arguments[i].split("-p=")[1];
@@ -136,19 +143,13 @@ try
 }
 
 // custom prefs can go here
-//Services.prefs.setIntPref("security.tls.version.max", 4);
-//Services.prefs.setIntPref("security.tls.version.fallback-limit", 4);
+// Services.prefs.setIntPref("security.pki.netscape_step_up_policy", 3)
 
 
-// test profile stuff
-// WIP:
-// * add logic back in
-// * clean up variable names
-// * remove hard-coded profile and make dynamic profile path
 
 
 function do_get_profile() {
-  let profd = current_directory + "/test_profile";
+  let profd = profile_path;
   let file = Components.classes["@mozilla.org/file/local;1"]
                        .createInstance(Components.interfaces.nsILocalFile);
   file.initWithPath(profd);
@@ -177,26 +178,6 @@ function do_get_profile() {
   let obsSvc = Components.classes["@mozilla.org/observer-service;1"].
         getService(Components.interfaces.nsIObserverService);
 
-  // We need to update the crash events directory when the profile changes.
-
-/*
-  if (runningInParent &&
-      "@mozilla.org/toolkit/crash-reporter;1" in Components.classes) {
-    let crashReporter =
-        Components.classes["@mozilla.org/toolkit/crash-reporter;1"]
-                          .getService(Components.interfaces.nsICrashReporter);
-    crashReporter.UpdateCrashEventsDir();
-  }
-*/
-/*
-  if (!_profileInitialized) {
-    obsSvc.notifyObservers(null, "profile-do-change", "xpcshell-do-get-profile");
-    _profileInitialized = true;
-    if (notifyProfileAfterChange) {
-      obsSvc.notifyObservers(null, "profile-after-change", "xpcshell-do-get-profile");
-    }
-  }
-*/
   // The methods of 'provider' will retain this scope so null out everything
   // to avoid spurious leak reports.
   profd = null;
@@ -207,6 +188,12 @@ function do_get_profile() {
   return file.clone();
 
 }
+
+
+
+
+
+
 
 const nsINSSErrorsService = Ci.nsINSSErrorsService;
 let nssErrorsService = Cc['@mozilla.org/nss_errors_service;1'].getService(nsINSSErrorsService);
@@ -541,13 +528,9 @@ function loadURI(uri) {
 
     let currentError = error ? getErrorType(error) : null;
     analyzeSecurityInfo(xhr, currentError, hostname, error);
-    if (error)
+    if (!error)
     {
       var msg = test_obj.site_info.rank + "," + test_obj.site_info.uri;
-      if (print_json)
-      {
-        msg += "\t" + JSON.stringify(test_obj);
-      }
       dump (msg + "\n");
     }
   }
@@ -658,5 +641,3 @@ try {
 } catch (e) {
   failRun(e.message);
 }
-//var P = Services.prefs.getIntPref("security.tls.version.max");
-//dump (" pref: " + P + "\n");
