@@ -58,7 +58,7 @@ then
     echo $'\t'$'\t'OR custom URL to source list
     echo $'\t'-u URL of Firefox DMG to test 
     echo $'\t'-d description of test run \(use quotes\)
-    echo $'\t'-o OneCRL set to use on test build 
+    echo $'\t'-o OneCRL set to use on test build $'\t'prod \(default\), stage, none
     echo $'\t'-p preference to pass to Firefox 
     echo $'\t'-p1 preference to pass to Firefox test build \(overrides -p\)
     echo $'\t'-p2 preference to pass to Firefox release build \(overrides -p\)$'\n'
@@ -197,7 +197,11 @@ cp $DIR"/profiles/default_profile/key3.db" $test_profile
 cp $DIR"/profiles/default_profile/cert8.db" $release_profile
 cp $DIR"/profiles/default_profile/key3.db" $release_profile
 
-# fetch OneCRL list
+
+
+# fetch OneCRL entries
+
+
 export go_orig=$(which go)
 export go_orig_path=$(dirname $go_orig)
 export go_path=$(readlink $go_orig)
@@ -232,11 +236,19 @@ else
 fi
 
 cd OneCRL-Tools/oneCRL2RevocationsTxt
-
 # get revocations from live environment and save locally
-go run main.go $one_crl > $test_profile"/revocations.txt"
-go run main.go prod > $release_profile"/revocations.txt"
 
+if [[ $one_crl == "prod" || $one_crl == "stage" ]]
+then
+    go run main.go $one_crl > $test_profile"/revocations.txt"
+else
+    # copy what's in test profile instead
+    cp $DIR"/profiles/test_profile/revocations.txt" $test_profile
+fi
+
+
+
+go run main.go prod > $release_profile"/revocations.txt"
 if [[ $platform == "osx" ]]
 then
     rm -rf $src_dir
@@ -244,9 +256,8 @@ else
     # we will assume linux
     sudo rm -rf $src_dir
 fi
-
 chmod -R 0555 $test_profile
-chmod -R 0555 $release_profile
+chmod -R 0555 $release_profile  
 
 TEMP=$TEST_DIR"/temp/"
 cd $TEMP
