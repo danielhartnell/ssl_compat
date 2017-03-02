@@ -246,8 +246,6 @@ else
     cp $DIR"/profiles/test_profile/revocations.txt" $test_profile
 fi
 
-
-
 go run main.go prod > $release_profile"/revocations.txt"
 if [[ $platform == "osx" ]]
 then
@@ -305,6 +303,13 @@ else
     mv firefox firefox_release
     release_build=$TEMP"firefox_release/firefox"
     sleep 5
+fi
+
+# if we are testing new OneCRL entries, we need to compare lists against the same test build
+if [[ $one_crl != "prod" ]]
+then
+    release_build=$test_build
+    release_build_url=$test_build_url
 fi
 
 # get metadata from each build of Firefox
