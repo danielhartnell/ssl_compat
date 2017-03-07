@@ -58,7 +58,7 @@ then
     echo $'\t'$'\t'OR custom URL to source list
     echo $'\t'-u URL of Firefox DMG to test 
     echo $'\t'-d description of test run \(use quotes\)
-    echo $'\t'-o OneCRL set to use on test build $'\t'prod \(default\), stage, none
+    echo $'\t'-o OneCRL set to use on test build $'\t'prod \(default\), stage, custom
     echo $'\t'-p preference to pass to Firefox 
     echo $'\t'-p1 preference to pass to Firefox test build \(overrides -p\)
     echo $'\t'-p2 preference to pass to Firefox release build \(overrides -p\)$'\n'
@@ -197,11 +197,7 @@ cp $DIR"/profiles/default_profile/key3.db" $test_profile
 cp $DIR"/profiles/default_profile/cert8.db" $release_profile
 cp $DIR"/profiles/default_profile/key3.db" $release_profile
 
-
-
 # fetch OneCRL entries
-
-
 export go_orig=$(which go)
 export go_orig_path=$(dirname $go_orig)
 export go_path=$(readlink $go_orig)
@@ -304,6 +300,24 @@ else
     release_build=$TEMP"firefox_release/firefox"
     sleep 5
 fi
+
+# Types of OneCRL runs:
+#
+# prod (default)
+# - [a][1] vs [b][1]
+#
+# stage
+# - [a][2] vs [a][1]
+#
+# custom (matches neither)
+# - [a][3] vs [a][1]
+#
+# Key:
+# [a] test build
+# [b] release build
+# [1] prod OneCRL
+# [2] stage OneCRL
+# [3] custom local revocations.txt
 
 # if we are testing new OneCRL entries, we need to compare lists against the same test build
 if [[ $one_crl != "prod" ]]
