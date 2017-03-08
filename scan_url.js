@@ -508,7 +508,7 @@ function queryHost(hostname, callback) {
     req.open("HEAD", "https://" + hostname, true);
     req.timeout = DEFAULT_TIMEOUT;
     // next line commented out due to bug #1313252
-    // req.channel.notificationCallbacks = new RedirectStopper();
+    req.channel.notificationCallbacks = new RedirectStopper();
     req.addEventListener("error", errorHandler, false);
     req.addEventListener("load", readyHandler, false);
     req.send();
