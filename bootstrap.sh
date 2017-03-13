@@ -6,4 +6,5 @@ sudo apt-get install python
 sudo apt-get install python-dev
 sudo apt-get install virtualenv
 sudo apt-get install gcc
-git clone https://github.com/mwobensmith/tls-canary
+sudo apt-get install golang-go
+#git clone https://github.com/mwobensmith/tls-canary
