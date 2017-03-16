@@ -197,7 +197,7 @@ function do_get_profile() {
 
 const nsINSSErrorsService = Ci.nsINSSErrorsService;
 let nssErrorsService = Cc['@mozilla.org/nss_errors_service;1'].getService(nsINSSErrorsService);
-const UNKNOWN_ERROR = 0;
+const UNKNOWN_ERROR = 1;
 
 function getErrorType(status) {
   let errType = "unknown";
