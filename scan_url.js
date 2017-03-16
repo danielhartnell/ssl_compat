@@ -198,6 +198,7 @@ function do_get_profile() {
 const nsINSSErrorsService = Ci.nsINSSErrorsService;
 let nssErrorsService = Cc['@mozilla.org/nss_errors_service;1'].getService(nsINSSErrorsService);
 const UNKNOWN_ERROR = 1;
+const UNREACHABLE_SITE = 12244224;
 
 function getErrorType(status) {
   let errType = "unknown";
@@ -382,6 +383,9 @@ function errorCodeLookup(error)
     case 0x804b000a:
       msg = "error_malformed_uri";
       break;
+    case 0xbad500:
+      msg = "generic_server_error_unreachable";
+      break;
     default:
       msg = "unknown_error";
       break;
@@ -504,7 +508,7 @@ function queryHost(hostname, callback) {
   }
   try {
     let req = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance(Ci.nsIXMLHttpRequest);
-    timeout = Timer.setTimeout(() => completed(UNKNOWN_ERROR, req), DEFAULT_TIMEOUT+2000);
+    timeout = Timer.setTimeout(() => completed(UNREACHABLE_SITE, req), DEFAULT_TIMEOUT+2000);
     req.open("HEAD", "https://" + hostname, true);
     req.timeout = DEFAULT_TIMEOUT;
     // next line commented out due to bug #1313252
