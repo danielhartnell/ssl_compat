@@ -63,3 +63,5 @@
 {"run":"2017-03-20-18-32-41","branch":"Nightly","errors":"5","description":"Fx55.0a1 nightly vs Fx52.0.1 release"}
 {"run":"2017-04-24-21-15-59","branch":"Nightly","errors":"3","description":"Fx55.0a1 nightly vs Fx53.0 release"}
 {"run":"2017-04-25-16-23-09","branch":"Beta","errors":"0","description":"Fx54.0b1 beta vs Fx53.0 release"}
+{"run":"2017-06-16-19-55-17","branch":"Beta","errors":"0","description":"Fx55.0b2 beta vs Fx54.0 release"}
+{"run":"2017-06-16-19-53-53","branch":"Nightly","errors":"0","description":"Fx56.0a1 nightly vs Fx54.0 release"}
