@@ -1,6 +1,7 @@
 # OBSOLETE:
 This project has been eclipsed by the master TLS Canary project
 located at https://github.com/mozilla/tls-canary
+
 Use that instead, it's much better.
 
 For archive purposes:
