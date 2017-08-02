@@ -1,5 +1,12 @@
-# TLS Canary version 2
-Automated testing of Firefox for SSL web compatibility
+# OBSOLETE:
+This project has been eclipsed by the master TLS Canary project
+located at https://github.com/mozilla/tls-canary
+
+Use that instead, it's much better.
+
+For archive purposes:
+
+TLS Canary version 2: Automated testing of Firefox for SSL web compatibility
 
 Results live here:
 http://tlscanary.mozilla.org
