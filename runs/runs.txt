@@ -67,3 +67,4 @@
 {"run":"2017-06-16-19-53-53","branch":"Nightly","errors":"0","description":"Fx56.0a1 nightly vs Fx54.0 release"}
 {"run":"2017-08-01-17-07-49","branch":"Nightly","errors":"825","description":"Fx56.0a1 nightly - 3DES cipher disable"}
 {"run":"2017-08-15-21-17-48","branch":"Nightly","errors":"850","description":"Fx57.0a1 nightly vs Fx55.0.1 release"}
+{"run":"2017-08-16-18-25-33","branch":"Beta","errors":"0","description":"Fx56.0b2 beta vs Fx55.0.2 release"}
